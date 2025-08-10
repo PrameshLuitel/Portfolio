@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import RocketLaunchAnimation from '@/components/effects/rocket-launch-animation';
 
 const VestaraSection = () => {
   return (
@@ -53,15 +54,18 @@ const VestaraSection = () => {
                   The insights and skills that power Vestara's vision were honed through my experience pioneering AI-first solutions and building tools like 'Portfolio Pulse,'. At Global Ime Capital Limited I gained firsthand insight into the operational bottlenecks Vestara is designed to solve. This unique blend of academic rigor, technical execution, and strategic foresight is what defines my role and the future of Vestara.
                 </p>
               </TabsContent>
-              <TabsContent value="launch" className="flex flex-col items-center justify-center h-full text-center">
-                 <h3 className="font-headline text-2xl text-primary mb-4">Project Launch</h3>
-                  <p className="text-muted-foreground mb-6 max-w-md">
-                    The platform is currently under active development. The official launch is planned for Q3 2025. Stay tuned for updates.
-                  </p>
-                <Button variant="outline" size="lg" disabled>
-                  <Rocket className="mr-2 h-5 w-5" />
-                  Launch Vestara (Pending)
-                </Button>
+              <TabsContent value="launch" className="relative flex flex-col items-center justify-center h-full text-center">
+                 <RocketLaunchAnimation />
+                 <div className="z-10">
+                    <h3 className="font-headline text-2xl text-primary mb-4">Project Launch</h3>
+                    <p className="text-muted-foreground mb-6 max-w-md">
+                        The platform is currently under active development. The official launch is planned for Q3 2025. Stay tuned for updates.
+                    </p>
+                    <Button variant="outline" size="lg" disabled>
+                        <Rocket className="mr-2 h-5 w-5" />
+                        Launch Vestara (Pending)
+                    </Button>
+                 </div>
               </TabsContent>
             </CardContent>
           </Tabs>
