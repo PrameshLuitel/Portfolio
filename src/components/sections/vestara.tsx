@@ -29,7 +29,7 @@ const VestaraSection = () => {
               <TabsContent value="vision" className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
                 <h3>Vision & Market Gap</h3>
                 <p>
-                  The investment landscape is saturated with generic data terminals and lagging analytical tools. Vestara GPT addresses a critical market gap: the need for a predictive, conversational AI partner for institutional investors. It moves beyond data retrieval to provide actionable, forward-looking strategic intelligence. Our vision is to make Vestara the central nervous system for every modern investment firm, transforming terabytes of noise into a clear signal of alpha.
+                  Project Vestara is an advanced AI-powered investment intelligence platform designed to redefine how financial professionals in Nepal access, interpret, and act on critical regulatory and market data. By unifying a specialized large language model with predictive market analytics, Vestara bridges the gap between deep regulatory knowledge and actionable investment insights. The result is a powerful tool that enables decision-makers to operate with unparalleled speed, precision, and confidence.
                 </p>
               </TabsContent>
               <TabsContent value="role" className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
