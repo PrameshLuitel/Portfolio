@@ -1,15 +1,8 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { CheckCircle, Cpu, Target, Telescope, BrainCircuit, Rocket } from 'lucide-react';
+import { Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const capabilities = [
-  { icon: CheckCircle, text: 'Regulatory Q&A' },
-  { icon: Target, text: 'Market Analysis' },
-  { icon: Telescope, text: 'Portfolio Optimization' },
-  { icon: Cpu, text: 'Competitor Intelligence' },
-];
 
 const VestaraSection = () => {
   return (
@@ -20,12 +13,10 @@ const VestaraSection = () => {
         <Card className="w-full max-w-5xl bg-card/70 backdrop-blur-sm border-primary/20">
           <Tabs defaultValue="vision" className="w-full">
             <CardHeader className="p-4 md:p-6">
-              <TabsList className="grid w-full grid-cols-2 md:grid-cols-5">
+              <TabsList className="grid w-full grid-cols-1 md:grid-cols-3">
                 <TabsTrigger value="vision" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Vision</TabsTrigger>
                 <TabsTrigger value="features" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Core Features</TabsTrigger>
                 <TabsTrigger value="role" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Founder Role</TabsTrigger>
-                <TabsTrigger value="capabilities" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Capabilities</TabsTrigger>
-                <TabsTrigger value="launch" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Launch</TabsTrigger>
               </TabsList>
             </CardHeader>
             <CardContent className="h-[50vh] overflow-y-auto px-4 md:px-6">
@@ -39,13 +30,13 @@ const VestaraSection = () => {
                  <div dangerouslySetInnerHTML={{ __html: `
                     <h4>1. Vestara GPT: The Domain-Trained AI Assistant</h4>
                     <p>
-                      Our custom-built large language model has been meticulously trained on the intricacies of <span class='text-primary font-semibold'>SEBON</span> and <span class='text-primary font-semibold'>NEPSE</span> regulations, as well as the unique workflows of investment banking in Nepal. Using <span class='text-primary font-semibold'>Retrieval-Augmented Generation (RAG)</span>, Vestara GPT delivers precise, context-aware responses to any compliance, operational, or market-related query. This functions as a real-time regulatory and strategy assistant, an authoritative source of truth for investment bankers, analysts, and compliance teams.
+                      Our custom-built large language model has been meticulously trained on the intricacies of <span class='text-primary font-normal'>SEBON</span> and <span class='text-primary font-normal'>NEPSE</span> regulations, as well as the unique workflows of investment banking in Nepal. Using <span class='text-primary font-normal'>Retrieval-Augmented Generation (RAG)</span>, Vestara GPT delivers precise, context-aware responses to any compliance, operational, or market-related query. This functions as a real-time regulatory and strategy assistant, an authoritative source of truth for investment bankers, analysts, and compliance teams.
                     </p>
                  ` }}/>
                  <div dangerouslySetInnerHTML={{ __html: `
                     <h4>2. The AI Predictive Analytics Suite</h4>
                     <p>
-                      A cutting-edge, multi-model AI prediction engine that covers the entire universe of NEPSE-listed stocks. It leverages a diverse portfolio of machine learning and deep learning architectures, including <span class='text-primary font-semibold'>LSTM</span>, <span class='text-primary font-semibold'>GRU</span>, <span class='text-primary font-semibold'>Transformers</span>, <span class='text-primary font-semibold'>XGBoost</span>, and <span class='text-primary font-semibold'>ensemble models</span>. By integrating <span class='text-primary font-semibold'>technical indicators</span>, <span class='text-primary font-semibold'>historical patterns</span>, and <span class='text-primary font-semibold'>sentiment data</span>, the engine produces <span class='text-primary font-semibold'>data-rich visualizations</span> and high-confidence forecasts. This suite is designed for both institutional analysis and academic research, augmenting human expertise for data-driven decision-making at scale.
+                      A cutting-edge, multi-model AI prediction engine that covers the entire universe of NEPSE-listed stocks. It leverages a diverse portfolio of machine learning and deep learning architectures, including <span class='text-primary font-normal'>LSTM</span>, <span class='text-primary font-normal'>GRU</span>, <span class='text-primary font-normal'>Transformers</span>, <span class='text-primary font-normal'>XGBoost</span>, and <span class='text-primary font-normal'>ensemble models</span>. By integrating <span class='text-primary font-normal'>technical indicators</span>, <span class='text-primary font-normal'>historical patterns</span>, and <span class='text-primary font-normal'>sentiment data</span>, the engine produces <span class='text-primary font-normal'>data-rich visualizations</span> and high-confidence forecasts. This suite is designed for both institutional analysis and academic research, augmenting human expertise for data-driven decision-making at scale.
                     </p>
                  ` }}/>
               </TabsContent>
@@ -61,31 +52,14 @@ const VestaraSection = () => {
                   The insights and skills that power Vestara's vision were honed through my experience pioneering AI-first solutions and building tools like 'Portfolio Pulse,'. At Global Ime Capital Limited I gained firsthand insight into the operational bottlenecks Vestara is designed to solve. This unique blend of academic rigor, technical execution, and strategic foresight is what defines my role and the future of Vestara.
                 </p>
               </TabsContent>
-              <TabsContent value="capabilities">
-                <h3 className="text-2xl font-headline text-primary mb-4">Projected Capabilities</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mt-4">
-                  {capabilities.map(cap => (
-                    <div key={cap.text} className="flex items-center gap-4">
-                      <cap.icon className="w-8 h-8 text-primary icon-glow shrink-0" />
-                      <span className="text-lg">{cap.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </TabsContent>
-              <TabsContent value="launch">
-                 <div className="flex flex-col items-center justify-center h-full text-center">
-                    <h3 className="text-2xl font-headline text-primary mb-4">Ready for Liftoff</h3>
-                    <p className="text-muted-foreground mb-6 max-w-md">The full version of Vestara GPT is currently under active development. The launch button below will be activated once the platform is live.</p>
-                    <Button variant="outline" size="lg" disabled>
-                      <Rocket className="mr-2 h-5 w-5" />
-                      Launch Vestara (Pending)
-                    </Button>
-                </div>
-              </TabsContent>
             </CardContent>
           </Tabs>
-          <div className="text-center text-xs text-muted-foreground p-4 border-t border-primary/20">
-            Expected Rollout: Q3 2025 (Full)
+          <div className="flex items-center justify-between text-xs text-muted-foreground p-4 border-t border-primary/20">
+            <span>Expected Rollout: Q3 2025 (Full)</span>
+            <Button variant="outline" size="sm" disabled>
+              <Rocket className="mr-2 h-4 w-4" />
+              Launch Vestara (Pending)
+            </Button>
           </div>
         </Card>
       </div>
