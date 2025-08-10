@@ -47,7 +47,7 @@ const aboutData = {
 const AboutMeSection = () => {
   const { playHoverSound } = useSound();
   return (
-    <section id="about-me" className="scroll-section p-4 md:p-8 flex items-center justify-center min-h-screen pt-20">
+    <section id="about-me" className="scroll-section p-4 md:p-8 flex items-center justify-center min-h-screen pt-20 md:pt-24">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
         <h2 className="font-headline text-4xl md:text-5xl text-glow mb-8 text-center">About Me</h2>
         <div className="flex flex-col lg:flex-row items-start justify-center gap-12 w-full max-w-7xl">
