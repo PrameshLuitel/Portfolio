@@ -80,9 +80,9 @@ const AboutMeSection = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {aboutData.highlights.map((highlight, index) => (
-                  <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20 text-center">
+                  <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20 text-center group">
                     <CardContent className="p-3 flex flex-col items-center justify-center gap-2">
-                      <highlight.icon className="w-6 h-6 text-primary icon-glow" />
+                      <highlight.icon className="w-6 h-6 text-primary transition-all group-hover:icon-glow" />
                       <p className="font-bold text-xs text-foreground text-center">{highlight.title}</p>
                     </CardContent>
                   </Card>

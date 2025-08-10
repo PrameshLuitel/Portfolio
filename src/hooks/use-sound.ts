@@ -22,25 +22,38 @@ export const useSound = () => {
   const playHoverSound = useCallback(() => {
     const audioContext = getAudioContext();
     if (!audioContext) return;
-    
-    // Create a simple, subtle "pop" sound
-    const oscillator = audioContext.createOscillator();
+
+    // Create a "shrrr" sound with white noise and a filter
+    const duration = 0.15;
+    const bufferSize = audioContext.sampleRate * duration;
+    const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+    const output = buffer.getChannelData(0);
+
+    for (let i = 0; i < bufferSize; i++) {
+      output[i] = Math.random() * 2 - 1;
+    }
+
+    const noise = audioContext.createBufferSource();
+    noise.buffer = buffer;
+
+    const bandpass = audioContext.createBiquadFilter();
+    bandpass.type = 'bandpass';
+    bandpass.frequency.setValueAtTime(1000, audioContext.currentTime);
+    bandpass.frequency.linearRampToValueAtTime(3000, audioContext.currentTime + duration * 0.8);
+    bandpass.Q.value = 5;
+
     const gainNode = audioContext.createGain();
-
-    // Sound properties for a quick, low-pitched pop
-    oscillator.type = 'sine'; 
-    oscillator.frequency.setValueAtTime(200, audioContext.currentTime);
-
-    // Volume envelope to make it sound like a "pop"
     gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-    gainNode.gain.linearRampToValueAtTime(0.1, audioContext.currentTime + 0.01); // Quick attack
-    gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.05); // Quick decay
+    gainNode.gain.linearRampToValueAtTime(0.05, audioContext.currentTime + 0.01);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + duration);
 
-    // Connect nodes and play
-    oscillator.connect(gainNode);
+    noise.connect(bandpass);
+    bandpass.connect(gainNode);
     gainNode.connect(audioContext.destination);
-    oscillator.start(audioContext.currentTime);
-    oscillator.stop(audioContext.currentTime + 0.1);
+
+    noise.start(audioContext.currentTime);
+    noise.stop(audioContext.currentTime + duration);
+
   }, [getAudioContext]);
 
   return { playHoverSound };
