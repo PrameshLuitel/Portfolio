@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 const researchPapers = [
   {
     title: 'Sentiment-Enhanced Stock Price Prediction in Nepalese Small-Cap Equities Using Natural Language Processing',
-    publication: 'Under Peer Review',
+    publication: 'Under Peer Review (Journal of Himalaya College of Engineering)',
     link: '#',
     tags: ['NLP', 'Sentiment Analysis', 'NEPSE', 'Small-Cap Equities', 'Peer-Reviewed'],
     summary: 'Developed a hybrid model combining NLP and quantitative market indicators to predict price movements in illiquid, small-cap stocks. This research pioneered NLP-driven financial analysis in the Nepalese capital market by converting qualitative sentiment data into structured features, demonstrating superior performance over traditional models in low-volume environments.',
