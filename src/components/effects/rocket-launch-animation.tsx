@@ -16,23 +16,22 @@ interface Particle {
 // Simple pixel art rocket shape (coordinates relative to a center point)
 const rocketShape = [
   // Tip
-  { x: 0, y: -12 },
+  { x: 0, y: -12, color: 'hsl(0, 0%, 90%)' }, 
   // Body
-  { x: 0, y: -11 },
-  { x: -1, y: -10 }, { x: 0, y: -10 }, { x: 1, y: -10 },
-  { x: -1, y: -9 }, { x: 0, y: -9 }, { x: 1, y: -9 },
-  { x: -2, y: -8 }, { x: -1, y: -8 }, { x: 0, y: -8 }, { x: 1, y: -8 }, { x: 2, y: -8 },
-  { x: -2, y: -7 }, { x: -1, y: -7 }, { x: 0, y: -7 }, { x: 1, y: -7 }, { x: 2, y: -7 },
-  { x: -2, y: -6 }, { x: -1, y: -6 }, { x: 0, y: -6 }, { x: 1, y: -6 }, { x: 2, y: -6 },
-  { x: -2, y: -5 }, { x: -1, y: -5 }, { x: 0, y: -5 }, { x: 1, y: -5 }, { x: 2, y: -5 },
-  { x: -2, y: -4 }, { x: -1, y: -4 }, { x: 0, y: -4 }, { x: 1, y: -4 }, { x: 2, y: -4 },
-  { x: -2, y: -3 }, { x: -1, y: -3 }, { x: 0, y: -3 }, { x: 1, y: -3 }, { x: 2, y: -3 },
-  { x: -2, y: -2 }, { x: 0, y: -2 }, { x: 2, y: -2 },
-  { x: -2, y: -1 }, { x: 0, y: -1 }, { x: 2, y: -1 },
+  { x: -1, y: -11, color: 'hsl(0, 0%, 80%)' }, { x: 0, y: -11, color: 'hsl(0, 0%, 95%)' }, { x: 1, y: -11, color: 'hsl(0, 0%, 75%)' },
+  { x: -1, y: -10, color: 'hsl(0, 0%, 80%)' }, { x: 0, y: -10, color: 'hsl(0, 0%, 95%)' }, { x: 1, y: -10, color: 'hsl(0, 0%, 75%)' },
+  { x: -2, y: -9, color: 'hsl(0, 0%, 70%)' }, { x: -1, y: -9, color: 'hsl(0, 0%, 80%)' }, { x: 0, y: -9, color: 'hsl(0, 0%, 95%)' }, { x: 1, y: -9, color: 'hsl(0, 0%, 75%)' }, { x: 2, y: -9, color: 'hsl(0, 0%, 65%)' },
+  { x: -2, y: -8, color: 'hsl(0, 0%, 70%)' }, { x: -1, y: -8, color: 'hsl(0, 0%, 80%)' }, { x: 0, y: -8, color: 'hsl(0, 0%, 95%)' }, { x: 1, y: -8, color: 'hsl(0, 0%, 75%)' }, { x: 2, y: -8, color: 'hsl(0, 0%, 65%)' },
+  { x: -2, y: -7, color: 'hsl(0, 0%, 70%)' }, { x: -1, y: -7, color: 'hsl(0, 0%, 80%)' }, { x: 0, y: -7, color: 'hsl(0, 0%, 95%)' }, { x: 1, y: -7, color: 'hsl(0, 0%, 75%)' }, { x: 2, y: -7, color: 'hsl(0, 0%, 65%)' },
+  { x: -2, y: -6, color: 'hsl(0, 0%, 70%)' }, { x: -1, y: -6, color: 'hsl(0, 0%, 80%)' }, { x: 0, y: -6, color: 'hsl(0, 0%, 95%)' }, { x: 1, y: -6, color: 'hsl(0, 0%, 75%)' }, { x: 2, y: -6, color: 'hsl(0, 0%, 65%)' },
+  { x: -2, y: -5, color: 'hsl(0, 0%, 70%)' }, { x: -1, y: -5, color: 'hsl(0, 0%, 80%)' }, { x: 0, y: -5, color: 'hsl(0, 0%, 95%)' }, { x: 1, y: -5, color: 'hsl(0, 0%, 75%)' }, { x: 2, y: -5, color: 'hsl(0, 0%, 65%)' },
+  { x: -2, y: -4, color: 'hsl(0, 0%, 70%)' }, { x: -1, y: -4, color: 'hsl(0, 0%, 80%)' }, { x: 0, y: -4, color: 'hsl(0, 0%, 95%)' }, { x: 1, y: -4, color: 'hsl(0, 0%, 75%)' }, { x: 2, y: -4, color: 'hsl(0, 0%, 65%)' },
+  { x: -2, y: -3, color: 'hsl(0, 0%, 70%)' }, { x: -1, y: -3, color: 'hsl(0, 0%, 80%)' }, { x: 0, y: -3, color: 'hsl(0, 0%, 95%)' }, { x: 1, y: -3, color: 'hsl(0, 0%, 75%)' }, { x: 2, y: -3, color: 'hsl(0, 0%, 65%)' },
+  // Engine
+  { x: -1, y: -2, color: 'hsl(0, 0%, 50%)' }, { x: 0, y: -2, color: 'hsl(0, 0%, 60%)' }, { x: 1, y: -2, color: 'hsl(0, 0%, 45%)' },
   // Fins
-  { x: -3, y: -1 }, { x: 3, y: -1 },
-  { x: -4, y: 0 }, { x: -3, y: 0 }, { x: 3, y: 0 }, { x: 4, y: 0 },
-  { x: -4, y: 1 }, { x: 4, y: 1 },
+  { x: -4, y: 0, color: 'hsl(0, 0%, 60%)' }, { x: -3, y: 0, color: 'hsl(0, 0%, 70%)' }, { x: 3, y: 0, color: 'hsl(0, 0%, 60%)' }, { x: 4, y: 0, color: 'hsl(0, 0%, 50%)' },
+  { x: -4, y: 1, color: 'hsl(0, 0%, 60%)' }, { x: -3, y: 1, color: 'hsl(0, 0%, 70%)' }, { x: 3, y: 1, color: 'hsl(0, 0%, 60%)' }, { x: 4, y: 1, color: 'hsl(0, 0%, 50%)' },
 ];
 
 
@@ -48,9 +47,9 @@ const RocketLaunchAnimation = () => {
     if (!ctx) return;
 
     let animationFrameId: number;
-    const particlesPerFrame = 5;
+    const particlesPerFrame = 8;
     const dotSize = 4;
-    const rocketBaseY = 2 * dotSize; // Base of the rocket in canvas space
+    const rocketBaseY = 2 * dotSize; 
 
     const resizeCanvas = () => {
       if(canvas.parentElement) {
@@ -61,32 +60,32 @@ const RocketLaunchAnimation = () => {
     resizeCanvas();
 
     const rocketCenterX = canvas.width / 2;
-    const rocketCenterY = canvas.height / 2 - 20;
+    const rocketCenterY = canvas.height / 2 - 40; // Move rocket up
 
     const createParticle = () => {
-      const angle = Math.PI / 2 + (Math.random() - 0.5) * (Math.PI / 4); // Pointing downwards
-      const speed = 1 + Math.random() * 2;
+      const angle = Math.PI / 2 + (Math.random() - 0.5) * (Math.PI / 3); 
+      const speed = 2 + Math.random() * 4;
 
       return {
-        x: rocketCenterX + (Math.random() - 0.5) * 10,
+        x: rocketCenterX + (Math.random() - 0.5) * 12,
         y: rocketCenterY + rocketBaseY,
         vx: Math.cos(angle) * speed * 0.5,
         vy: Math.sin(angle) * speed,
-        size: Math.random() * 2 + 1.5,
+        size: Math.random() * 2.5 + 2,
         life: 100,
-        maxLife: Math.random() * 50 + 50
+        maxLife: Math.random() * 60 + 40
       };
     };
     
     const drawRocket = () => {
       if (!ctx) return;
       const primaryColor = theme === 'dark' ? 'hsl(var(--primary))' : 'hsl(var(--primary))';
-      ctx.fillStyle = primaryColor;
       ctx.shadowColor = primaryColor;
-      ctx.shadowBlur = 5;
-
+      ctx.shadowBlur = 15;
+      
       rocketShape.forEach(p => {
-        ctx.fillRect(rocketCenterX + p.x * dotSize, rocketCenterY + p.y * dotSize, dotSize -1, dotSize -1);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(rocketCenterX + p.x * dotSize, rocketCenterY + p.y * dotSize, dotSize, dotSize);
       });
       ctx.shadowBlur = 0;
     }
@@ -99,7 +98,7 @@ const RocketLaunchAnimation = () => {
       drawRocket();
 
       for (let i = 0; i < particlesPerFrame; i++) {
-        if(particlesRef.current.length < 300) {
+        if(particlesRef.current.length < 500) { // More particles
             particlesRef.current.push(createParticle());
         }
       }
@@ -109,19 +108,20 @@ const RocketLaunchAnimation = () => {
       particlesRef.current.forEach(p => {
         p.x += p.vx;
         p.y += p.vy;
+        p.vy *= 1.01; // slight acceleration
         p.life -= 100 / p.maxLife;
 
         const lifeRatio = p.life / 100;
         
         let color;
-        if (lifeRatio > 0.8) {
-          color = `rgba(255, 255, 180, ${lifeRatio * 0.9})`; // Bright Yellow
-        } else if (lifeRatio > 0.5) {
-          color = `rgba(255, 165, 0, ${lifeRatio * 0.9})`; // Orange
-        } else if (lifeRatio > 0.2) {
-            color = `rgba(255, 69, 0, ${lifeRatio * 0.9})`; // Red-Orange
+        if (lifeRatio > 0.85) {
+          color = `rgba(255, 255, 220, ${lifeRatio})`; // Bright Yellow/White
+        } else if (lifeRatio > 0.6) {
+          color = `rgba(255, 190, 0, ${lifeRatio})`; // Orange
+        } else if (lifeRatio > 0.3) {
+            color = `rgba(255, 100, 0, ${lifeRatio})`; // Red-Orange
         } else {
-          color = `rgba(139, 0, 0, ${lifeRatio * 0.9})`; // Dark Red
+          color = `rgba(150, 50, 0, ${lifeRatio * 0.8})`; // Dark Red/Brown
         }
         
         ctx.fillStyle = color;

@@ -54,7 +54,7 @@ const VestaraSection = () => {
                   The insights and skills that power Vestara's vision were honed through my experience pioneering AI-first solutions and building tools like 'Portfolio Pulse,'. At Global Ime Capital Limited I gained firsthand insight into the operational bottlenecks Vestara is designed to solve. This unique blend of academic rigor, technical execution, and strategic foresight is what defines my role and the future of Vestara.
                 </p>
               </TabsContent>
-              <TabsContent value="launch" className="relative grid grid-cols-1 md:grid-cols-2 items-center h-full text-center md:text-left gap-8">
+              <TabsContent value="launch" className="grid grid-cols-1 md:grid-cols-2 items-center h-full text-center md:text-left gap-8">
                  <div className="z-10">
                     <h3 className="font-headline text-2xl text-primary mb-4">Project Launch</h3>
                     <p className="text-muted-foreground mb-6 max-w-md mx-auto md:mx-0">
