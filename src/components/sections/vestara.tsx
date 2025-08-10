@@ -13,10 +13,11 @@ const VestaraSection = () => {
         <Card className="w-full max-w-5xl bg-card/70 backdrop-blur-sm border-primary/20">
           <Tabs defaultValue="vision" className="w-full">
             <CardHeader className="p-4 md:p-6">
-              <TabsList className="grid w-full grid-cols-1 md:grid-cols-3">
+              <TabsList className="grid w-full grid-cols-1 md:grid-cols-4">
                 <TabsTrigger value="vision" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Vision</TabsTrigger>
                 <TabsTrigger value="features" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Core Features</TabsTrigger>
                 <TabsTrigger value="role" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Founder Role</TabsTrigger>
+                <TabsTrigger value="launch" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Launch</TabsTrigger>
               </TabsList>
             </CardHeader>
             <CardContent className="h-[50vh] overflow-y-auto px-4 md:px-6">
@@ -51,6 +52,16 @@ const VestaraSection = () => {
                  <p>
                   The insights and skills that power Vestara's vision were honed through my experience pioneering AI-first solutions and building tools like 'Portfolio Pulse,'. At Global Ime Capital Limited I gained firsthand insight into the operational bottlenecks Vestara is designed to solve. This unique blend of academic rigor, technical execution, and strategic foresight is what defines my role and the future of Vestara.
                 </p>
+              </TabsContent>
+              <TabsContent value="launch" className="flex flex-col items-center justify-center h-full text-center">
+                 <h3 className="font-headline text-2xl text-primary mb-4">Project Launch</h3>
+                  <p className="text-muted-foreground mb-6 max-w-md">
+                    The platform is currently under active development. The official launch is planned for Q3 2025. Stay tuned for updates.
+                  </p>
+                <Button variant="outline" size="lg" disabled>
+                  <Rocket className="mr-2 h-5 w-5" />
+                  Launch Vestara (Pending)
+                </Button>
               </TabsContent>
             </CardContent>
           </Tabs>
