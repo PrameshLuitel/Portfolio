@@ -26,8 +26,6 @@ const ProjectsSection = () => {
             loop: true,
           }}
           className="w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl"
-          onMouseEnter={plugin.current.stop}
-          onMouseLeave={plugin.current.reset}
         >
           <CarouselContent>
             {projects.map((project) => (

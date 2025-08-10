@@ -21,7 +21,7 @@ const VestaraSection = () => {
                 <TabsTrigger value="launch">Launch</TabsTrigger>
               </TabsList>
             </CardHeader>
-            <CardContent className="h-[60vh] overflow-y-auto px-4 md:px-6">
+            <CardContent className="h-[450px] overflow-y-auto px-4 md:px-6">
               <TabsContent value="vision" className="prose prose-sm md:prose-base prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
                 <h3>Vision & Market Gap</h3>
                 <p>
@@ -71,7 +71,7 @@ const VestaraSection = () => {
               </TabsContent>
             </CardContent>
           </Tabs>
-          <div className="flex items-center justify-between text-xs text-muted-foreground p-4 border-t border-primary/20">
+          <div className="flex flex-wrap items-center justify-between text-xs text-muted-foreground p-4 border-t border-primary/20 gap-4">
             <span>Expected Rollout: Q3 2025</span>
             <Button variant="outline" size="sm" disabled>
               <Rocket className="mr-2 h-4 w-4" />
