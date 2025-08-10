@@ -4,10 +4,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Mail, href: 'mailto:#', label: 'Email' },
-  { icon: FileText, href: '#', label: 'Research Papers' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn' },
+  { icon: Github, href: 'https://github.com/PrameshLuitel', label: 'GitHub' },
+  { icon: Mail, href: 'mailto:luitelpramesh@gmail.com', label: 'Email' },
+  { icon: FileText, href: '#', label: 'CV' },
 ]
 
 const ContactSection = () => {
