@@ -29,8 +29,10 @@ const RocketLaunchAnimation = () => {
     const particlesPerSecond = 200;
 
     const resizeCanvas = () => {
-      canvas.width = canvas.parentElement?.clientWidth || 0;
-      canvas.height = canvas.parentElement?.clientHeight || 0;
+      if(canvas.parentElement) {
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.parentElement.clientHeight;
+      }
     };
     resizeCanvas();
 
@@ -46,7 +48,7 @@ const RocketLaunchAnimation = () => {
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed,
         size: Math.random() * 3 + 2,
-        life: 1,
+        life: 100,
         maxLife: Math.random() * 50 + 80
       };
     };
@@ -93,7 +95,8 @@ const RocketLaunchAnimation = () => {
         ctx.shadowBlur = 10;
         
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size * lifeRatio, 0, Math.PI * 2);
+        const radius = Math.max(0, p.size * lifeRatio);
+        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
         ctx.fill();
       });
 
