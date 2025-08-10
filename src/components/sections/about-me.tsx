@@ -46,9 +46,9 @@ const AboutMeSection = () => {
     <section id="about-me" className="scroll-section p-4 md:p-8 flex items-center justify-center min-h-screen">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
         <h2 className="font-headline text-4xl md:text-5xl text-glow mb-8 text-center">About Me</h2>
-        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-12 w-full max-w-7xl">
+        <div className="flex flex-col lg:flex-row items-start justify-center gap-12 w-full max-w-7xl">
           {/* Left Column: Image, CV, and Intro */}
-          <div className="w-full lg:w-1/3 flex flex-col items-center text-center lg:sticky lg:top-28">
+          <div className="w-full lg:w-[30%] flex flex-col items-center text-center">
             <Image
               src={aboutData.imageUrl}
               alt="Pramesh Luitel Headshot"
@@ -64,13 +64,13 @@ const AboutMeSection = () => {
                 Download My CV
               </a>
             </Button>
-            <p className="text-base text-muted-foreground text-left">
+            <p className="text-sm text-muted-foreground text-left">
               {aboutData.introduction}
             </p>
           </div>
 
           {/* Right Column: Highlights and Skills */}
-          <div className="w-full lg:w-2/3 flex flex-col gap-10">
+          <div className="w-full lg:w-[70%] flex flex-col gap-8">
             {/* Highlights */}
             <div>
               <h3 className="font-headline text-2xl text-primary mb-4 text-center lg:text-left">Major Highlights</h3>
@@ -89,16 +89,16 @@ const AboutMeSection = () => {
             {/* Skills */}
             <div>
                <h3 className="font-headline text-2xl text-primary mb-4 text-center lg:text-left">Core Competencies</h3>
-               <div className="space-y-6">
+               <div className="space-y-4">
                 {aboutData.skills.map((skillGroup, index) => (
                   <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20">
-                    <CardHeader className="p-4">
+                    <CardHeader className="p-3">
                       <CardTitle className="flex items-center gap-3 text-lg">
                         <skillGroup.icon className="w-6 h-6 text-primary icon-glow" />
                         {skillGroup.category}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="p-4 pt-0">
+                    <CardContent className="p-3 pt-0">
                       <div className="flex flex-wrap gap-2">
                         {skillGroup.items.map(item => (
                             <div key={item} className="text-xs text-center font-medium px-3 py-1.5 rounded-full bg-secondary/50 border border-primary/20 text-foreground transition-all hover:bg-primary/20 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 cursor-default">
