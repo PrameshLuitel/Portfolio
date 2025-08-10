@@ -129,7 +129,7 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <NavItem key={link.label} link={link} />
             ))}
-             <Button asChild variant="ghost" size="sm" className="text-glow text-primary">
+             <Button asChild variant="outline" size="sm" className="text-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                 <a href="/Pramesh_Luitel_CV.pdf" download>
                   <Download className="mr-2 h-4 w-4" />
                   CV
