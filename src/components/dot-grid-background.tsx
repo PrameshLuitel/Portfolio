@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useRef, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 
 const DotGridBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const parentRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -37,6 +38,17 @@ const DotGridBackground = () => {
       const dotSize = 1.2;
       const mouseRadius = 150;
 
+      const lightThemeColors = {
+        glow: 'hsla(217, 91%, 60%,', // primary
+        dot: 'hsla(220, 20%, 88%, 0.5)', // border
+      };
+      const darkThemeColors = {
+        glow: 'hsla(90, 100%, 50%,', // primary
+        dot: 'hsla(159, 100%, 22%, 0.4)', // accent
+      };
+
+      const colors = theme === 'light' ? lightThemeColors : darkThemeColors;
+
       for (let x = 0; x < canvas.width; x += spacing) {
         for (let y = 0; y < canvas.height; y += spacing) {
           const dx = mouse.x - x;
@@ -46,12 +58,12 @@ const DotGridBackground = () => {
           const opacity = Math.max(0, 1 - dist / mouseRadius);
           
           if (opacity > 0.05) {
-            ctx.fillStyle = `hsla(90, 100%, 50%, ${opacity * 0.6})`;
+            ctx.fillStyle = `${colors.glow} ${opacity * 0.6})`;
             ctx.beginPath();
             ctx.arc(x, y, dotSize + opacity * 2, 0, Math.PI * 2);
             ctx.fill();
           } else {
-            ctx.fillStyle = 'hsla(159, 100%, 22%, 0.4)';
+            ctx.fillStyle = colors.dot;
             ctx.beginPath();
             ctx.arc(x, y, dotSize, 0, Math.PI * 2);
             ctx.fill();
@@ -69,10 +81,10 @@ const DotGridBackground = () => {
       window.removeEventListener('resize', resizeCanvas);
       document.body.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  }, [theme]);
 
   return (
-    <div ref={parentRef} className="fixed top-0 left-0 w-full h-full -z-10">
+    <div className="fixed top-0 left-0 w-full h-full -z-10">
       <canvas ref={canvasRef}/>
     </div>
   );
