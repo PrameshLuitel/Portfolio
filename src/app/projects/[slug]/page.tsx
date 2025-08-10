@@ -43,7 +43,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 </CardHeader>
                 <CardContent>
                   <Image
-                    src={project.image.src.replace('400x300', '800x450')}
+                    src={project.image.src.startsWith('https') ? project.image.src.replace('400x300', '800x450') : project.image.src}
                     alt={project.title}
                     width={800}
                     height={450}
