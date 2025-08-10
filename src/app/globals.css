@@ -84,13 +84,13 @@
     height: 100vh;
   }
   .scroll-section {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
   }
 
   @media (min-width: 768px) {
@@ -98,6 +98,7 @@
       scroll-snap-type: y mandatory;
     }
     .scroll-section {
+      height: 100vh;
       scroll-snap-align: start;
     }
   }
