@@ -13,7 +13,7 @@ interface Particle {
   maxLife: number;
 }
 
-// Simple pixel art rocket shape (coordinates relative to a center point)
+// A more detailed pixel art rocket shape
 const rocketShape = [
   // Tip
   { x: 0, y: -12, color: 'hsl(0, 0%, 90%)' }, 
