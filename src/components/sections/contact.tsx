@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Button } from '@/components/ui/button';
@@ -5,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useSound } from '@/hooks/use-sound';
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
+import { useState } from 'react';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn' },
@@ -15,6 +17,11 @@ const socialLinks = [
 
 const ContactSection = () => {
   const { playHoverSound } = useSound();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const mailtoHref = `mailto:luitelpramesh@gmail.com?subject=Inquiry from ${name} (${email})&body=${encodeURIComponent(message)}`;
 
   return (
     <section id="contact" className="scroll-section p-4 md:p-8">
@@ -33,14 +40,33 @@ const ContactSection = () => {
           </div>
         </div>
         <div className="flex-1 w-full">
-          <form className="space-y-4">
-            <Input type="text" placeholder="Your Name" className="bg-background/50 backdrop-blur-sm" />
-            <Input type="email" placeholder="Your Email" className="bg-background/50 backdrop-blur-sm" />
-            <Textarea placeholder="Your Message" className="bg-background/50 backdrop-blur-sm" />
-            <Button type="submit" className="w-full text-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground" variant="outline" onMouseEnter={playHoverSound}>
-              Send Inquiry
+          <div className="space-y-4">
+            <Input 
+              type="text" 
+              placeholder="Your Name" 
+              className="bg-background/50 backdrop-blur-sm" 
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Input 
+              type="email" 
+              placeholder="Your Email" 
+              className="bg-background/50 backdrop-blur-sm" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <Textarea 
+              placeholder="Your Message" 
+              className="bg-background/50 backdrop-blur-sm" 
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            <Button asChild className="w-full text-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground" variant="outline" onMouseEnter={playHoverSound}>
+              <a href={mailtoHref}>
+                Send Inquiry
+              </a>
             </Button>
-          </form>
+          </div>
         </div>
       </div>
     </section>
