@@ -87,7 +87,7 @@ const VestaraSection = () => {
             </CardContent>
           </Tabs>
           <div className="text-center text-xs text-muted-foreground p-4 border-t border-primary/20">
-            Expected Rollout: Q4 2024 (Alpha), Q2 2025 (Full)
+            Expected Rollout: Q4 2024 (Alpha), Q3 2025 (Full)
           </div>
         </Card>
       </div>
