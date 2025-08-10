@@ -32,12 +32,12 @@ const ResearchSection = () => {
             {researchPapers.map((paper, index) => (
               <Card key={index} className="bg-card/70 backdrop-blur-sm border-primary/20">
                 <CardHeader>
-                  <div className="flex justify-between items-start gap-4">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
                     <div className="flex-grow">
                       <CardTitle className="text-xl text-foreground">{paper.title}</CardTitle>
                       <CardDescription className="text-muted-foreground mt-1">{paper.publication}</CardDescription>
                     </div>
-                    <Button asChild variant="outline" size="sm" className="ml-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed" disabled={!paper.isPublished}>
+                    <Button asChild variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed self-start sm:self-auto" disabled={!paper.isPublished}>
                       <a href={paper.isPublished ? paper.link : undefined} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="mr-2 h-4 w-4" />
                         {paper.isPublished ? 'View Paper' : 'Pending'}

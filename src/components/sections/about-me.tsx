@@ -70,7 +70,7 @@ const AboutMeSection = () => {
           </div>
 
           <div className="w-full lg:w-[70%] flex flex-col gap-8">
-            <div className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-4">
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-4 gap-4">
               <h3 className="font-headline text-2xl text-primary text-center lg:text-left">Major Highlights</h3>
               <Button asChild variant="outline" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
                 <a href={aboutData.cvUrl} download>
@@ -95,13 +95,13 @@ const AboutMeSection = () => {
                <div className="space-y-4">
                 {aboutData.skills.map((skillGroup, index) => (
                   <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20">
-                    <CardHeader className="p-3">
+                    <CardHeader className="p-4 pb-2 md:p-6 md:pb-3">
                       <CardTitle className="flex items-center gap-3 text-lg">
                         <skillGroup.icon className="w-6 h-6 text-primary icon-glow" />
                         {skillGroup.category}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="p-3 pt-0">
+                    <CardContent className="p-4 pt-2 md:p-6 md:pt-3">
                       <div className="flex flex-wrap gap-2">
                         {skillGroup.items.map(item => (
                             <div 

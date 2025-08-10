@@ -22,13 +22,13 @@ const VestaraSection = () => {
               </TabsList>
             </CardHeader>
             <CardContent className="h-[55vh] overflow-y-auto px-4 md:px-6">
-              <TabsContent value="vision" className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
+              <TabsContent value="vision" className="prose prose-sm md:prose-base prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
                 <h3>Vision & Market Gap</h3>
                 <p>
                   Project Vestara is an advanced AI-powered investment intelligence platform designed to redefine how financial professionals in Nepal access, interpret, and act on critical regulatory and market data. By unifying a specialized large language model with predictive market analytics, Vestara bridges the gap between deep regulatory knowledge and actionable investment insights. The result is a powerful tool that enables decision-makers to operate with unparalleled speed, precision, and confidence.
                 </p>
               </TabsContent>
-              <TabsContent value="features" className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary space-y-4">
+              <TabsContent value="features" className="prose prose-sm md:prose-base prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary space-y-4">
                  <div dangerouslySetInnerHTML={{ __html: `
                     <h4>1. Vestara GPT: The Domain-Trained AI Assistant</h4>
                     <p>
@@ -42,7 +42,7 @@ const VestaraSection = () => {
                     </p>
                  ` }}/>
               </TabsContent>
-              <TabsContent value="role" className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
+              <TabsContent value="role" className="prose prose-sm md:prose-base prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
                 <h3>Founder & Lead Architect</h3>
                 <p>
                   As the Founder and Lead Architect of Project Vestara, my role is a culmination of my academic research and hands-on experience in the financial sector. I founded this venture with a clear objective: to modernize investment intelligence in emerging markets by bridging the gap between deep regulatory knowledge and actionable insights.
@@ -72,7 +72,7 @@ const VestaraSection = () => {
             </CardContent>
           </Tabs>
           <div className="flex items-center justify-between text-xs text-muted-foreground p-4 border-t border-primary/20">
-            <span>Expected Rollout: Q3 2025 (Full)</span>
+            <span>Expected Rollout: Q3 2025</span>
             <Button variant="outline" size="sm" disabled>
               <Rocket className="mr-2 h-4 w-4" />
               Launch Vestara (Pending)
