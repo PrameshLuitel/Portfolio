@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
@@ -31,15 +32,25 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('#home');
   const mainContainerRef = useRef<HTMLElement | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+
+  useEffect(() => {
+    if (!isMounted) return;
+
     mainContainerRef.current = document.querySelector('.scroll-container');
+    const container = mainContainerRef.current;
 
     const handleScroll = () => {
-      const scrollPosition = mainContainerRef.current?.scrollTop || 0;
+      const scrollPosition = container?.scrollTop || 0;
       let currentActiveSection = '';
 
       navLinks.forEach(link => {
+        if (!link.href.startsWith('#')) return;
         const section = document.getElementById(link.href.substring(1));
         if (section) {
           const sectionTop = section.offsetTop - 100; // offset for better accuracy
@@ -55,18 +66,18 @@ const Navbar = () => {
         setActiveSection(currentActiveSection);
       }
     };
-
-    const container = mainContainerRef.current;
+    
     container?.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
 
     return () => {
       container?.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isMounted]);
 
 
   const scrollToSection = (e: React.MouseEvent<HTMLElement>, id: string) => {
+    if (!id.startsWith('#')) return;
     e.preventDefault();
     const targetId = id.substring(1); 
     const section = document.getElementById(targetId);
@@ -103,9 +114,16 @@ const Navbar = () => {
                    <DropdownMenuItem key={item.label} asChild disabled={item.href === '#'}>
                     <a 
                       href={item.href} 
-                      target={item.isExternal || item.href?.startsWith('http') ? '_blank' : undefined} 
+                      target={item.isExternal || item.href?.startsWith('http') || item.href?.startsWith('/projects') ? '_blank' : undefined} 
                       rel={item.isExternal || item.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                       download={item.isDownload}
+                      onClick={(e) => {
+                        if (item.href?.startsWith('/projects')) {
+                           // Let default behavior (navigation) happen
+                        } else if (item.href?.startsWith('#')) {
+                           scrollToSection(e, item.href)
+                        }
+                      }}
                       className="flex items-center gap-2"
                     >
                       {item.icon && <item.icon className="h-4 w-4" />}
