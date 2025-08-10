@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { CheckCircle, Cpu, Target, Telescope } from 'lucide-react';
+import { CheckCircle, Cpu, Target, Telescope, BrainCircuit } from 'lucide-react';
 
 const capabilities = [
   { icon: CheckCircle, text: 'Regulatory Q&A' },
@@ -18,8 +18,9 @@ const VestaraSection = () => {
         <Card className="w-full max-w-5xl bg-card/70 backdrop-blur-sm border-primary/20">
           <Tabs defaultValue="vision" className="w-full">
             <CardHeader className="p-4 md:p-6">
-              <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-background/50">
+              <TabsList className="grid w-full grid-cols-2 md:grid-cols-5">
                 <TabsTrigger value="vision" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Vision</TabsTrigger>
+                <TabsTrigger value="features" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Core Features</TabsTrigger>
                 <TabsTrigger value="role" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Founder Role</TabsTrigger>
                 <TabsTrigger value="capabilities" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Capabilities</TabsTrigger>
                 <TabsTrigger value="demo" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Demo</TabsTrigger>
@@ -31,6 +32,20 @@ const VestaraSection = () => {
                 <p>
                   Project Vestara is an advanced AI-powered investment intelligence platform designed to redefine how financial professionals in Nepal access, interpret, and act on critical regulatory and market data. By unifying a specialized large language model with predictive market analytics, Vestara bridges the gap between deep regulatory knowledge and actionable investment insights. The result is a powerful tool that enables decision-makers to operate with unparalleled speed, precision, and confidence.
                 </p>
+              </TabsContent>
+              <TabsContent value="features" className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary space-y-4">
+                 <div>
+                    <h4>1. Vestara GPT: The Domain-Trained AI Assistant</h4>
+                    <p>
+                      Our custom-built large language model has been meticulously trained on the intricacies of SEBON and NEPSE regulations, as well as the unique workflows of investment banking in Nepal. Using Retrieval-Augmented Generation (RAG), Vestara GPT delivers precise, context-aware responses to any compliance, operational, or market-related query. This functions as a real-time regulatory and strategy assistant, providing authoritative accuracy for investment bankers, analysts, and compliance teams.
+                    </p>
+                 </div>
+                 <div>
+                    <h4>2. The AI Stock Price Prediction Suite</h4>
+                    <p>
+                      This cutting-edge predictive analytics engine leverages LSTM deep learning models and sentiment analysis to provide high-confidence price forecasts. Focused exclusively on Nepalese equities and utilizing last-day market data, this suite is designed to augment, not replace, human expertise. The platform ensures optimal synergy between human decision-making and AI precision, empowering professionals to make more informed choices with both large-cap and small-cap stocks.
+                    </p>
+                 </div>
               </TabsContent>
               <TabsContent value="role" className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
                 <h3>Founder & Lead Architect</h3>
