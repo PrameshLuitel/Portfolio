@@ -1,14 +1,27 @@
 import GlitchText from '@/components/glitch-text';
-import { MoveDown } from 'lucide-react';
+import { Github, Linkedin, Mail, MoveDown } from 'lucide-react';
+
+const socialLinks = [
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn' },
+  { icon: Github, href: 'https://github.com/PrameshLuitel', label: 'GitHub' },
+  { icon: Mail, href: 'mailto:luitelpramesh@gmail.com', label: 'Email' },
+]
 
 const HeroSection = () => {
   return (
     <section id="home" className="scroll-section flex-col justify-center items-center text-center p-4">
       <div className="z-10 flex flex-col items-center">
         <GlitchText text="Pramesh Luitel" className="font-headline text-5xl md:text-7xl lg:text-8xl mb-4" />
-        <p className="font-body text-lg md:text-xl lg:text-2xl max-w-3xl text-muted-foreground">
+        <p className="font-body text-lg md:text-xl lg:text-2xl max-w-3xl text-muted-foreground mb-8">
           Merging deep capital markets insight with cutting-edge AI, I create systems that eliminate inefficiency, predict with precision, and set new benchmarks in investment banking and financial research.
         </p>
+        <div className="flex justify-center space-x-6">
+          {socialLinks.map(link => (
+            <a key={link.label} href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+              <link.icon className="w-8 h-8 icon-glow"/>
+            </a>
+          ))}
+        </div>
         <div className="absolute bottom-10 animate-bounce">
           <MoveDown className="w-8 h-8 text-primary" />
         </div>
