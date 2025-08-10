@@ -33,9 +33,9 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-secondary/80 backdrop-blur-md">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold text-glow">
+            <Link href="/" className="text-xl font-bold text-foreground dark:text-glow">
               Pramesh Luitel
             </Link>
           </div>
@@ -45,7 +45,7 @@ const Navbar = () => {
                 key={label}
                 href={href} 
                 onClick={(e) => scrollToSection(e, href)}
-                className="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary hover:text-glow transition-all"
+                className="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary dark:hover:text-glow transition-all"
               >
                 {label}
               </a>
