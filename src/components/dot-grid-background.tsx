@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useRef, useEffect } from 'react';
@@ -20,15 +21,11 @@ const DotGridBackground = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
-    resizeCanvas();
     
     const handleMouseMove = (e: MouseEvent) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     };
-
-    window.addEventListener('resize', resizeCanvas);
-    document.body.addEventListener('mousemove', handleMouseMove);
 
     const draw = () => {
       if(!ctx) return;
@@ -74,7 +71,12 @@ const DotGridBackground = () => {
       animationFrameId = requestAnimationFrame(draw);
     };
 
+    // Run on client mount
+    resizeCanvas();
     draw();
+
+    window.addEventListener('resize', resizeCanvas);
+    document.body.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
