@@ -36,9 +36,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <div className="lg:col-span-2">
               <Card className="bg-card/70 backdrop-blur-sm border-primary/20 overflow-hidden">
                 <CardHeader>
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                     <CardTitle className="font-headline text-4xl text-glow text-primary">{project.title}</CardTitle>
-                    <Badge variant="secondary" className="text-base mt-2 md:mt-0 whitespace-nowrap">{project.status}</Badge>
+                    <Badge variant="secondary" className="text-base mt-2 sm:mt-0 whitespace-nowrap self-start">{project.status}</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>

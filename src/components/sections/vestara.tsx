@@ -14,11 +14,11 @@ const VestaraSection = () => {
         <Card className="w-full max-w-5xl bg-card/70 backdrop-blur-sm border-primary/20">
           <Tabs defaultValue="vision" className="w-full">
             <CardHeader className="p-4 md:p-6">
-              <TabsList className="grid w-full grid-cols-1 md:grid-cols-4">
-                <TabsTrigger value="vision" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Vision</TabsTrigger>
-                <TabsTrigger value="features" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Core Features</TabsTrigger>
-                <TabsTrigger value="role" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Founder Role</TabsTrigger>
-                <TabsTrigger value="launch" className="data-[state=active]:bg-accent data-[state=active]:text-foreground data-[state=active]:text-glow">Launch</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4">
+                <TabsTrigger value="vision">Vision</TabsTrigger>
+                <TabsTrigger value="features">Core Features</TabsTrigger>
+                <TabsTrigger value="role">Founder Role</TabsTrigger>
+                <TabsTrigger value="launch">Launch</TabsTrigger>
               </TabsList>
             </CardHeader>
             <CardContent className="h-[55vh] overflow-y-auto px-4 md:px-6">

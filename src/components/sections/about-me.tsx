@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -69,7 +70,7 @@ const AboutMeSection = () => {
           </div>
 
           <div className="w-full lg:w-[70%] flex flex-col gap-8">
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-4">
               <h3 className="font-headline text-2xl text-primary text-center lg:text-left">Major Highlights</h3>
               <Button asChild variant="outline" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
                 <a href={aboutData.cvUrl} download>
