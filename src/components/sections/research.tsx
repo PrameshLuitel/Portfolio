@@ -57,7 +57,7 @@ const ResearchSection = () => {
             ))}
           </div>
           <div className="text-center mt-6">
-            <Button variant="outline" disabled className="bg-card/70 backdrop-blur-sm border-dashed border-primary/30 text-muted-foreground cursor-not-allowed">
+            <Button variant="outline" className="bg-card/70 backdrop-blur-sm border-dashed border-primary/50 text-primary/80 cursor-not-allowed hover:bg-primary/10 hover:text-primary transition-colors">
               <Plus className="mr-2 h-4 w-4" />
               More Research Incoming...
             </Button>
