@@ -51,13 +51,13 @@ const AboutMeSection = () => {
             <Image
               src={aboutData.imageUrl}
               alt="Pramesh Luitel Headshot"
-              width={250}
-              height={250}
+              width={200}
+              height={200}
               className="rounded-full border-4 border-primary shadow-lg mb-6"
               data-ai-hint={aboutData.imageHint}
             />
             <h3 className="font-headline text-2xl text-foreground mb-4">Pramesh Luitel</h3>
-            <Card className="bg-card/50 backdrop-blur-sm border-primary/20 mb-6">
+             <Card className="bg-card/50 backdrop-blur-sm border-primary/20 mb-6">
                 <CardContent className="p-4 text-left">
                     <p className="text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: aboutData.introduction }} />
                 </CardContent>
