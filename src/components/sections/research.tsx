@@ -1,4 +1,4 @@
-import { FileText, Download, Plus } from 'lucide-react';
+import { FileText, Download, Plus, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -6,17 +6,19 @@ import { Badge } from '@/components/ui/badge';
 const researchPapers = [
   {
     title: 'Sentiment-Enhanced Stock Price Prediction in Nepalese Small-Cap Equities Using Natural Language Processing',
-    publication: 'Published in the Journal of Himalayan College of Engineering (Peer-Reviewed)',
+    publication: 'Under Peer Review',
     link: '#',
     tags: ['NLP', 'Sentiment Analysis', 'NEPSE', 'Small-Cap Equities', 'Peer-Reviewed'],
     summary: 'Developed a hybrid model combining NLP and quantitative market indicators to predict price movements in illiquid, small-cap stocks. This research pioneered NLP-driven financial analysis in the Nepalese capital market by converting qualitative sentiment data into structured features, demonstrating superior performance over traditional models in low-volume environments.',
+    isPublished: false,
   },
   {
     title: 'Market Oscillations and Predictive Analytics: AI-Driven Insights into Nepalese Stock Market’s Indices and its Sub-Indices',
     publication: "Published on SSRN | Top Downloads in Emerging & Asian Markets",
-    link: '#',
+    link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5030130',
     tags: ['Predictive Analytics', 'LSTM', 'Time-Series Forecasting', 'NEPSE', 'SSRN'],
     summary: "Conducted an in-depth analysis of the NEPSE index using LSTM networks and advanced technical indicators. This work engineered a robust forecasting framework, highlighting the applicability of deep learning in structurally inefficient markets where traditional financial models often underperform.",
+    isPublished: true,
   },
 ];
 
@@ -35,10 +37,10 @@ const ResearchSection = () => {
                       <CardTitle className="text-xl text-foreground">{paper.title}</CardTitle>
                       <CardDescription className="text-muted-foreground mt-1">{paper.publication}</CardDescription>
                     </div>
-                    <Button asChild variant="outline" size="sm" className="ml-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-shrink-0">
-                      <a href={paper.link} target="_blank" rel="noopener noreferrer">
-                        <Download className="mr-2 h-4 w-4" />
-                        PDF
+                    <Button asChild variant="outline" size="sm" className="ml-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed" disabled={!paper.isPublished}>
+                      <a href={paper.isPublished ? paper.link : undefined} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        {paper.isPublished ? 'View Paper' : 'Pending'}
                       </a>
                     </Button>
                   </div>
