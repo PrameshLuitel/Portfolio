@@ -1,21 +1,33 @@
+
+"use client";
+
+import * as React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { projects } from '@/lib/data';
+import Autoplay from "embla-carousel-autoplay";
 
 const ProjectsSection = () => {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+
   return (
     <section id="projects" className="scroll-section p-4 md:p-8">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
         <h2 className="font-headline text-4xl md:text-5xl text-glow mb-12 text-center">Venture & Project Showcase</h2>
         <Carousel
+          plugins={[plugin.current]}
           opts={{
             align: "start",
             loop: true,
           }}
           className="w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl"
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
         >
           <CarouselContent>
             {projects.map((project) => (
