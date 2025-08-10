@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ThemeToggle } from './theme-toggle';
 import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/button';
+import { cn } from '@/lib/utils';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -17,6 +18,42 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('#home');
+  const mainContainerRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    mainContainerRef.current = document.querySelector('.scroll-container');
+
+    const handleScroll = () => {
+      const scrollPosition = mainContainerRef.current?.scrollTop || 0;
+      let currentActiveSection = '';
+
+      navLinks.forEach(link => {
+        const section = document.getElementById(link.href.substring(1));
+        if (section) {
+          const sectionTop = section.offsetTop - 100; // offset for better accuracy
+          const sectionHeight = section.offsetHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentActiveSection = link.href;
+          }
+        }
+      });
+      
+      if (currentActiveSection) {
+        setActiveSection(currentActiveSection);
+      }
+    };
+
+    const container = mainContainerRef.current;
+    container?.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      container?.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -45,7 +82,10 @@ const Navbar = () => {
                 key={label}
                 href={href} 
                 onClick={(e) => scrollToSection(e, href)}
-                className="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary dark:hover:text-primary transition-all"
+                className={cn(
+                  "px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary dark:hover:text-primary transition-all",
+                  activeSection === href && "text-primary dark:text-primary"
+                )}
               >
                 {label}
               </a>
@@ -68,7 +108,10 @@ const Navbar = () => {
                 key={label}
                 href={href} 
                 onClick={(e) => scrollToSection(e, href)}
-                className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent"
+                className={cn(
+                  "block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent",
+                  activeSection === href && "text-primary bg-accent"
+                )}
               >
                 {label}
               </a>
