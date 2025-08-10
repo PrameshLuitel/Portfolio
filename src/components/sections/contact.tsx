@@ -12,7 +12,7 @@ const socialLinks = [
 
 const ContactSection = () => {
   return (
-    <section className="scroll-section p-4 md:p-8">
+    <section id="contact" className="scroll-section p-4 md:p-8">
       <div className="z-10 container mx-auto flex flex-col md:flex-row items-center justify-center gap-12 max-w-4xl">
         <div className="flex-1 text-center md:text-left">
           <h2 className="font-headline text-4xl md:text-5xl text-glow mb-4">Connect & Collaborate</h2>

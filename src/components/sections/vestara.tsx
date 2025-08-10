@@ -11,7 +11,7 @@ const capabilities = [
 
 const VestaraSection = () => {
   return (
-    <section className="scroll-section p-4 md:p-8">
+    <section id="vestara" className="scroll-section p-4 md:p-8">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
         <h2 className="font-headline text-4xl md:text-5xl text-glow mb-2 text-center">Flagship Project: Vestara GPT</h2>
         <p className="text-muted-foreground mb-8">The future of investment strategy, powered by proprietary AI.</p>

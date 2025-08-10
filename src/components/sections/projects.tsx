@@ -28,7 +28,7 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section className="scroll-section p-4 md:p-8">
+    <section id="projects" className="scroll-section p-4 md:p-8">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center h-full">
         <h2 className="font-headline text-4xl md:text-5xl text-glow mb-8 text-center">Venture & Research Showcase</h2>
         <div className="w-full max-w-4xl h-[70vh] overflow-y-auto pr-4">
