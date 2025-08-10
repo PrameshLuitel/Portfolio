@@ -48,6 +48,18 @@ export const projects = [
     liveLink: null,
     githubLink: null,
   },
+  {
+    slug: 'new-sample-project',
+    title: 'New Sample Project',
+    description: 'This is a sample project to show you how to add new items to your portfolio.',
+    longDescription: "You can edit this text in `src/lib/data.ts` to provide a full, detailed description of your new project. Explain the problem, the solution, and the outcomes. You can use this space to go into much more detail than the short description on the card.",
+    image: { src: 'https://placehold.co/400x300', hint: 'new project' },
+    status: 'Idea',
+    technologies: ['New Tech 1', 'New Tech 2'],
+    features: ['Feature A', 'Feature B', 'Feature C'],
+    liveLink: '#',
+    githubLink: '#',
+  },
 ];
 
 export const researchPapers = [
