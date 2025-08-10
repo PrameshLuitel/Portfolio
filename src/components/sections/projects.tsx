@@ -5,22 +5,28 @@ import { Badge } from '@/components/ui/badge';
 
 const projects = [
   {
-    title: 'Project Sentinel: Algorithmic Risk Arbiter',
-    description: 'A real-time, multi-factor risk model that stress-tests portfolios against crisis scenarios, providing predictive volatility alerts.',
-    image: { src: 'https://placehold.co/400x300', hint: 'secure server' },
-    status: 'Acquired by Top-Tier Quant Fund',
+    title: 'Portfolio Pulse',
+    description: 'An internal MIS system I built end-to-end for Global IME Capital Limited. It processes raw Excel portfolio data in-browser, generating interactive dashboards for real-time performance, allocation, and gain/loss analysis. This replaced a manual process, bringing unprecedented clarity and speed to executive portfolio supervision.',
+    image: { src: 'https://placehold.co/400x300', hint: 'data analytics dashboard' },
+    status: 'Successfully Deployed',
   },
   {
-    title: 'ThesisDAO: Decentralized Research Funding',
-    description: 'A DAO on Ethereum that allows for peer-to-peer funding of research proposals, governed by tokenized reputation.',
-    image: { src: 'https://placehold.co/400x300', hint: 'blockchain network' },
-    status: 'Live on Mainnet',
+    title: 'MeroShare Automation',
+    description: "Automated MeroShare's operations processes like applying for IPOs, completing eDIS, and creating verification workflows for these critical tasks.",
+    image: { src: 'https://placehold.co/400x300', hint: 'automation robot' },
+    status: 'Personal Project',
   },
   {
-    title: 'AlphaStream: LLM-Powered Idea Generation',
-    description: 'A proprietary LLM that surfaces high-alpha trade ideas by analyzing millions of unstructured data points in real-time.',
-    image: { src: 'https://placehold.co/400x300', hint: 'data stream' },
-    status: 'In-house Production',
+    title: 'Automated Form Fillers For PMS Clients',
+    description: 'Developed a custom script to automate the tedious process of filling out Portfolio Management Services (PMS) forms, significantly reducing manual data entry and minimizing errors for clients.',
+    image: { src: 'https://placehold.co/400x300', hint: 'digital form' },
+    status: 'Utility Script',
+  },
+  {
+    title: 'Project Vestara',
+    description: 'My flagship venture, a proprietary AI platform designed to become the central nervous system for modern investment firms by transforming market noise into a clear signal of alpha.',
+    image: { src: 'https://placehold.co/400x300', hint: 'ai brain' },
+    status: 'In Development',
   },
 ];
 
