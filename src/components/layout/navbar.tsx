@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ThemeSwitch } from './theme-switch';
-import { Menu, X, ChevronDown, Download } from 'lucide-react';
+import { Menu, X, ChevronDown, Download, Linkedin, Github } from 'lucide-react';
 import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
 import {
@@ -16,12 +16,15 @@ import { projects, researchPapers } from '@/lib/data';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
-  { href: '#about-me', label: 'About Me' },
+  { href: '#about-me', label: 'About Me', isDropdown: true, items: [
+    { href: '/Pramesh_Luitel_CV.pdf', label: 'Download CV', isDownload: true, icon: Download },
+    { href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn', isExternal: true, icon: Linkedin },
+    { href: 'https://github.com/PrameshLuitel', label: 'GitHub', isExternal: true, icon: Github },
+  ]},
   { href: '#projects', label: 'Projects', isDropdown: true, items: projects.map(p => ({ href: `/projects/${p.slug}`, label: p.title })) },
   { href: '#research', label: 'Research Papers', isDropdown: true, items: researchPapers.map((p, i) => ({ href: p.isPublished ? p.link : '#', label: p.title, isPublished: p.isPublished })) },
   { href: '#vestara', label: 'Vestara GPT' },
   { href: '#contact', label: 'Contact' },
-  { href: '/Pramesh_Luitel_CV.pdf', label: 'CV', isDownload: true },
 ];
 
 const Navbar = () => {
@@ -37,14 +40,15 @@ const Navbar = () => {
       let currentActiveSection = '';
 
       navLinks.forEach(link => {
-        if (link.isDownload) return;
-        const section = document.getElementById(link.href.substring(1));
-        if (section) {
-          const sectionTop = section.offsetTop - 100; // offset for better accuracy
-          const sectionHeight = section.offsetHeight;
+        if (link.isDropdown) {
+          const section = document.getElementById(link.href.substring(1));
+          if (section) {
+            const sectionTop = section.offsetTop - 100; // offset for better accuracy
+            const sectionHeight = section.offsetHeight;
 
-          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            currentActiveSection = link.href;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+              currentActiveSection = link.href;
+            }
           }
         }
       });
@@ -98,29 +102,23 @@ const Navbar = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 {link.items?.map(item => (
-                  <DropdownMenuItem key={item.label} asChild disabled={item.href === '#'}>
-                    <Link href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                   <DropdownMenuItem key={item.label} asChild disabled={item.href === '#'}>
+                    <a 
+                      href={item.href} 
+                      target={item.isExternal || item.href?.startsWith('http') ? '_blank' : undefined} 
+                      rel={item.isExternal || item.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      download={item.isDownload}
+                      className="flex items-center gap-2"
+                    >
+                      {item.icon && <item.icon className="h-4 w-4" />}
                       {item.label}
-                    </Link>
+                    </a>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
         </div>
       );
-    }
-
-    if (link.isDownload) {
-      return (
-         <a 
-          href={link.href} 
-          download
-          className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary dark:hover:text-primary transition-all"
-        >
-          <Download className="h-4 w-4" />
-          {link.label}
-        </a>
-      )
     }
 
     return (
@@ -163,18 +161,17 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map(({ href, label, isDownload }) => (
+            {navLinks.map((link) => (
               <a 
-                key={label}
-                href={href} 
-                onClick={(e) => !isDownload && scrollToSection(e, href)}
-                download={isDownload}
+                key={link.label}
+                href={link.href} 
+                onClick={(e) => scrollToSection(e, link.href)}
                 className={cn(
                   "block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent",
-                  activeSection === href && "text-primary bg-accent"
+                  activeSection === link.href && "text-primary bg-accent"
                 )}
               >
-                {label}
+                {link.label}
               </a>
             ))}
           </div>
