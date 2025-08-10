@@ -1,6 +1,9 @@
+"use client";
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useSound } from '@/hooks/use-sound';
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 
 const socialLinks = [
@@ -11,6 +14,8 @@ const socialLinks = [
 ]
 
 const ContactSection = () => {
+  const { playHoverSound } = useSound();
+
   return (
     <section id="contact" className="scroll-section p-4 md:p-8">
       <div className="z-10 container mx-auto flex flex-col md:flex-row items-center justify-center gap-12 max-w-4xl">
@@ -32,7 +37,7 @@ const ContactSection = () => {
             <Input type="text" placeholder="Your Name" className="bg-background/50 backdrop-blur-sm" />
             <Input type="email" placeholder="Your Email" className="bg-background/50 backdrop-blur-sm" />
             <Textarea placeholder="Your Message" className="bg-background/50 backdrop-blur-sm" />
-            <Button type="submit" className="w-full text-glow border border-primary" variant="outline">
+            <Button type="submit" className="w-full text-glow border border-primary" variant="outline" onMouseEnter={playHoverSound}>
               Send Inquiry
             </Button>
           </form>

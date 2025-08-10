@@ -1,7 +1,10 @@
+"use client";
+
 import GlitchText from '@/components/glitch-text';
 import { Github, Linkedin, Mail, MoveDown, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { useSound } from '@/hooks/use-sound';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn' },
@@ -11,6 +14,7 @@ const socialLinks = [
 ];
 
 const HeroSection = () => {
+  const { playHoverSound } = useSound();
   return (
     <section id="home" className="scroll-section">
       <div className="z-10 container mx-auto flex h-full flex-col items-center justify-center text-center p-4">
@@ -20,13 +24,13 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-8">
-          <Button asChild variant="outline" size="lg" className="border-primary text-glow">
+          <Button asChild variant="outline" size="lg" className="border-primary text-glow" onMouseEnter={playHoverSound}>
             <Link href="#projects">Projects</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-primary text-glow">
+          <Button asChild variant="outline" size="lg" className="border-primary text-glow" onMouseEnter={playHoverSound}>
             <Link href="#research">Research Papers</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-primary text-glow">
+          <Button asChild variant="outline" size="lg" className="border-primary text-glow" onMouseEnter={playHoverSound}>
             <Link href="#vestara">Explore Vestara GPT</Link>
           </Button>
         </div>

@@ -1,11 +1,14 @@
+"use client";
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Download, FileText, Zap, Briefcase, Code, BarChart, Palette } from 'lucide-react';
+import { useSound } from '@/hooks/use-sound';
 
 const aboutData = {
   introduction: "A B.Com (Hons) graduate who transforms the intersection of finance, technology, and creativity into intelligent, actionable solutions. With a proven track record in building <span class='text-primary font-semibold'>full-stack analytics platforms</span>, <span class='text-primary font-semibold'>automating legacy systems</span>, and pioneering <span class='text-primary font-semibold'>AI-driven capital market research</span>, I specialize in modernizing financial operations. I am a passionate and innovative thinker dedicated to pushing the boundaries of fintech, particularly in emerging markets, through automation and applied AI. My work includes founding Project Vestara, a SaaS platform for investment banks, and publishing peer-reviewed research on sentiment-enhanced stock prediction. I am always seeking new challenges to leverage my skills in <span class='text-primary font-semibold'>predictive analytics</span>, <span class='text-primary font-semibold'>machine learning</span>, and <span class='text-primary font-semibold'>strategic digital innovation</span>.",
-  imageUrl: 'https://placehold.co/400x400',
+  imageUrl: 'https://placehold.co/200x200',
   imageHint: 'professional headshot',
   cvUrl: '#',
   highlights: [
@@ -42,6 +45,7 @@ const aboutData = {
 };
 
 const AboutMeSection = () => {
+  const { playHoverSound } = useSound();
   return (
     <section id="about-me" className="scroll-section p-4 md:p-8 flex items-center justify-center min-h-screen pt-20">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
@@ -62,18 +66,19 @@ const AboutMeSection = () => {
                     <p className="text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: aboutData.introduction }} />
                 </CardContent>
             </Card>
-            <Button asChild variant="outline" className="border-primary text-glow">
-              <a href={aboutData.cvUrl} download>
-                <Download className="mr-2 h-4 w-4" />
-                Download My CV
-              </a>
-            </Button>
           </div>
 
           <div className="w-full lg:w-[70%] flex flex-col gap-8">
-            <div>
-              <h3 className="font-headline text-2xl text-primary mb-4 text-center lg:text-left">Major Highlights</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="font-headline text-2xl text-primary text-center lg:text-left">Major Highlights</h3>
+              <Button asChild variant="outline" className="border-primary text-glow" onMouseEnter={playHoverSound}>
+                <a href={aboutData.cvUrl} download>
+                  <Download className="mr-2 h-4 w-4" />
+                  Download My CV
+                </a>
+              </Button>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {aboutData.highlights.map((highlight, index) => (
                   <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20 text-center">
                     <CardContent className="p-3 flex flex-col items-center justify-center gap-2">
@@ -83,7 +88,6 @@ const AboutMeSection = () => {
                   </Card>
                 ))}
               </div>
-            </div>
 
             <div>
                <h3 className="font-headline text-2xl text-primary mb-4 text-center lg:text-left">Core Competencies</h3>
@@ -99,7 +103,11 @@ const AboutMeSection = () => {
                     <CardContent className="p-3 pt-0">
                       <div className="flex flex-wrap gap-2">
                         {skillGroup.items.map(item => (
-                            <div key={item} className="text-xs text-center font-medium px-3 py-1.5 rounded-full bg-secondary/50 border border-primary/20 text-foreground transition-all hover:bg-primary/20 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 cursor-default">
+                            <div 
+                                key={item} 
+                                className="text-xs text-center font-medium px-3 py-1.5 rounded-full bg-secondary/50 border border-primary/20 text-foreground transition-all hover:bg-primary/20 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 cursor-default"
+                                onMouseEnter={playHoverSound}
+                            >
                                 {item}
                             </div>
                         ))}
