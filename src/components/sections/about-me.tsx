@@ -11,15 +11,15 @@ const aboutData = {
   highlights: [
     {
       icon: FileText,
-      title: 'AI Research & Recognition',
+      title: 'AI and Finance Research',
     },
     {
       icon: Zap,
-      title: 'Innovation in Finance Operations',
+      title: 'Innovation and Automation in Finance Operations',
     },
     {
       icon: Briefcase,
-      title: 'Strategic Deals & Advisory',
+      title: 'Entrepreneurial & Leadership Experience',
     },
   ],
   skills: [
@@ -74,7 +74,7 @@ const AboutMeSection = () => {
                   <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20 text-center">
                     <CardContent className="p-4 flex flex-col items-center justify-center gap-3 aspect-square">
                       <highlight.icon className="w-10 h-10 text-primary icon-glow" />
-                      <p className="font-bold text-foreground mt-2">{highlight.title}</p>
+                      <p className="font-bold text-foreground mt-2 text-center">{highlight.title}</p>
                     </CardContent>
                   </Card>
                 ))}
