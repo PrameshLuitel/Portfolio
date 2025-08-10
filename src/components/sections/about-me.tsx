@@ -102,7 +102,7 @@ const AboutMeSection = () => {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="p-4 pt-2 md:p-6 md:pt-3">
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 justify-start">
                         {skillGroup.items.map(item => (
                             <div 
                                 key={item} 

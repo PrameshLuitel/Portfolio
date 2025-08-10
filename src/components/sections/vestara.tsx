@@ -21,7 +21,7 @@ const VestaraSection = () => {
                 <TabsTrigger value="launch">Launch</TabsTrigger>
               </TabsList>
             </CardHeader>
-            <CardContent className="h-[55vh] overflow-y-auto px-4 md:px-6">
+            <CardContent className="h-[60vh] overflow-y-auto px-4 md:px-6">
               <TabsContent value="vision" className="prose prose-sm md:prose-base prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
                 <h3>Vision & Market Gap</h3>
                 <p>
@@ -54,8 +54,8 @@ const VestaraSection = () => {
                   The insights and skills that power Vestara's vision were honed through my experience pioneering AI-first solutions and building tools like 'Portfolio Pulse,'. At Global Ime Capital Limited I gained firsthand insight into the operational bottlenecks Vestara is designed to solve. This unique blend of academic rigor, technical execution, and strategic foresight is what defines my role and the future of Vestara.
                 </p>
               </TabsContent>
-              <TabsContent value="launch" className="grid grid-cols-1 md:grid-cols-2 items-center h-full text-center md:text-left gap-8">
-                 <div className="z-10">
+              <TabsContent value="launch" className="flex flex-col md:grid md:grid-cols-2 items-center h-full text-center md:text-left gap-8">
+                 <div className="z-10 order-2 md:order-1 flex flex-col items-center md:items-start">
                     <h3 className="font-headline text-2xl text-primary mb-4">Project Launch</h3>
                     <p className="text-muted-foreground mb-6 max-w-md mx-auto md:mx-0">
                         The platform is currently under active development. The official launch is planned for Q3 2025. Stay tuned for updates.
@@ -65,7 +65,7 @@ const VestaraSection = () => {
                         Launch Vestara (Pending)
                     </Button>
                  </div>
-                 <div className="relative h-full w-full">
+                 <div className="relative h-64 w-full md:h-full md:w-full order-1 md:order-2">
                     <RocketLaunchAnimation />
                  </div>
               </TabsContent>
