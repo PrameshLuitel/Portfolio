@@ -63,7 +63,11 @@ const AboutMeSection = () => {
                 Download My CV
               </a>
             </Button>
-            <p className="text-sm text-muted-foreground text-left" dangerouslySetInnerHTML={{ __html: aboutData.introduction }} />
+            <Card className="bg-card/50 backdrop-blur-sm border-primary/20 mt-0">
+                <CardContent className="p-4 text-left">
+                    <p className="text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: aboutData.introduction }} />
+                </CardContent>
+            </Card>
           </div>
 
           <div className="w-full lg:w-[70%] flex flex-col gap-8">
@@ -72,9 +76,9 @@ const AboutMeSection = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {aboutData.highlights.map((highlight, index) => (
                   <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20 text-center">
-                    <CardContent className="p-4 flex flex-col items-center justify-center gap-2">
-                      <highlight.icon className="w-8 h-8 text-primary icon-glow" />
-                      <p className="font-bold text-sm text-foreground text-center">{highlight.title}</p>
+                    <CardContent className="p-3 flex flex-col items-center justify-center gap-2">
+                      <highlight.icon className="w-6 h-6 text-primary icon-glow" />
+                      <p className="font-bold text-xs text-foreground text-center">{highlight.title}</p>
                     </CardContent>
                   </Card>
                 ))}
