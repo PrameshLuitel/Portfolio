@@ -12,7 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { projects, researchPapers } from '@/lib/data';
+import { projects } from '@/lib/data';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -22,7 +22,7 @@ const navLinks = [
     { href: 'https://github.com/PrameshLuitel', label: 'GitHub', isExternal: true, icon: Github },
   ]},
   { href: '#projects', label: 'Projects', isDropdown: true, items: projects.map(p => ({ href: `/projects/${p.slug}`, label: p.title })) },
-  { href: '#research', label: 'Research Papers', isDropdown: true, items: researchPapers.map((p, i) => ({ href: p.isPublished ? p.link : '#', label: p.title, isPublished: p.isPublished })) },
+  { href: '#research', label: 'Research' },
   { href: '#vestara', label: 'Vestara GPT' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -40,15 +40,13 @@ const Navbar = () => {
       let currentActiveSection = '';
 
       navLinks.forEach(link => {
-        if (link.isDropdown) {
-          const section = document.getElementById(link.href.substring(1));
-          if (section) {
-            const sectionTop = section.offsetTop - 100; // offset for better accuracy
-            const sectionHeight = section.offsetHeight;
+        const section = document.getElementById(link.href.substring(1));
+        if (section) {
+          const sectionTop = section.offsetTop - 100; // offset for better accuracy
+          const sectionHeight = section.offsetHeight;
 
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-              currentActiveSection = link.href;
-            }
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentActiveSection = link.href;
           }
         }
       });
