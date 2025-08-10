@@ -56,18 +56,18 @@ const AboutMeSection = () => {
               className="rounded-full border-4 border-primary shadow-lg mb-6"
               data-ai-hint={aboutData.imageHint}
             />
-            <h3 className="font-headline text-2xl text-foreground mb-2">Pramesh Luitel</h3>
-            <Button asChild variant="outline" className="border-primary text-glow mb-6">
+            <h3 className="font-headline text-2xl text-foreground mb-4">Pramesh Luitel</h3>
+            <Card className="bg-card/50 backdrop-blur-sm border-primary/20 mb-6">
+                <CardContent className="p-4 text-left">
+                    <p className="text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: aboutData.introduction }} />
+                </CardContent>
+            </Card>
+            <Button asChild variant="outline" className="border-primary text-glow">
               <a href={aboutData.cvUrl} download>
                 <Download className="mr-2 h-4 w-4" />
                 Download My CV
               </a>
             </Button>
-            <Card className="bg-card/50 backdrop-blur-sm border-primary/20 mt-0">
-                <CardContent className="p-4 text-left">
-                    <p className="text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: aboutData.introduction }} />
-                </CardContent>
-            </Card>
           </div>
 
           <div className="w-full lg:w-[70%] flex flex-col gap-8">
