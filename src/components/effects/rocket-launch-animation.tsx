@@ -13,6 +13,29 @@ interface Particle {
   maxLife: number;
 }
 
+// Simple pixel art rocket shape (coordinates relative to a center point)
+const rocketShape = [
+  // Tip
+  { x: 0, y: -12 },
+  // Body
+  { x: 0, y: -11 },
+  { x: -1, y: -10 }, { x: 0, y: -10 }, { x: 1, y: -10 },
+  { x: -1, y: -9 }, { x: 0, y: -9 }, { x: 1, y: -9 },
+  { x: -2, y: -8 }, { x: -1, y: -8 }, { x: 0, y: -8 }, { x: 1, y: -8 }, { x: 2, y: -8 },
+  { x: -2, y: -7 }, { x: -1, y: -7 }, { x: 0, y: -7 }, { x: 1, y: -7 }, { x: 2, y: -7 },
+  { x: -2, y: -6 }, { x: -1, y: -6 }, { x: 0, y: -6 }, { x: 1, y: -6 }, { x: 2, y: -6 },
+  { x: -2, y: -5 }, { x: -1, y: -5 }, { x: 0, y: -5 }, { x: 1, y: -5 }, { x: 2, y: -5 },
+  { x: -2, y: -4 }, { x: -1, y: -4 }, { x: 0, y: -4 }, { x: 1, y: -4 }, { x: 2, y: -4 },
+  { x: -2, y: -3 }, { x: -1, y: -3 }, { x: 0, y: -3 }, { x: 1, y: -3 }, { x: 2, y: -3 },
+  { x: -2, y: -2 }, { x: 0, y: -2 }, { x: 2, y: -2 },
+  { x: -2, y: -1 }, { x: 0, y: -1 }, { x: 2, y: -1 },
+  // Fins
+  { x: -3, y: -1 }, { x: 3, y: -1 },
+  { x: -4, y: 0 }, { x: -3, y: 0 }, { x: 3, y: 0 }, { x: 4, y: 0 },
+  { x: -4, y: 1 }, { x: 4, y: 1 },
+];
+
+
 const RocketLaunchAnimation = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { theme } = useTheme();
@@ -25,8 +48,9 @@ const RocketLaunchAnimation = () => {
     if (!ctx) return;
 
     let animationFrameId: number;
-    let lastTime = 0;
-    const particlesPerSecond = 200;
+    const particlesPerFrame = 5;
+    const dotSize = 4;
+    const rocketBaseY = 2 * dotSize; // Base of the rocket in canvas space
 
     const resizeCanvas = () => {
       if(canvas.parentElement) {
@@ -36,34 +60,46 @@ const RocketLaunchAnimation = () => {
     };
     resizeCanvas();
 
+    const rocketCenterX = canvas.width / 2;
+    const rocketCenterY = canvas.height / 2 - 20;
+
     const createParticle = () => {
-      const x = canvas.width / 2;
-      const y = canvas.height;
-      const angle = -Math.PI / 2 + (Math.random() - 0.5) * (Math.PI / 3);
-      const speed = 5 + Math.random() * 5;
+      const angle = Math.PI / 2 + (Math.random() - 0.5) * (Math.PI / 4); // Pointing downwards
+      const speed = 1 + Math.random() * 2;
 
       return {
-        x: x,
-        y: y,
-        vx: Math.cos(angle) * speed,
+        x: rocketCenterX + (Math.random() - 0.5) * 10,
+        y: rocketCenterY + rocketBaseY,
+        vx: Math.cos(angle) * speed * 0.5,
         vy: Math.sin(angle) * speed,
-        size: Math.random() * 3 + 2,
+        size: Math.random() * 2 + 1.5,
         life: 100,
-        maxLife: Math.random() * 50 + 80
+        maxLife: Math.random() * 50 + 50
       };
     };
+    
+    const drawRocket = () => {
+      if (!ctx) return;
+      const primaryColor = theme === 'dark' ? 'hsl(var(--primary))' : 'hsl(var(--primary))';
+      ctx.fillStyle = primaryColor;
+      ctx.shadowColor = primaryColor;
+      ctx.shadowBlur = 5;
 
-    const draw = (timestamp: number) => {
+      rocketShape.forEach(p => {
+        ctx.fillRect(rocketCenterX + p.x * dotSize, rocketCenterY + p.y * dotSize, dotSize -1, dotSize -1);
+      });
+      ctx.shadowBlur = 0;
+    }
+
+    const draw = () => {
       if (!ctx) return;
 
-      const deltaTime = timestamp - lastTime;
-      lastTime = timestamp;
-
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      drawRocket();
 
-      const numNewParticles = Math.floor(particlesPerSecond * (deltaTime / 1000));
-      for (let i = 0; i < numNewParticles; i++) {
-        if(particlesRef.current.length < 500) {
+      for (let i = 0; i < particlesPerFrame; i++) {
+        if(particlesRef.current.length < 300) {
             particlesRef.current.push(createParticle());
         }
       }
@@ -73,26 +109,22 @@ const RocketLaunchAnimation = () => {
       particlesRef.current.forEach(p => {
         p.x += p.vx;
         p.y += p.vy;
-        p.vy += 0.05; // gravity
         p.life -= 100 / p.maxLife;
 
         const lifeRatio = p.life / 100;
         
-        // Color transition from yellow -> orange -> red -> dark
         let color;
         if (lifeRatio > 0.8) {
-          color = `rgba(255, 255, 180, ${lifeRatio})`; // Bright Yellow
+          color = `rgba(255, 255, 180, ${lifeRatio * 0.9})`; // Bright Yellow
         } else if (lifeRatio > 0.5) {
-          color = `rgba(255, 165, 0, ${lifeRatio})`; // Orange
+          color = `rgba(255, 165, 0, ${lifeRatio * 0.9})`; // Orange
         } else if (lifeRatio > 0.2) {
-            color = `rgba(255, 69, 0, ${lifeRatio})`; // Red-Orange
+            color = `rgba(255, 69, 0, ${lifeRatio * 0.9})`; // Red-Orange
         } else {
-          color = `rgba(139, 0, 0, ${lifeRatio})`; // Dark Red
+          color = `rgba(139, 0, 0, ${lifeRatio * 0.9})`; // Dark Red
         }
         
         ctx.fillStyle = color;
-        ctx.shadowColor = color;
-        ctx.shadowBlur = 10;
         
         ctx.beginPath();
         const radius = Math.max(0, p.size * lifeRatio);
@@ -100,7 +132,6 @@ const RocketLaunchAnimation = () => {
         ctx.fill();
       });
 
-      ctx.shadowBlur = 0;
       animationFrameId = requestAnimationFrame(draw);
     };
 
@@ -114,7 +145,7 @@ const RocketLaunchAnimation = () => {
   }, [theme]);
 
   return (
-    <canvas ref={canvasRef} className="absolute inset-0 w-full h-full -z-10" />
+    <canvas ref={canvasRef} className="w-full h-full" />
   );
 };
 

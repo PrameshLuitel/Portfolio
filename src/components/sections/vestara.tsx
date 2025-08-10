@@ -54,17 +54,19 @@ const VestaraSection = () => {
                   The insights and skills that power Vestara's vision were honed through my experience pioneering AI-first solutions and building tools like 'Portfolio Pulse,'. At Global Ime Capital Limited I gained firsthand insight into the operational bottlenecks Vestara is designed to solve. This unique blend of academic rigor, technical execution, and strategic foresight is what defines my role and the future of Vestara.
                 </p>
               </TabsContent>
-              <TabsContent value="launch" className="relative flex flex-col items-center justify-center h-full text-center">
-                 <RocketLaunchAnimation />
+              <TabsContent value="launch" className="relative grid grid-cols-1 md:grid-cols-2 items-center h-full text-center md:text-left gap-8">
                  <div className="z-10">
                     <h3 className="font-headline text-2xl text-primary mb-4">Project Launch</h3>
-                    <p className="text-muted-foreground mb-6 max-w-md">
+                    <p className="text-muted-foreground mb-6 max-w-md mx-auto md:mx-0">
                         The platform is currently under active development. The official launch is planned for Q3 2025. Stay tuned for updates.
                     </p>
                     <Button variant="outline" size="lg" disabled>
                         <Rocket className="mr-2 h-5 w-5" />
                         Launch Vestara (Pending)
                     </Button>
+                 </div>
+                 <div className="relative h-full w-full">
+                    <RocketLaunchAnimation />
                  </div>
               </TabsContent>
             </CardContent>
