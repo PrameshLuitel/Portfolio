@@ -38,7 +38,7 @@ const VestaraSection = () => {
                  <div dangerouslySetInnerHTML={{ __html: `
                     <h4>1. Vestara GPT: The Domain-Trained AI Assistant</h4>
                     <p>
-                      Our custom-built large language model has been meticulously trained on the intricacies of <span class='text-primary'>SEBON</span> and <span class='text-primary'>NEPSE</span> regulations, as well as the unique workflows of investment banking in Nepal. Using <span class='text-primary'>Retrieval-Augmented Generation (RAG)</span>, Vestara GPT delivers precise, context-aware responses to any compliance, operational, or market-related query. This functions as a real-time regulatory and strategy assistant, a an authoritative source of truth for investment bankers, analysts, and compliance teams.
+                      Our custom-built large language model has been meticulously trained on the intricacies of <span class='text-primary'>SEBON</span> and <span class='text-primary'>NEPSE</span> regulations, as well as the unique workflows of investment banking in Nepal. Using <span class='text-primary'>Retrieval-Augmented Generation (RAG)</span>, Vestara GPT delivers precise, context-aware responses to any compliance, operational, or market-related query. This functions as a real-time regulatory and strategy assistant, an authoritative source of truth for investment bankers, analysts, and compliance teams.
                     </p>
                  ` }}/>
                  <div dangerouslySetInnerHTML={{ __html: `
@@ -51,7 +51,13 @@ const VestaraSection = () => {
               <TabsContent value="role" className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
                 <h3>Founder & Lead Architect</h3>
                 <p>
-                  As the sole founder, I am responsible for the end-to-end creation of Vestara GPT. This encompasses architecting the proprietary Large Language Model (LLM), designing the multi-source data ingestion pipelines (market data, regulatory filings, news sentiment), developing the reinforcement learning from human feedback (RLHF) framework with finance experts, and engineering the secure, scalable cloud infrastructure. My role is a synthesis of quant, data scientist, and product visionary.
+                  As the Founder and Lead Architect of Project Vestara, my role is a culmination of my academic research and hands-on experience in the financial sector. I founded this venture with a clear objective: to modernize investment intelligence in emerging markets by bridging the gap between deep regulatory knowledge and actionable insights.
+                </p>
+                <p>
+                  My work isn't just about building a product; it's about translating my research into a scalable, real-world application. My published papers on sentiment-enhanced stock prediction and AI-driven insights for NEPSE are not abstract academic exercises, but the very foundation of Vestara's predictive framework. I personally architected the proprietary Large Language Model (LLM) and its multi-source data ingestion pipelines, and pioneered the reinforcement learning framework with finance experts.
+                </p>
+                 <p>
+                  The insights and skills that power Vestara's vision were honed through my experience pioneering AI-first solutions and building tools like 'Portfolio Pulse,'. At Global Ime Capital Limited I gained firsthand insight into the operational bottlenecks Vestara is designed to solve. This unique blend of academic rigor, technical execution, and strategic foresight is what defines my role and the future of Vestara.
                 </p>
               </TabsContent>
               <TabsContent value="capabilities">
