@@ -10,7 +10,7 @@ const aboutData = {
   introduction: "A B.Com (Hons) graduate who transforms the intersection of finance, technology, and creativity into intelligent, actionable solutions. With a proven track record in building <span class='text-primary font-semibold'>full-stack analytics platforms</span>, <span class='text-primary font-semibold'>automating legacy systems</span>, and pioneering <span class='text-primary font-semibold'>AI-driven capital market research</span>, I specialize in modernizing financial operations. I am a passionate and innovative thinker dedicated to pushing the boundaries of fintech, particularly in emerging markets, through automation and applied AI. My work includes founding Project Vestara, a SaaS platform for investment banks, and publishing peer-reviewed research on sentiment-enhanced stock prediction. I am always seeking new challenges to leverage my skills in <span class='text-primary font-semibold'>predictive analytics</span>, <span class='text-primary font-semibold'>machine learning</span>, and <span class='text-primary font-semibold'>strategic digital innovation</span>.",
   imageUrl: 'https://placehold.co/200x200',
   imageHint: 'professional headshot',
-  cvUrl: '#',
+  cvUrl: '/Pramesh_Luitel_CV.pdf',
   highlights: [
     {
       icon: FileText,
@@ -83,7 +83,7 @@ const AboutMeSection = () => {
                   <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20 text-center group">
                     <CardContent className="p-3 flex flex-col items-center justify-center gap-2">
                       <highlight.icon className="w-6 h-6 text-primary transition-all group-hover:icon-glow" />
-                      <p className="font-bold text-xs text-foreground text-center">{highlight.title}</p>
+                      <p className="font-bold text-xs text-center">{highlight.title}</p>
                     </CardContent>
                   </Card>
                 ))}

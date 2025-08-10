@@ -130,7 +130,7 @@ const Navbar = () => {
               <NavItem key={link.label} link={link} />
             ))}
              <Button asChild variant="ghost" size="sm" className="text-glow text-primary">
-                <a href="#" download>
+                <a href="/Pramesh_Luitel_CV.pdf" download>
                   <Download className="mr-2 h-4 w-4" />
                   CV
                 </a>
@@ -162,7 +162,7 @@ const Navbar = () => {
               </a>
             ))}
              <a 
-                href="#"
+                href="/Pramesh_Luitel_CV.pdf"
                 download
                 className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent"
               >
