@@ -1,16 +1,25 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 
 const StartupSound = () => {
   const audioContextRef = useRef<AudioContext | null>(null);
   const hasPlayedRef = useRef(false);
 
-  const playSound = () => {
-    if (!audioContextRef.current || hasPlayedRef.current) return;
+  const getAudioContext = useCallback(() => {
+    if (typeof window === 'undefined') return null;
+    if (!audioContextRef.current) {
+      audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+    }
+    return audioContextRef.current;
+  }, []);
+
+  const playSound = useCallback(() => {
+    const audioContext = getAudioContext();
+    if (!audioContext || hasPlayedRef.current) return;
     
-    if (audioContextRef.current.state === 'suspended') {
-        audioContextRef.current.resume();
+    if (audioContext.state === 'suspended') {
+        audioContext.resume();
     }
 
     // Check if sound has already been played in this session
@@ -18,8 +27,6 @@ const StartupSound = () => {
       hasPlayedRef.current = true;
       return;
     }
-    
-    const audioContext = audioContextRef.current;
     
     const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
@@ -47,29 +54,31 @@ const StartupSound = () => {
     // Clean up interaction listener
     window.removeEventListener('click', playSound);
     window.removeEventListener('keydown', playSound);
-  };
+  }, [getAudioContext]);
 
   useEffect(() => {
-    // Initialize AudioContext
-    if (!audioContextRef.current) {
-        audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
-    }
-    
-    // Try to play immediately
-    playSound();
+    const initAudio = () => {
+      // Try to play immediately if allowed
+      playSound();
 
-    // If it's suspended, it requires user interaction
-    if (audioContextRef.current && audioContextRef.current.state === 'suspended') {
-      window.addEventListener('click', playSound, { once: true });
-      window.addEventListener('keydown', playSound, { once: true });
-    }
+      const audioContext = getAudioContext();
+      // If it's suspended, it requires user interaction
+      if (audioContext && audioContext.state === 'suspended') {
+        window.addEventListener('click', playSound, { once: true });
+        window.addEventListener('keydown', playSound, { once: true });
+      }
+    };
+    
+    // Defer initialization to after the initial render
+    const timeoutId = setTimeout(initAudio, 1);
 
     return () => {
+      clearTimeout(timeoutId);
       // Cleanup listeners on component unmount
       window.removeEventListener('click', playSound);
       window.removeEventListener('keydown', playSound);
     };
-  }, []);
+  }, [playSound, getAudioContext]);
 
   return null; // This component doesn't render anything
 };
