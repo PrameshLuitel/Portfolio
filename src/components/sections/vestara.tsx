@@ -34,18 +34,18 @@ const VestaraSection = () => {
                 </p>
               </TabsContent>
               <TabsContent value="features" className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary space-y-4">
-                 <div>
+                 <div dangerouslySetInnerHTML={{ __html: `
                     <h4>1. Vestara GPT: The Domain-Trained AI Assistant</h4>
                     <p>
-                      Our custom-built large language model has been meticulously trained on the intricacies of SEBON and NEPSE regulations, as well as the unique workflows of investment banking in Nepal. Using Retrieval-Augmented Generation (RAG), Vestara GPT delivers precise, context-aware responses to any compliance, operational, or market-related query. This functions as a real-time regulatory and strategy assistant, providing authoritative accuracy for investment bankers, analysts, and compliance teams.
+                      Our custom-built large language model has been meticulously trained on the intricacies of <span class='text-primary font-semibold'>SEBON</span> and <span class='text-primary font-semibold'>NEPSE</span> regulations, as well as the unique workflows of investment banking in Nepal. Using <span class='text-primary font-semibold'>Retrieval-Augmented Generation (RAG)</span>, Vestara GPT delivers precise, context-aware responses to any compliance, operational, or market-related query. This functions as a real-time regulatory and strategy assistant, providing authoritative accuracy for investment bankers, analysts, and compliance teams.
                     </p>
-                 </div>
-                 <div>
-                    <h4>2. The AI Stock Price Prediction Suite</h4>
+                 ` }}/>
+                 <div dangerouslySetInnerHTML={{ __html: `
+                    <h4>2. The AI Predictive Analytics Suite</h4>
                     <p>
-                      This cutting-edge predictive analytics engine leverages LSTM deep learning models and sentiment analysis to provide high-confidence price forecasts. Focused exclusively on Nepalese equities and utilizing last-day market data, this suite is designed to augment, not replace, human expertise. The platform ensures optimal synergy between human decision-making and AI precision, empowering professionals to make more informed choices with both large-cap and small-cap stocks.
+                      A cutting-edge, multi-model AI prediction engine that covers the entire universe of NEPSE-listed stocks. It leverages a diverse portfolio of machine learning and deep learning architectures, including <span class='text-primary font-semibold'>LSTM</span>, <span class='text-primary font-semibold'>GRU</span>, <span class='text-primary font-semibold'>Transformers</span>, <span class='text-primary font-semibold'>XGBoost</span>, and <span class='text-primary font-semibold'>ensemble models</span>. By integrating <span class='text-primary font-semibold'>technical indicators</span>, <span class='text-primary font-semibold'>historical patterns</span>, and <span class='text-primary font-semibold'>sentiment data</span>, the engine produces <span class='text-primary font-semibold'>data-rich visualizations</span> and high-confidence forecasts. This suite is designed for both institutional analysis and academic research, augmenting human expertise for data-driven decision-making at scale.
                     </p>
-                 </div>
+                 ` }}/>
               </TabsContent>
               <TabsContent value="role" className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
                 <h3>Founder & Lead Architect</h3>
