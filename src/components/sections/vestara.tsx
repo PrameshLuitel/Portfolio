@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import RocketLaunchAnimation from '@/components/effects/rocket-launch-animation';
 
 const VestaraSection = () => {
   return (
@@ -54,19 +53,16 @@ const VestaraSection = () => {
                   The insights and skills that power Vestara's vision were honed through my experience pioneering AI-first solutions and building tools like 'Portfolio Pulse,'. At Global Ime Capital Limited I gained firsthand insight into the operational bottlenecks Vestara is designed to solve. This unique blend of academic rigor, technical execution, and strategic foresight is what defines my role and the future of Vestara.
                 </p>
               </TabsContent>
-              <TabsContent value="launch" className="flex flex-col md:grid md:grid-cols-2 items-center h-full text-center md:text-left gap-8">
-                 <div className="z-10 order-2 md:order-1 flex flex-col items-center md:items-start">
+              <TabsContent value="launch" className="flex flex-col items-center justify-center h-full text-center gap-8">
+                 <div className="z-10 flex flex-col items-center">
                     <h3 className="font-headline text-2xl text-primary mb-4">Project Launch</h3>
-                    <p className="text-muted-foreground mb-6 max-w-md mx-auto md:mx-0">
+                    <p className="text-muted-foreground mb-6 max-w-md mx-auto">
                         The platform is currently under active development. The official launch is planned for Q3 2025. Stay tuned for updates.
                     </p>
                     <Button variant="outline" size="lg" disabled>
                         <Rocket className="mr-2 h-5 w-5" />
                         Launch Vestara (Pending)
                     </Button>
-                 </div>
-                 <div className="relative h-64 w-full md:h-full md:w-full order-1 md:order-2">
-                    <RocketLaunchAnimation />
                  </div>
               </TabsContent>
             </CardContent>
