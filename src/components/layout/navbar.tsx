@@ -116,7 +116,7 @@ const Navbar = () => {
                       href={item.href} 
                       target={item.isExternal || item.href?.startsWith('http') || item.href?.startsWith('/projects') ? '_blank' : undefined} 
                       rel={item.isExternal || item.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      download={item.isDownload}
+                      download={item.isDownload ? item.href.split('/').pop() : undefined}
                       onClick={(e) => {
                         if (item.href?.startsWith('/projects')) {
                            // Let default behavior (navigation) happen

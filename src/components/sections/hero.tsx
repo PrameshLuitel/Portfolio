@@ -11,7 +11,7 @@ const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn' },
   { icon: Github, href: 'https://github.com/PrameshLuitel', label: 'GitHub' },
   { icon: Mail, href: 'mailto:luitelpramesh@gmail.com', label: 'Email' },
-  { icon: FileText, href: '/pramesh-resume.pdf', label: 'CV' },
+  { icon: FileText, href: '/pramesh-resume.pdf', label: 'CV', download: true },
 ];
 
 const HeroSection = () => {
@@ -38,7 +38,7 @@ const HeroSection = () => {
 
         <div className="flex justify-center space-x-6">
           {socialLinks.map(link => (
-            <a key={link.label} href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors" download={link.label === 'CV'}>
+            <a key={link.label} href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer" download={link.download}>
               <link.icon className="w-8 h-8 icon-glow"/>
             </a>
           ))}

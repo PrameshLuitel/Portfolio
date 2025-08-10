@@ -72,7 +72,7 @@ const AboutMeSection = () => {
             <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-4 gap-4">
               <h3 className="font-headline text-2xl text-primary text-center lg:text-left">Major Highlights</h3>
               <Button asChild variant="outline" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
-                <a href={aboutData.cvUrl} download>
+                <a href={aboutData.cvUrl} download="pramesh-resume.pdf">
                   <Download className="mr-2 h-4 w-4" />
                   Download My CV
                 </a>
