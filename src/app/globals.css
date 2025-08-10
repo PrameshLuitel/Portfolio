@@ -31,37 +31,35 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 217 91% 60%;
-
-    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 164 87% 9%;
-    --foreground: 90 10% 95%;
+    --background: 162 75% 8%; /* Dark Desaturated Emerald */
+    --foreground: 158 10% 95%;
 
-    --card: 164 80% 11%;
-    --card-foreground: 90 10% 95%;
+    --card: 162 75% 10%; /* Slightly lighter than background */
+    --card-foreground: 158 10% 95%;
 
-    --popover: 164 87% 9%;
-    --popover-foreground: 90 10% 95%;
+    --popover: 162 75% 8%;
+    --popover-foreground: 158 10% 95%;
 
-    --primary: 90 100% 50%;
-    --primary-foreground: 164 87% 9%;
+    --primary: 90 100% 50%; /* Electric Green */
+    --primary-foreground: 162 75% 8%;
 
-    --secondary: 159 100% 22%;
-    --secondary-foreground: 90 10% 95%;
+    --secondary: 158 100% 18%; /* Darker Emerald for secondary elements */
+    --secondary-foreground: 158 10% 95%;
 
-    --muted: 159 50% 15%;
-    --muted-foreground: 90 10% 65%;
+    --muted: 158 100% 15%;
+    --muted-foreground: 158 10% 65%;
 
-    --accent: 159 100% 22%;
-    --accent-foreground: 90 10% 95%;
+    --accent: 158 100% 22%; /* Deep Emerald Green for accents/hovers */
+    --accent-foreground: 158 10% 95%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 159 100% 18%;
-    --input: 159 100% 18%;
+    --border: 158 100% 18%;
+    --input: 158 100% 18%;
     --ring: 90 100% 50%;
   }
 }
