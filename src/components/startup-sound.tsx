@@ -29,7 +29,7 @@ const StartupSound = () => {
       // Volume envelope
       gainNode.gain.setValueAtTime(0, audioContext.currentTime);
       gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.05); // Quick fade in
-      gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.3); // Fade out
+      gainNode.gain.exponentialRampToValueAtTime(0.0001, audio-context.currentTime + 0.3); // Fade out
 
       // Connect nodes and start sound
       oscillator.connect(gainNode);
