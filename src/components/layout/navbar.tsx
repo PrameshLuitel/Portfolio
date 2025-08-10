@@ -18,7 +18,7 @@ import { projects } from '@/lib/data';
 const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about-me', label: 'About Me', isDropdown: true, items: [
-    { href: '/pramesh-resume.pdf', label: 'Download CV', isDownload: true, icon: Download },
+    { href: 'https://drive.google.com/uc?export=download&id=1UxNWOyHX1QNOWQXf70z0-iyRWnip5f9U', label: 'Download CV', isDownload: true, icon: Download, isExternal: true },
     { href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn', isExternal: true, icon: Linkedin },
     { href: 'https://github.com/PrameshLuitel', label: 'GitHub', isExternal: true, icon: Github },
   ]},
@@ -118,9 +118,9 @@ const Navbar = () => {
                       href={item.href} 
                       target={item.isExternal || item.href?.startsWith('http') || item.href?.startsWith('/projects') ? '_blank' : undefined} 
                       rel={item.isExternal || item.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      download={item.isDownload ? 'pramesh-resume.pdf' : undefined}
+                      download={item.isDownload && !item.isExternal ? 'pramesh-resume.pdf' : undefined}
                       onClick={(e) => {
-                        if (item.href?.startsWith('/projects')) {
+                        if (item.href?.startsWith('/projects') || item.isExternal) {
                            // Let default behavior (navigation) happen
                         } else if (item.href?.startsWith('#')) {
                            scrollToSection(e, item.href)

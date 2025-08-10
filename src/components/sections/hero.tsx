@@ -11,7 +11,7 @@ const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn' },
   { icon: Github, href: 'https://github.com/PrameshLuitel', label: 'GitHub' },
   { icon: Mail, href: 'mailto:luitelpramesh@gmail.com', label: 'Email' },
-  { icon: FileText, href: '/pramesh-resume.pdf', label: 'CV', download: true },
+  { icon: FileText, href: 'https://drive.google.com/uc?export=download&id=1UxNWOyHX1QNOWQXf70z0-iyRWnip5f9U', label: 'CV' },
 ];
 
 const HeroSection = () => {
@@ -42,9 +42,8 @@ const HeroSection = () => {
               key={link.label} 
               href={link.href} 
               aria-label={link.label} 
-              target={link.download ? undefined : "_blank"} 
+              target="_blank" 
               rel="noopener noreferrer" 
-              download={link.download ? 'pramesh-resume.pdf' : undefined}
             >
               <link.icon className="w-8 h-8 icon-glow"/>
             </a>
