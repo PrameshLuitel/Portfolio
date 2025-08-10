@@ -80,12 +80,10 @@
     @apply bg-background text-foreground;
   }
   .scroll-container {
-    scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
   }
   .scroll-section {
-    scroll-snap-align: start;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -93,6 +91,15 @@
     align-items: center;
     position: relative;
     overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .scroll-container {
+      scroll-snap-type: y mandatory;
+    }
+    .scroll-section {
+      scroll-snap-align: start;
+    }
   }
 }
 

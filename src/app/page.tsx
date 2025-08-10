@@ -6,10 +6,12 @@ import HeroSection from '@/components/sections/hero';
 import ProjectsSection from '@/components/sections/projects';
 import ResearchSection from '@/components/sections/research';
 import VestaraSection from '@/components/sections/vestara';
+import StartupSound from '@/components/startup-sound';
 
 export default function Home() {
   return (
     <>
+      <StartupSound />
       <DotGridBackground />
       <Navbar />
       <main className="scroll-container">
