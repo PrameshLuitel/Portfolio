@@ -10,7 +10,6 @@ import { useSound } from '@/hooks/use-sound';
 const aboutData = {
   introduction: "A B.Com (Hons) graduate who transforms the intersection of finance, technology, and creativity into intelligent, actionable solutions. With a proven track record in building <span class='text-primary font-semibold'>full-stack analytics platforms</span>, <span class='text-primary font-semibold'>automating legacy systems</span>, and pioneering <span class='text-primary font-semibold'>AI-driven capital market research</span>, I specialize in modernizing financial operations. I am a passionate and innovative thinker dedicated to pushing the boundaries of fintech, particularly in emerging markets, through automation and applied AI. My work includes founding Project Vestara, a SaaS platform for investment banks, and publishing peer-reviewed research on sentiment-enhanced stock prediction. I am always seeking new challenges to leverage my skills in <span class='text-primary font-semibold'>predictive analytics</span>, <span class='text-primary font-semibold'>machine learning</span>, and <span class='text-primary font-semibold'>strategic digital innovation</span>.",
   imageUrl: '/images/pramesh-luitel-headshot.jpg',
-  cvUrl: '/pramesh-resume.pdf',
   highlights: [
     {
       icon: FileText,
@@ -72,7 +71,7 @@ const AboutMeSection = () => {
             <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-4 gap-4">
               <h3 className="font-headline text-2xl text-primary text-center lg:text-left">Major Highlights</h3>
               <Button asChild variant="outline" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
-                <a href={aboutData.cvUrl} download>
+                <a href="/pramesh-resume.pdf" download="pramesh-resume.pdf">
                   <Download className="mr-2 h-4 w-4" />
                   Download My CV
                 </a>

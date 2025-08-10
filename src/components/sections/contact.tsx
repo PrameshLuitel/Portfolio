@@ -33,7 +33,15 @@ const ContactSection = () => {
           </p>
           <div className="flex justify-center md:justify-start space-x-6">
             {socialLinks.map(link => (
-              <a key={link.label} href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors" download={link.download}>
+              <a 
+                key={link.label} 
+                href={link.href} 
+                aria-label={link.label} 
+                target={link.download ? undefined : "_blank"}
+                rel="noopener noreferrer" 
+                className="text-foreground hover:text-primary transition-colors" 
+                download={link.download ? 'pramesh-resume.pdf' : undefined}
+              >
                 <link.icon className="w-8 h-8 icon-glow"/>
               </a>
             ))}

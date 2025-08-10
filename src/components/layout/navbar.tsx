@@ -44,6 +44,8 @@ const Navbar = () => {
 
     mainContainerRef.current = document.querySelector('.scroll-container');
     const container = mainContainerRef.current;
+    if (!container) return;
+
 
     const handleScroll = () => {
       const scrollPosition = container?.scrollTop || 0;
@@ -116,7 +118,7 @@ const Navbar = () => {
                       href={item.href} 
                       target={item.isExternal || item.href?.startsWith('http') || item.href?.startsWith('/projects') ? '_blank' : undefined} 
                       rel={item.isExternal || item.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      download={item.isDownload}
+                      download={item.isDownload ? 'pramesh-resume.pdf' : undefined}
                       onClick={(e) => {
                         if (item.href?.startsWith('/projects')) {
                            // Let default behavior (navigation) happen
