@@ -18,7 +18,7 @@ import { projects } from '@/lib/data';
 const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about-me', label: 'About Me', isDropdown: true, items: [
-    { href: '/Pramesh_Luitel_CV.pdf', label: 'Download CV', isDownload: true, icon: Download },
+    { href: '/pramesh-resume.pdf', label: 'Download CV', isDownload: true, icon: Download },
     { href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn', isExternal: true, icon: Linkedin },
     { href: 'https://github.com/PrameshLuitel', label: 'GitHub', isExternal: true, icon: Github },
   ]},

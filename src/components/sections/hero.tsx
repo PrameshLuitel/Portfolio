@@ -1,3 +1,4 @@
+
 "use client";
 
 import GlitchText from '@/components/glitch-text';
@@ -10,7 +11,7 @@ const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn' },
   { icon: Github, href: 'https://github.com/PrameshLuitel', label: 'GitHub' },
   { icon: Mail, href: 'mailto:luitelpramesh@gmail.com', label: 'Email' },
-  { icon: FileText, href: '/Pramesh_Luitel_CV.pdf', label: 'CV' },
+  { icon: FileText, href: '/pramesh-resume.pdf', label: 'CV' },
 ];
 
 const HeroSection = () => {
