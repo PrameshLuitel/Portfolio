@@ -24,13 +24,13 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-8">
-          <Button asChild variant="outline" size="lg" className="border-primary text-glow" onMouseEnter={playHoverSound}>
+          <Button asChild variant="outline" size="lg" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
             <Link href="#projects">Projects</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-primary text-glow" onMouseEnter={playHoverSound}>
+          <Button asChild variant="outline" size="lg" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
             <Link href="#research">Research Papers</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-primary text-glow" onMouseEnter={playHoverSound}>
+          <Button asChild variant="outline" size="lg" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
             <Link href="#vestara">Explore Vestara GPT</Link>
           </Button>
         </div>

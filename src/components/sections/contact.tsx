@@ -37,7 +37,7 @@ const ContactSection = () => {
             <Input type="text" placeholder="Your Name" className="bg-background/50 backdrop-blur-sm" />
             <Input type="email" placeholder="Your Email" className="bg-background/50 backdrop-blur-sm" />
             <Textarea placeholder="Your Message" className="bg-background/50 backdrop-blur-sm" />
-            <Button type="submit" className="w-full text-glow border border-primary" variant="outline" onMouseEnter={playHoverSound}>
+            <Button type="submit" className="w-full text-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground" variant="outline" onMouseEnter={playHoverSound}>
               Send Inquiry
             </Button>
           </form>
