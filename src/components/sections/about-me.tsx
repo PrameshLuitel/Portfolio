@@ -72,9 +72,9 @@ const AboutMeSection = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {aboutData.highlights.map((highlight, index) => (
                   <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20 text-center">
-                    <CardContent className="p-4 flex flex-col items-center justify-center gap-3 aspect-square">
-                      <highlight.icon className="w-10 h-10 text-primary icon-glow" />
-                      <p className="font-bold text-foreground mt-2 text-center">{highlight.title}</p>
+                    <CardContent className="p-4 flex flex-col items-center justify-center gap-2">
+                      <highlight.icon className="w-8 h-8 text-primary icon-glow" />
+                      <p className="font-bold text-sm text-foreground text-center">{highlight.title}</p>
                     </CardContent>
                   </Card>
                 ))}
