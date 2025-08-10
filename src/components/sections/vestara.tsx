@@ -37,7 +37,7 @@ const VestaraSection = () => {
                  <div dangerouslySetInnerHTML={{ __html: `
                     <h4>1. Vestara GPT: The Domain-Trained AI Assistant</h4>
                     <p>
-                      Our custom-built large language model has been meticulously trained on the intricacies of <span class='text-primary font-semibold'>SEBON</span> and <span class='text-primary font-semibold'>NEPSE</span> regulations, as well as the unique workflows of investment banking in Nepal. Using <span class='text-primary font-semibold'>Retrieval-Augmented Generation (RAG)</span>, Vestara GPT delivers precise, context-aware responses to any compliance, operational, or market-related query. This functions as a real-time regulatory and strategy assistant, providing authoritative accuracy for investment bankers, analysts, and compliance teams.
+                      Our custom-built large language model has been meticulously trained on the intricacies of <span class='text-primary font-semibold'>SEBON</span> and <span class='text-primary font-semibold'>NEPSE</span> regulations, as well as the unique workflows of investment banking in Nepal. Using <span class='text-primary font-semibold'>Retrieval-Augmented Generation (RAG)</span>, Vestara GPT delivers precise, context-aware responses to any compliance, operational, or market-related query. This functions as a real-time regulatory and strategy assistant, a an authoritative source of truth for investment bankers, analysts, and compliance teams.
                     </p>
                  ` }}/>
                  <div dangerouslySetInnerHTML={{ __html: `
