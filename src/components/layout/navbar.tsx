@@ -18,7 +18,7 @@ import { projects } from '@/lib/data';
 const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about-me', label: 'About Me', isDropdown: true, items: [
-    { href: '/pramesh-resume.pdf', label: 'Download CV', isDownload: true, icon: Download },
+    { href: 'pramesh-resume.pdf', label: 'Download CV', isDownload: true, icon: Download },
     { href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn', isExternal: true, icon: Linkedin },
     { href: 'https://github.com/PrameshLuitel', label: 'GitHub', isExternal: true, icon: Github },
   ]},
@@ -116,7 +116,7 @@ const Navbar = () => {
                       href={item.href} 
                       target={item.isExternal || item.href?.startsWith('http') || item.href?.startsWith('/projects') ? '_blank' : undefined} 
                       rel={item.isExternal || item.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      download={item.isDownload ? item.href.split('/').pop() : undefined}
+                      download={item.isDownload ? item.href?.split('/').pop() : undefined}
                       onClick={(e) => {
                         if (item.href?.startsWith('/projects')) {
                            // Let default behavior (navigation) happen
