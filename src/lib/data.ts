@@ -15,7 +15,7 @@ export const projects = [
   },
   {
     slug: 'automated-form-fillers',
-    title: 'Automated Form Fillers For PMS Clients',
+    title: 'Auto Form Filler App for PMS',
     description: 'Developed a custom script to automate the tedious process of filling out Portfolio Management Services (PMS) forms, significantly reducing manual data entry and minimizing errors for clients.',
     image: { src: 'https://placehold.co/400x300', hint: 'digital form' },
     status: 'Utility Script',
