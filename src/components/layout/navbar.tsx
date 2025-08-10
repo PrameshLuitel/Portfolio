@@ -23,8 +23,7 @@ const Navbar = () => {
     const targetId = id.substring(1); 
     const section = document.getElementById(targetId);
     if (section) {
-      window.scrollTo({
-        top: section.offsetTop,
+      section.scrollIntoView({
         behavior: 'smooth',
       });
     }
@@ -32,7 +31,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
@@ -40,13 +39,13 @@ const Navbar = () => {
               Pramesh Luitel
             </Link>
           </div>
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-1">
             {navLinks.map(({ href, label }) => (
               <a 
                 key={label}
                 href={href} 
                 onClick={(e) => scrollToSection(e, href)}
-                className="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary hover:text-glow transition-colors"
+                className="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary hover:text-glow transition-all"
               >
                 {label}
               </a>
@@ -62,7 +61,7 @@ const Navbar = () => {
         </div>
       </nav>
       {isOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden bg-background/95 backdrop-blur-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map(({ href, label }) => (
               <a 
