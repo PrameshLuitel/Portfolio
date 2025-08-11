@@ -53,6 +53,39 @@ const AboutMeSection = () => {
         <div className="flex flex-col md:flex-row items-start justify-center gap-8 w-full max-w-6xl">
           
           {/* Left Column */}
+          <div className="w-full md:w-[35%] lg:w-[30%] flex flex-col items-center text-center gap-4">
+            <Image
+              src={aboutData.imageUrl}
+              alt="Pramesh Luitel Headshot"
+              width={120}
+              height={120}
+              className="rounded-full border-4 border-primary shadow-lg"
+            />
+            <h3 className="font-headline text-xl text-foreground -mt-2">Pramesh Luitel</h3>
+            
+            <div className="w-full">
+              <h3 className="font-headline text-lg text-primary mb-2">Major Highlights</h3>
+              <div className="grid grid-cols-1 gap-2">
+                  {aboutData.highlights.map((highlight, index) => (
+                    <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20 text-center group">
+                      <CardContent className="p-2 flex flex-col items-center justify-center gap-1">
+                        <highlight.icon className="w-5 h-5 text-primary transition-all group-hover:icon-glow" />
+                        <p className="font-bold text-xs text-center">{highlight.title}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+              </div>
+            </div>
+            
+            <Button asChild variant="outline" size="sm" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground w-full" onMouseEnter={playHoverSound}>
+              <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download>
+                <Download className="mr-2 h-4 w-4" />
+                Download My CV
+              </a>
+            </Button>
+          </div>
+          
+          {/* Right Column */}
           <div className="w-full md:w-[65%] lg:w-[70%] flex flex-col gap-4">
              <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
                 <CardContent className="p-4">
@@ -87,39 +120,6 @@ const AboutMeSection = () => {
                 ))}
               </div>
             </div>
-          </div>
-
-          {/* Right Column */}
-          <div className="w-full md:w-[35%] lg:w-[30%] flex flex-col items-center text-center gap-4">
-            <Image
-              src={aboutData.imageUrl}
-              alt="Pramesh Luitel Headshot"
-              width={120}
-              height={120}
-              className="rounded-full border-4 border-primary shadow-lg"
-            />
-            <h3 className="font-headline text-xl text-foreground -mt-2">Pramesh Luitel</h3>
-            
-            <div className="w-full">
-              <h3 className="font-headline text-lg text-primary mb-2">Major Highlights</h3>
-              <div className="grid grid-cols-1 gap-2">
-                  {aboutData.highlights.map((highlight, index) => (
-                    <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20 text-center group">
-                      <CardContent className="p-2 flex flex-col items-center justify-center gap-1">
-                        <highlight.icon className="w-5 h-5 text-primary transition-all group-hover:icon-glow" />
-                        <p className="font-bold text-xs text-center">{highlight.title}</p>
-                      </CardContent>
-                    </Card>
-                  ))}
-              </div>
-            </div>
-            
-            <Button asChild variant="outline" size="sm" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground w-full" onMouseEnter={playHoverSound}>
-              <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download>
-                <Download className="mr-2 h-4 w-4" />
-                Download My CV
-              </a>
-            </Button>
           </div>
 
         </div>
