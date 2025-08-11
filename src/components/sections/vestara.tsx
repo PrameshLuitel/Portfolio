@@ -20,7 +20,7 @@ const VestaraSection = () => {
                 <TabsTrigger value="launch">Launch</TabsTrigger>
               </TabsList>
             </CardHeader>
-            <CardContent className="h-[450px] overflow-y-auto px-4 md:px-6">
+            <CardContent className="overflow-y-auto px-4 py-2 md:px-6 md:py-4 min-h-[400px]">
               <TabsContent value="vision" className="prose prose-sm md:prose-base prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
                 <h3>Vision & Market Gap</h3>
                 <p>
@@ -53,7 +53,7 @@ const VestaraSection = () => {
                   The insights and skills that power Vestara's vision were honed through my experience pioneering AI-first solutions and building tools like 'Portfolio Pulse,'. At Global Ime Capital Limited I gained firsthand insight into the operational bottlenecks Vestara is designed to solve. This unique blend of academic rigor, technical execution, and strategic foresight is what defines my role and the future of Vestara.
                 </p>
               </TabsContent>
-              <TabsContent value="launch" className="flex flex-col items-center justify-center h-full text-center gap-8">
+              <TabsContent value="launch" className="flex flex-col items-center justify-center h-full text-center gap-8 min-h-[400px]">
                  <div className="z-10 flex flex-col items-center">
                     <h3 className="font-headline text-2xl text-primary mb-4">Project Launch</h3>
                     <p className="text-muted-foreground mb-6 max-w-md mx-auto">

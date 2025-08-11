@@ -27,8 +27,8 @@ const ResearchSection = () => {
     <section id="research" className="scroll-section p-4 md:p-8">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center h-full">
         <h2 className="font-headline text-4xl md:text-5xl text-glow mb-8 text-center">Research & Publications</h2>
-        <div className="w-full max-w-5xl h-[70vh] flex flex-col">
-          <div className="overflow-y-auto pr-4 space-y-6 flex-grow">
+        <div className="w-full max-w-5xl flex flex-col">
+          <div className="overflow-y-auto pr-4 space-y-6 flex-grow max-h-[70vh]">
             {researchPapers.map((paper, index) => (
               <Card key={index} className="bg-card/70 backdrop-blur-sm border-primary/20">
                 <CardHeader>

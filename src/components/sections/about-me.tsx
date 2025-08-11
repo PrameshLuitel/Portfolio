@@ -50,13 +50,13 @@ const AboutMeSection = () => {
     <section id="about-me" className="scroll-section p-4 md:p-8 flex items-center justify-center min-h-screen pt-20 md:pt-24">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
         <h2 className="font-headline text-4xl md:text-5xl text-glow mb-8 text-center">About Me</h2>
-        <div className="flex flex-col lg:flex-row items-start justify-center gap-12 w-full max-w-7xl">
-          <div className="w-full lg:w-[30%] flex flex-col items-center text-center">
+        <div className="flex flex-col md:flex-row items-start justify-center gap-8 w-full max-w-7xl">
+          <div className="w-full md:w-[30%] flex flex-col items-center text-center">
             <Image
               src={aboutData.imageUrl}
               alt="Pramesh Luitel Headshot"
-              width={200}
-              height={200}
+              width={180}
+              height={180}
               className="rounded-full border-4 border-primary shadow-lg mb-6"
             />
             <h3 className="font-headline text-2xl text-foreground mb-4">Pramesh Luitel</h3>
@@ -67,11 +67,11 @@ const AboutMeSection = () => {
             </Card>
           </div>
 
-          <div className="w-full lg:w-[70%] flex flex-col gap-8">
-            <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-4 gap-4">
+          <div className="w-full md:w-[70%] flex flex-col gap-6">
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-0 gap-4">
               <h3 className="font-headline text-2xl text-primary text-center md:text-left">Major Highlights</h3>
               <Button asChild variant="outline" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
-                <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer">
+                <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download>
                   <Download className="mr-2 h-4 w-4" />
                   Download My CV
                 </a>
@@ -93,13 +93,13 @@ const AboutMeSection = () => {
                <div className="space-y-4">
                 {aboutData.skills.map((skillGroup, index) => (
                   <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20">
-                    <CardHeader className="p-4 pb-2 md:p-6 md:pb-3">
+                    <CardHeader className="p-3 md:p-4 pb-2">
                       <CardTitle className="flex items-center gap-3 text-lg">
                         <skillGroup.icon className="w-6 h-6 text-primary icon-glow" />
                         {skillGroup.category}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="p-4 pt-2 md:p-6 md:pt-3">
+                    <CardContent className="p-3 pt-1 md:p-4 md:pt-2">
                       <div className="flex flex-wrap gap-2 justify-start">
                         {skillGroup.items.map(item => (
                             <div 
