@@ -29,7 +29,7 @@ export const projects = [
     title: 'Auto Form Filler App for PMS',
     description: 'A utility script that automates filling Portfolio Management Services (PMS) forms, saving time and reducing data entry errors.',
     longDescription: 'Developed a custom script to automate the tedious process of filling out Portfolio Management Services (PMS) forms for merchant banking clients. By mapping spreadsheet data to form fields, this utility significantly reduces manual data entry time and minimizes errors, ensuring accuracy and efficiency in the client onboarding process.',
-    image: { src: '/images/auto-form-filler.png', hint: 'digital form' },
+    image: { src: '/images/form_bot.png', hint: 'digital form' },
     status: 'Utility Script',
     technologies: ['Python', 'Pandas', 'OpenPyXL'],
     features: ['Automated form population', 'Data mapping from Excel', 'Error reduction', 'Batch processing'],
