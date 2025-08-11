@@ -41,7 +41,7 @@ export const projects = [
     title: 'Project Vestara',
     description: 'My flagship venture, a proprietary AI platform designed to become the central nervous system for modern investment firms.',
     longDescription: "Project Vestara is my flagship venture, a proprietary AI platform designed to become the central nervous system for modern investment firms. It moves beyond simple data retrieval to provide actionable, forward-looking strategic intelligence by transforming market noise into a clear signal of alpha. The vision is to make Vestara an indispensable conversational AI partner for institutional investors.",
-    image: { src: '/vestara-logo.png', hint: 'ai brain' },
+    image: { src: '/images/vestara-logo.png', hint: 'ai brain' },
     status: 'In Development',
     technologies: ['AI/ML', 'LLM', 'Python', 'Next.js', 'Genkit'],
     features: ['Conversational AI Interface', 'Predictive Analytics', 'Regulatory Q&A', 'Portfolio Optimization Simulation'],
