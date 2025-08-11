@@ -25,43 +25,41 @@ const researchPapers = [
 const ResearchSection = () => {
   return (
     <section id="research" className="scroll-section p-4 md:p-8 flex items-center justify-center">
-      <div className="z-10 container mx-auto flex flex-col items-center justify-center h-full w-full max-w-4xl">
+      <div className="z-10 container mx-auto flex flex-col items-center justify-center w-full max-w-4xl">
         <h2 className="font-headline text-3xl md:text-4xl text-glow mb-4 text-center">Research & Publications</h2>
-        <div className="w-full flex-grow flex flex-col min-h-0">
-          <div className="flex-grow overflow-y-auto pr-2 space-y-3">
-            {researchPapers.map((paper, index) => (
-              <Card key={index} className="bg-card/70 backdrop-blur-sm border-primary/20">
-                <CardHeader className="p-4">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
-                    <div className="flex-grow">
-                      <CardTitle className="text-base md:text-lg text-foreground">{paper.title}</CardTitle>
-                      <CardDescription className="text-muted-foreground mt-1 text-xs md:text-sm">{paper.publication}</CardDescription>
-                    </div>
-                    <Button asChild variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed self-start sm:self-auto" disabled={!paper.isPublished}>
-                      <a href={paper.isPublished ? paper.link : undefined} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        {paper.isPublished ? 'View Paper' : 'Pending'}
-                      </a>
-                    </Button>
+        <div className="w-full space-y-3">
+          {researchPapers.map((paper, index) => (
+            <Card key={index} className="bg-card/70 backdrop-blur-sm border-primary/20">
+              <CardHeader className="p-4">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+                  <div className="flex-grow">
+                    <CardTitle className="text-base md:text-lg text-foreground">{paper.title}</CardTitle>
+                    <CardDescription className="text-muted-foreground mt-1 text-xs md:text-sm">{paper.publication}</CardDescription>
                   </div>
-                </CardHeader>
-                <CardContent className="p-4 pt-0">
-                  <p className="text-muted-foreground mb-3 text-xs md:text-sm">{paper.summary}</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {paper.tags.map(tag => (
-                      <Badge key={tag} variant="secondary">{tag}</Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-3">
-            <Button variant="outline" className="bg-card/70 backdrop-blur-sm border-dashed border-primary/50 text-primary/80 cursor-not-allowed hover:bg-primary/10 hover:text-primary transition-colors">
-              <Plus className="mr-2 h-4 w-4" />
-              More Research Incoming...
-            </Button>
-          </div>
+                  <Button asChild variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed self-start sm:self-auto" disabled={!paper.isPublished}>
+                    <a href={paper.isPublished ? paper.link : undefined} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      {paper.isPublished ? 'View Paper' : 'Pending'}
+                    </a>
+                  </Button>
+                </div>
+              </CardHeader>
+              <CardContent className="p-4 pt-0">
+                <p className="text-muted-foreground mb-3 text-xs md:text-sm">{paper.summary}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {paper.tags.map(tag => (
+                    <Badge key={tag} variant="secondary">{tag}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        <div className="text-center mt-3">
+          <Button variant="outline" className="bg-card/70 backdrop-blur-sm border-dashed border-primary/50 text-primary/80 cursor-not-allowed hover:bg-primary/10 hover:text-primary transition-colors">
+            <Plus className="mr-2 h-4 w-4" />
+            More Research Incoming...
+          </Button>
         </div>
       </div>
     </section>
