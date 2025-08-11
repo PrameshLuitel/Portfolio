@@ -89,7 +89,7 @@ const AboutMeSection = () => {
               </div>
 
             <div>
-               <h3 className="font-headline text-xl text-primary mb-2 text-center md:text-left">Core Competencies</h3>
+               <h3 className="font-headline text-xl text-primary mt-2 mb-2 text-center md:text-left">Core Competencies</h3>
                <div className="space-y-2">
                 {aboutData.skills.map((skillGroup, index) => (
                   <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20">
