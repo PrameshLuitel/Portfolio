@@ -51,7 +51,7 @@ export const projects = [
   {
     slug: 'nepse-trading-bot',
     title: 'Nepse Trading Bot',
-    description: 'A bot that takes client code and name from an Excel sheet and places buy or sell orders within a specified price range, automating the trading workflow for PMS.',
+    description: 'A bot that takes client code and client\'s name from an excel sheet and put a buy or sell  order in the right price range whichever has been kept in the excel sheet automating the wrokflow of the traind department in the Portfolio management services.',
     longDescription: "A bot that takes client code and client's name from an excel sheet and put a buy or sell order in the right price range whichever has been kept in the excel sheet automating the wrokflow of the traind department in the Portfolio management services.",
     image: { src: 'https://placehold.co/400x300', hint: 'trading bot' },
     status: 'Utility Script',
