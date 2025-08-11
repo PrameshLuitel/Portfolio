@@ -47,10 +47,10 @@ const aboutData = {
 const AboutMeSection = () => {
   const { playHoverSound } = useSound();
   return (
-    <section id="about-me" className="scroll-section p-4 md:p-6 flex items-center justify-center min-h-screen pt-20 md:pt-16">
+    <section id="about-me" className="scroll-section p-4 md:p-6 flex items-center justify-center pt-20 md:pt-16">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
         <h2 className="font-headline text-3xl md:text-4xl text-glow mb-4 text-center">About Me</h2>
-        <div className="flex flex-col md:flex-row items-start justify-center gap-4 w-full max-w-6xl">
+        <div className="flex flex-col md:flex-row-reverse items-start justify-center gap-8 w-full max-w-6xl">
           <div className="w-full md:w-[35%] lg:w-[30%] flex flex-col items-center text-center">
             <Image
               src={aboutData.imageUrl}
@@ -71,7 +71,7 @@ const AboutMeSection = () => {
             <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-1 gap-2">
               <h3 className="font-headline text-xl text-primary text-center md:text-left">Major Highlights</h3>
               <Button asChild variant="outline" size="sm" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
-                <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download="pramesh-luitel-resume.pdf">
+                <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download>
                   <Download className="mr-2 h-4 w-4" />
                   Download My CV
                 </a>
