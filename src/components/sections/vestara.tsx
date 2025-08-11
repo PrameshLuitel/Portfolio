@@ -20,7 +20,7 @@ const VestaraSection = () => {
                 <TabsTrigger value="launch">Launch</TabsTrigger>
               </TabsList>
             </CardHeader>
-            <CardContent className="overflow-y-auto px-4 py-2 md:px-6 md:py-4 max-h-[55vh]">
+            <CardContent className="px-4 pt-0 md:px-6 md:py-4 space-y-4 max-h-[60vh] overflow-y-auto">
               <TabsContent value="vision" className="prose prose-sm md:prose-base prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
                 <h3>Vision & Market Gap</h3>
                 <p>
