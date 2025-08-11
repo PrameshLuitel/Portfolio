@@ -9,7 +9,7 @@ import { useSound } from '@/hooks/use-sound';
 
 const aboutData = {
   introduction: "A B.Com (Hons) graduate who transforms the intersection of finance, technology, and creativity into intelligent, actionable solutions. With a proven track record in building <span class='text-primary font-semibold'>full-stack analytics platforms</span>, <span class='text-primary font-semibold'>automating legacy systems</span>, and pioneering <span class='text-primary font-semibold'>AI-driven capital market research</span>, I specialize in modernizing financial operations. I am a passionate and innovative thinker dedicated to pushing the boundaries of fintech, particularly in emerging markets, through automation and applied AI. My work includes founding Project Vestara, a SaaS platform for investment banks, and publishing peer-reviewed research on sentiment-enhanced stock prediction. I am always seeking new challenges to leverage my skills in <span class='text-primary font-semibold'>predictive analytics</span>, <span class='text-primary font-semibold'>machine learning</span>, and <span class='text-primary font-semibold'>strategic digital innovation</span>.",
-  imageUrl: '/pramesh-luitel-headshot.jpg',
+  imageUrl: '/images/pramesh-luitel-headshot.jpg',
   cvUrl: 'https://drive.google.com/uc?export=download&id=1UxNWOyHX1QNOWQXf70z0-iyRWnip5f9U',
   highlights: [
     {
@@ -50,15 +50,14 @@ const AboutMeSection = () => {
     <section id="about-me" className="scroll-section p-4 md:p-8 flex items-center justify-center min-h-screen pt-20 md:pt-24">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
         <h2 className="font-headline text-4xl md:text-5xl text-glow mb-8 text-center">About Me</h2>
-        <div className="flex flex-col md:flex-row items-start justify-center gap-12 w-full max-w-7xl">
-          <div className="w-full md:w-[30%] flex flex-col items-center text-center">
+        <div className="flex flex-col lg:flex-row items-start justify-center gap-12 w-full max-w-7xl">
+          <div className="w-full lg:w-[30%] flex flex-col items-center text-center">
             <Image
               src={aboutData.imageUrl}
               alt="Pramesh Luitel Headshot"
               width={200}
               height={200}
               className="rounded-full border-4 border-primary shadow-lg mb-6"
-              
             />
             <h3 className="font-headline text-2xl text-foreground mb-4">Pramesh Luitel</h3>
              <Card className="bg-card/50 backdrop-blur-sm border-primary/20 mb-6">
@@ -68,10 +67,10 @@ const AboutMeSection = () => {
             </Card>
           </div>
 
-          <div className="w-full md:w-[70%] flex flex-col gap-8">
+          <div className="w-full lg:w-[70%] flex flex-col gap-8">
             <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-4 gap-4">
               <h3 className="font-headline text-2xl text-primary text-center md:text-left">Major Highlights</h3>
-              <Button asChild variant="outline" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound} download>
+              <Button asChild variant="outline" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
                 <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-4 w-4" />
                   Download My CV
