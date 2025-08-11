@@ -24,18 +24,18 @@ const researchPapers = [
 
 const ResearchSection = () => {
   return (
-    <section id="research" className="scroll-section p-4 md:p-8">
-      <div className="z-10 container mx-auto flex flex-col items-center justify-center h-full">
-        <h2 className="font-headline text-4xl md:text-5xl text-glow mb-8 text-center">Research & Publications</h2>
-        <div className="w-full max-w-5xl flex flex-col">
-          <div className="overflow-y-auto pr-4 space-y-6 flex-grow max-h-[70vh]">
+    <section id="research" className="scroll-section p-4 md:p-8 flex items-center justify-center">
+      <div className="z-10 container mx-auto flex flex-col items-center justify-center h-full w-full">
+        <h2 className="font-headline text-3xl md:text-4xl text-glow mb-6 text-center">Research & Publications</h2>
+        <div className="w-full max-w-4xl flex flex-col flex-grow min-h-0">
+          <div className="overflow-y-auto pr-2 space-y-4 flex-grow">
             {researchPapers.map((paper, index) => (
               <Card key={index} className="bg-card/70 backdrop-blur-sm border-primary/20">
                 <CardHeader>
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
                     <div className="flex-grow">
-                      <CardTitle className="text-xl text-foreground">{paper.title}</CardTitle>
-                      <CardDescription className="text-muted-foreground mt-1">{paper.publication}</CardDescription>
+                      <CardTitle className="text-lg text-foreground">{paper.title}</CardTitle>
+                      <CardDescription className="text-muted-foreground mt-1 text-sm">{paper.publication}</CardDescription>
                     </div>
                     <Button asChild variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed self-start sm:self-auto" disabled={!paper.isPublished}>
                       <a href={paper.isPublished ? paper.link : undefined} target="_blank" rel="noopener noreferrer">
@@ -46,7 +46,7 @@ const ResearchSection = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4">{paper.summary}</p>
+                  <p className="text-muted-foreground mb-3 text-sm">{paper.summary}</p>
                   <div className="flex flex-wrap gap-2">
                     {paper.tags.map(tag => (
                       <Badge key={tag} variant="secondary">{tag}</Badge>
@@ -56,7 +56,7 @@ const ResearchSection = () => {
               </Card>
             ))}
           </div>
-          <div className="text-center mt-6">
+          <div className="text-center mt-4">
             <Button variant="outline" className="bg-card/70 backdrop-blur-sm border-dashed border-primary/50 text-primary/80 cursor-not-allowed hover:bg-primary/10 hover:text-primary transition-colors">
               <Plus className="mr-2 h-4 w-4" />
               More Research Incoming...

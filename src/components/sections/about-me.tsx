@@ -47,41 +47,41 @@ const aboutData = {
 const AboutMeSection = () => {
   const { playHoverSound } = useSound();
   return (
-    <section id="about-me" className="scroll-section p-4 md:p-8 flex items-center justify-center min-h-screen pt-20 md:pt-24">
+    <section id="about-me" className="scroll-section p-4 md:p-6 flex items-center justify-center min-h-screen pt-20 md:pt-16">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
-        <h2 className="font-headline text-4xl md:text-5xl text-glow mb-8 text-center">About Me</h2>
-        <div className="flex flex-col md:flex-row items-start justify-center gap-8 w-full max-w-7xl">
-          <div className="w-full md:w-[30%] flex flex-col items-center text-center">
+        <h2 className="font-headline text-3xl md:text-4xl text-glow mb-6 text-center">About Me</h2>
+        <div className="flex flex-col md:flex-row items-start justify-center gap-6 w-full max-w-6xl">
+          <div className="w-full md:w-[35%] lg:w-[30%] flex flex-col items-center text-center">
             <Image
               src={aboutData.imageUrl}
               alt="Pramesh Luitel Headshot"
-              width={180}
-              height={180}
-              className="rounded-full border-4 border-primary shadow-lg mb-6"
+              width={150}
+              height={150}
+              className="rounded-full border-4 border-primary shadow-lg mb-4"
             />
-            <h3 className="font-headline text-2xl text-foreground mb-4">Pramesh Luitel</h3>
-             <Card className="bg-card/50 backdrop-blur-sm border-primary/20 mb-6">
+            <h3 className="font-headline text-xl text-foreground mb-3">Pramesh Luitel</h3>
+             <Card className="bg-card/50 backdrop-blur-sm border-primary/20 mb-4">
                 <CardContent className="p-4 text-left">
-                    <p className="text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: aboutData.introduction }} />
+                    <p className="text-xs md:text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: aboutData.introduction }} />
                 </CardContent>
             </Card>
           </div>
 
-          <div className="w-full md:w-[70%] flex flex-col gap-6">
-            <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-0 gap-4">
-              <h3 className="font-headline text-2xl text-primary text-center md:text-left">Major Highlights</h3>
-              <Button asChild variant="outline" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
-                <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download>
+          <div className="w-full md:w-[65%] lg:w-[70%] flex flex-col gap-4">
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-0 gap-3">
+              <h3 className="font-headline text-xl text-primary text-center md:text-left">Major Highlights</h3>
+              <Button asChild variant="outline" size="sm" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
+                <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download="pramesh-luitel-resume.pdf">
                   <Download className="mr-2 h-4 w-4" />
                   Download My CV
                 </a>
               </Button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 {aboutData.highlights.map((highlight, index) => (
                   <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20 text-center group">
                     <CardContent className="p-3 flex flex-col items-center justify-center gap-2">
-                      <highlight.icon className="w-6 h-6 text-primary transition-all group-hover:icon-glow" />
+                      <highlight.icon className="w-5 h-5 text-primary transition-all group-hover:icon-glow" />
                       <p className="font-bold text-xs text-center">{highlight.title}</p>
                     </CardContent>
                   </Card>
@@ -89,22 +89,22 @@ const AboutMeSection = () => {
               </div>
 
             <div>
-               <h3 className="font-headline text-2xl text-primary mb-4 text-center md:text-left">Core Competencies</h3>
-               <div className="space-y-4">
+               <h3 className="font-headline text-xl text-primary mb-3 text-center md:text-left">Core Competencies</h3>
+               <div className="space-y-3">
                 {aboutData.skills.map((skillGroup, index) => (
                   <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20">
-                    <CardHeader className="p-3 md:p-4 pb-2">
-                      <CardTitle className="flex items-center gap-3 text-lg">
-                        <skillGroup.icon className="w-6 h-6 text-primary icon-glow" />
+                    <CardHeader className="p-3 pb-2">
+                      <CardTitle className="flex items-center gap-3 text-base">
+                        <skillGroup.icon className="w-5 h-5 text-primary icon-glow" />
                         {skillGroup.category}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="p-3 pt-1 md:p-4 md:pt-2">
-                      <div className="flex flex-wrap gap-2 justify-start">
+                    <CardContent className="p-3 pt-1">
+                      <div className="flex flex-wrap gap-1.5 justify-start">
                         {skillGroup.items.map(item => (
                             <div 
                                 key={item} 
-                                className="text-xs text-center font-medium px-3 py-1.5 rounded-full bg-secondary/50 border border-primary/20 text-foreground transition-all hover:bg-primary/20 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 cursor-default"
+                                className="text-xs text-center font-medium px-2.5 py-1 rounded-full bg-secondary/50 border border-primary/20 text-foreground transition-all hover:bg-primary/20 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 cursor-default"
                                 onMouseEnter={playHoverSound}
                             >
                                 {item}

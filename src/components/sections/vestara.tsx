@@ -6,10 +6,10 @@ import { Button } from '@/components/ui/button';
 
 const VestaraSection = () => {
   return (
-    <section id="vestara" className="scroll-section p-4 md:p-8">
+    <section id="vestara" className="scroll-section p-4 md:p-8 flex items-center justify-center">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
-        <h2 className="font-headline text-4xl md:text-5xl text-glow mb-2 text-center">Flagship Project: Vestara GPT</h2>
-        <p className="text-muted-foreground mb-8">The future of investment strategy, powered by proprietary AI.</p>
+        <h2 className="font-headline text-3xl md:text-4xl text-glow mb-2 text-center">Flagship Project: Vestara GPT</h2>
+        <p className="text-muted-foreground mb-6">The future of investment strategy, powered by proprietary AI.</p>
         <Card className="w-full max-w-5xl bg-card/70 backdrop-blur-sm border-primary/20">
           <Tabs defaultValue="vision" className="w-full">
             <CardHeader className="p-4 md:p-6">
@@ -20,7 +20,7 @@ const VestaraSection = () => {
                 <TabsTrigger value="launch">Launch</TabsTrigger>
               </TabsList>
             </CardHeader>
-            <CardContent className="overflow-y-auto px-4 py-2 md:px-6 md:py-4 min-h-[400px]">
+            <CardContent className="overflow-y-auto px-4 py-2 md:px-6 md:py-4 max-h-[55vh]">
               <TabsContent value="vision" className="prose prose-sm md:prose-base prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-primary">
                 <h3>Vision & Market Gap</h3>
                 <p>
@@ -53,7 +53,7 @@ const VestaraSection = () => {
                   The insights and skills that power Vestara's vision were honed through my experience pioneering AI-first solutions and building tools like 'Portfolio Pulse,'. At Global Ime Capital Limited I gained firsthand insight into the operational bottlenecks Vestara is designed to solve. This unique blend of academic rigor, technical execution, and strategic foresight is what defines my role and the future of Vestara.
                 </p>
               </TabsContent>
-              <TabsContent value="launch" className="flex flex-col items-center justify-center h-full text-center gap-8 min-h-[400px]">
+              <TabsContent value="launch" className="flex flex-col items-center justify-center text-center gap-6 py-8">
                  <div className="z-10 flex flex-col items-center">
                     <h3 className="font-headline text-2xl text-primary mb-4">Project Launch</h3>
                     <p className="text-muted-foreground mb-6 max-w-md mx-auto">
@@ -67,13 +67,6 @@ const VestaraSection = () => {
               </TabsContent>
             </CardContent>
           </Tabs>
-          <div className="flex flex-wrap items-center justify-between text-xs text-muted-foreground p-4 border-t border-primary/20 gap-4">
-            <span>Expected Rollout: Q3 2025</span>
-            <Button variant="outline" size="sm" disabled>
-              <Rocket className="mr-2 h-4 w-4" />
-              Launch Vestara (Pending)
-            </Button>
-          </div>
         </Card>
       </div>
     </section>
