@@ -17,7 +17,7 @@ export const projects = [
     title: 'MeroShare Automation',
     description: "Automated MeroShare's operations like IPO applications, eDIS completions, and verification workflows to enhance efficiency.",
     longDescription: "A suite of automation scripts designed to streamline tedious and repetitive tasks on the MeroShare platform, which is central to the Nepalese stock market. These scripts handle applying for IPOs, completing eDIS (Electronic Delivery Instruction Slip), and creating verification workflows for these critical processes. The project significantly reduces manual effort and minimizes the potential for human error.",
-    image: { src: '/images/meroshare-automation.png', hint: 'automation robot' },
+    image: { src: '/images/meroshare.png', hint: 'automation robot' },
     status: 'Personal Project',
     technologies: ['Python', 'Selenium', 'Automation Scripts'],
     features: ['Automated IPO application', 'Automated eDIS completion', 'Custom verification workflows', 'Error handling and logging'],
