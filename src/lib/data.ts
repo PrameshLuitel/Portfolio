@@ -53,7 +53,7 @@ export const projects = [
     title: 'Nepse Trading Bot',
     description: 'A bot that takes client code and client\'s name from an excel sheet and put a buy or sell  order in the right price range whichever has been kept in the excel sheet automating the wrokflow of the traind department in the Portfolio management services.',
     longDescription: "A bot that takes client code and client's name from an excel sheet and put a buy or sell order in the right price range whichever has been kept in the excel sheet automating the wrokflow of the traind department in the Portfolio management services.",
-    image: { src: 'https://placehold.co/400x300', hint: 'trading bot' },
+    image: { src: '/images/tms.png', hint: 'trading bot' },
     status: 'Utility Script',
     technologies: ['Python', 'Automation', 'Pandas', 'Selenium'],
     features: ['Automated order placement', 'Reads from Excel', 'Price range validation', 'Workflow automation'],
@@ -72,7 +72,7 @@ export const researchPapers = [
     isPublished: false,
   },
   {
-    title: 'Market Oscillations and Predictive Analytics: AI-Driven Insights into Nepalese Stock Market’s Indices and its Sub-Indices',
+    title: 'Market Oscillations and Predictive Analytics: AI-Driven Insights into Nepse Stock Market’s Indices and its Sub-Indices',
     publication: "Published on SSRN | Top Downloads in Emerging & Asian Markets",
     link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5030130',
     tags: ['Predictive Analytics', 'LSTM', 'Time-Series Forecasting', 'NEPSE', 'SSRN'],
