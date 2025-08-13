@@ -21,7 +21,7 @@ export const projects = [
     status: 'Personal Project',
     technologies: ['Python', 'Selenium', 'Automation Scripts'],
     features: ['Automated IPO application', 'Automated eDIS completion', 'Custom verification workflows', 'Error handling and logging'],
-    liveLink: null,
+    liveLink: 'https://www.youtube.com/watch?v=Ts_Ks0hKWPo',
     githubLink: 'https://github.com/PrameshLuitel/MeroShare-Automation',
   },
   {
