@@ -28,11 +28,11 @@ export const projects = [
     slug: 'auto-form-filler-pms',
     title: 'Auto Form Filler App for PMS',
     description: 'A utility script that automates filling Portfolio Management Services (PMS) forms, saving time and reducing data entry errors.',
-    longDescription: 'Developed a custom script to automate the tedious process of filling out Portfolio Management Services (PMS) forms for merchant banking clients. By mapping spreadsheet data to form fields, this utility significantly reduces manual data entry time and minimizes errors, ensuring accuracy and efficiency in the client onboarding process.',
+    longDescription: 'Developed at Global IME Capital Limited, this desktop application automates the PMS onboarding process, reducing the time required from over 2 hours per client to under 5 minutes—a 96% reduction in processing time. The tool has evolved from a CLI into a user-friendly GUI application with PyQt6, featuring both dark and light themes for accessibility. The Python-based solution uses pandas for data handling and PyMuPDF/PyPDF2 for precise PDF form filling, showcasing a significant improvement in operational efficiency through targeted automation.',
     image: { src: '/images/form.png', hint: 'digital form' },
     status: 'Utility Script',
-    technologies: ['Python', 'Pandas', 'OpenPyXL'],
-    features: ['Automated form population', 'Data mapping from Excel', 'Error reduction', 'Batch processing'],
+    technologies: ['Python', 'Pandas', 'OpenPyXL', 'PyQt6', 'PyMuPDF', 'PyPDF2'],
+    features: ['Automated PDF form population', 'Evolved from CLI to GUI', '96% reduction in client onboarding time', 'Light & Dark theme support'],
     liveLink: null,
     githubLink: null,
   },
@@ -58,7 +58,7 @@ export const projects = [
     technologies: ['Python', 'Automation', 'Pandas', 'Selenium'],
     features: ['Automated order placement', 'Reads from Excel', 'Price range validation', 'Workflow automation'],
     liveLink: null,
-    githubLink: '#',
+githubLink: '#',
   },
 ];
 
