@@ -12,7 +12,7 @@ const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn' },
   { icon: Github, href: 'https://github.com/PrameshLuitel', label: 'GitHub' },
   { icon: Mail, href: 'mailto:luitelpramesh@gmail.com', label: 'Email' },
-  { icon: FileText, href: 'https://drive.google.com/uc?export=download&id=1UxNWOyHX1QNOWQXf70z0-iyRWnip5f9U', label: 'CV' },
+  { icon: FileText, href: 'https://drive.google.com/uc?export=download&id=1PY3-9VC9wAUVdzM5iyWciKlkx4n1J7uD', label: 'CV' },
 ]
 
 const ContactSection = () => {
