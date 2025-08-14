@@ -158,9 +158,9 @@ const Navbar = () => {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <Link href="/" className="flex flex-col">
-              <span className="text-xl font-bold text-foreground leading-tight">Pramesh Luitel</span>
-              <span className="text-xs text-muted-foreground leading-tight hidden sm:block">Creative Solutions to Eliminate Inefficiency</span>
+            <Link href="/" className="flex items-baseline gap-2">
+              <span className="text-xl font-bold text-foreground">Pramesh Luitel</span>
+              <span className="text-xs text-muted-foreground hidden lg:block">| Creative Solutions to Eliminate Inefficiency</span>
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-1">
