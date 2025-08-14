@@ -6,6 +6,9 @@ import { ThemeProvider } from '@/components/theme-provider';
 export const metadata: Metadata = {
   title: 'Pramesh Luitel | Portfolio',
   description: 'Portfolio of Pramesh Luitel, showcasing projects and expertise in finance and technology.',
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({
