@@ -11,6 +11,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '../ui/button';
 import { Github, Link as LinkIcon } from 'lucide-react';
+import { ScrollArea } from '../ui/scroll-area';
 
 const ProjectsSection = () => {
   const plugin = React.useRef(
@@ -61,48 +62,50 @@ const ProjectsSection = () => {
                         </Card>
                       </div>
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-[600px] bg-card/80 backdrop-blur-lg">
-                      <DialogHeader>
+                    <DialogContent className="sm:max-w-[600px] bg-card/80 backdrop-blur-lg p-0">
+                      <DialogHeader className="p-6 pb-0">
                         <DialogTitle className="text-2xl font-headline text-primary">{project.title}</DialogTitle>
                         <DialogDescription>{project.status}</DialogDescription>
                       </DialogHeader>
-                      <div className="grid gap-4 py-4">
-                        <Image
-                            src={project.image.src}
-                            alt={project.title}
-                            width={600}
-                            height={400}
-                            className="rounded-md border border-primary/20 object-cover w-full h-56"
-                            data-ai-hint={project.image.hint}
-                        />
-                        <p className="text-sm text-muted-foreground">{project.longDescription}</p>
-                        <div>
-                          <h4 className="font-semibold text-foreground mb-2">Technologies Used:</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {project.technologies.map(tech => (
-                              <Badge key={tech} variant="outline">{tech}</Badge>
-                            ))}
+                      <ScrollArea className="max-h-[80vh]">
+                        <div className="grid gap-4 p-6">
+                          <Image
+                              src={project.image.src}
+                              alt={project.title}
+                              width={600}
+                              height={400}
+                              className="rounded-md border border-primary/20 object-cover w-full h-auto aspect-[4/3]"
+                              data-ai-hint={project.image.hint}
+                          />
+                          <p className="text-sm text-muted-foreground">{project.longDescription}</p>
+                          <div>
+                            <h4 className="font-semibold text-foreground mb-2">Technologies Used:</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {project.technologies.map(tech => (
+                                <Badge key={tech} variant="outline">{tech}</Badge>
+                              ))}
+                            </div>
+                          </div>
+                          <div className="flex flex-wrap gap-4 mt-4">
+                              {project.liveLink && (
+                                  <Button asChild variant="outline" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground">
+                                      <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                                          <LinkIcon className="mr-2 h-4 w-4" />
+                                          Live Demo
+                                      </a>
+                                  </Button>
+                              )}
+                              {project.githubLink && (
+                                  <Button asChild variant="outline">
+                                      <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                                          <Github className="mr-2 h-4 w-4" />
+                                          GitHub
+                                      </a>
+                                  </Button>
+                              )}
                           </div>
                         </div>
-                        <div className="flex gap-4 mt-4">
-                            {project.liveLink && (
-                                <Button asChild variant="outline" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground">
-                                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                                        <LinkIcon className="mr-2 h-4 w-4" />
-                                        Live Demo
-                                    </a>
-                                </Button>
-                            )}
-                            {project.githubLink && (
-                                <Button asChild variant="outline">
-                                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                                        <Github className="mr-2 h-4 w-4" />
-                                        GitHub
-                                    </a>
-                                </Button>
-                            )}
-                        </div>
-                      </div>
+                      </ScrollArea>
                     </DialogContent>
                   </Dialog>
                 </div>
