@@ -10,13 +10,9 @@ import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-
-// Force the page to be dynamically rendered to avoid build-time type errors.
-export const dynamic = 'force-dynamic';
 
 interface ProjectPageProps {
   params: {
