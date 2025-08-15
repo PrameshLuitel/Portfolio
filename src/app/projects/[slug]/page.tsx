@@ -7,9 +7,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ExternalLink, Github, CheckCircle } from 'lucide-react';
+import type { FC } from 'react';
 
-// This page will now be dynamically rendered
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+interface ProjectPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+const ProjectPage: FC<ProjectPageProps> = ({ params }) => {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
@@ -118,3 +124,5 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     </div>
   );
 }
+
+export default ProjectPage;
