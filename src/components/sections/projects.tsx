@@ -6,7 +6,6 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
-import Link from 'next/link';
 import { projects } from '@/lib/data';
 import Autoplay from "embla-carousel-autoplay";
 
@@ -31,7 +30,7 @@ const ProjectsSection = () => {
             {projects.map((project) => (
               <CarouselItem key={project.slug} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1 h-full">
-                  <Link href={`/projects/${project.slug}`} className="block h-full">
+                  <div className="block h-full cursor-pointer">
                     <Card className="h-full flex flex-col bg-card/70 backdrop-blur-sm border-primary/20 overflow-hidden transition-all hover:border-primary hover:shadow-lg hover:shadow-primary/20">
                       <CardHeader>
                         <CardTitle className="flex items-center justify-between">
@@ -53,7 +52,7 @@ const ProjectsSection = () => {
                         <Badge variant="secondary" className="w-full justify-center">{project.status}</Badge>
                       </CardFooter>
                     </Card>
-                  </Link>
+                  </div>
                 </div>
               </CarouselItem>
             ))}

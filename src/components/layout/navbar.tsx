@@ -22,7 +22,7 @@ const navLinks = [
     { href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn', isExternal: true, icon: Linkedin },
     { href: 'https://github.com/PrameshLuitel', label: 'GitHub', isExternal: true, icon: Github },
   ]},
-  { href: '#projects', label: 'Projects', isDropdown: true, items: projects.map(p => ({ href: `/projects/${p.slug}`, label: p.title })) },
+  { href: '#projects', label: 'Projects' },
   { href: '#research', label: 'Research' },
   { href: '#vestara', label: 'Vestara GPT' },
   { href: '#contact', label: 'Contact' },
