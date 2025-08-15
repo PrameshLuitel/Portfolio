@@ -1,12 +1,22 @@
-import { projects } from '@/lib/data';
+import type React from 'react';
 import { notFound } from 'next/navigation';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { ArrowLeft, CheckCircle, ExternalLink, Github } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { projects } from '@/lib/data';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, ExternalLink, Github, CheckCircle } from 'lucide-react';
-import type React from 'react';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+
+// Force the page to be dynamically rendered to avoid build-time type errors.
+export const dynamic = 'force-dynamic';
 
 interface ProjectPageProps {
   params: {
