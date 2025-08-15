@@ -8,13 +8,19 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ExternalLink, Github, CheckCircle } from 'lucide-react';
 
+type ProjectPageProps = {
+  params: {
+    slug: string;
+  };
+};
+
 export async function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
   }));
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
@@ -43,7 +49,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 </CardHeader>
                 <CardContent>
                   <Image
-                    src={project.image.src.startsWith('https') ? project.image.src.replace('400x300', '800x450') : project.image.src}
+                    src={project.image.src}
                     alt={project.title}
                     width={800}
                     height={450}
