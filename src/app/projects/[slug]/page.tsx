@@ -13,7 +13,7 @@ type PageProps = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export default function ProjectPage({ params }: PageProps) {
+export default async function ProjectPage({ params }: PageProps) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
