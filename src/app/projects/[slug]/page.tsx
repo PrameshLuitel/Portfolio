@@ -7,15 +7,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ExternalLink, Github, CheckCircle } from 'lucide-react';
-import type { FC } from 'react';
 
-interface ProjectPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-const ProjectPage: FC<ProjectPageProps> = ({ params }) => {
+export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
@@ -124,5 +117,3 @@ const ProjectPage: FC<ProjectPageProps> = ({ params }) => {
     </div>
   );
 }
-
-export default ProjectPage;
