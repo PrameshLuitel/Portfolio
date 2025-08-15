@@ -8,10 +8,9 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ExternalLink, Github, CheckCircle } from 'lucide-react';
 
-type ProjectPageProps = {
-  params: {
-    slug: string;
-  };
+type Props = {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
 };
 
 export async function generateStaticParams() {
@@ -20,7 +19,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default function ProjectPage({ params }: Props) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
