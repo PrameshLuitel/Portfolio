@@ -1,4 +1,3 @@
-
 import { projects } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -7,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ExternalLink, Github, CheckCircle } from 'lucide-react';
+import type React from 'react';
 
 interface ProjectPageProps {
   params: {
@@ -14,7 +14,7 @@ interface ProjectPageProps {
   };
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
@@ -122,4 +122,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </div>
     </div>
   );
-}
+};
+
+export default ProjectPage;
