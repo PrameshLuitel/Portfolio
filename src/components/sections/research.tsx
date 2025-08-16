@@ -59,7 +59,7 @@ const ResearchSection = () => {
           ))}
         </div>
         <div className="text-center mt-3">
-          <Button variant="outline" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
+          <Button variant="outline" className="text-glow bg-primary/10 border-primary border-dashed text-primary hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
             <Plus className="mr-2 h-4 w-4" />
             More Research Incoming...
           </Button>
