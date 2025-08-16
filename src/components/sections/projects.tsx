@@ -28,8 +28,8 @@ const ProjectsSection = () => {
             align: "start",
             loop: true,
           }}
-          onMouseEnter={plugin.current.stop}
-          onMouseLeave={plugin.current.play}
+          onMouseEnter={() => plugin.current.stop()}
+          onMouseLeave={() => plugin.current.play()}
           className="w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl"
         >
           <CarouselContent>
