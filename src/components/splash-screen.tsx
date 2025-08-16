@@ -49,9 +49,9 @@ const SplashScreen = ({ setIsLoading }: SplashScreenProps) => {
 
   return (
     <motion.div
+      key="splash-screen"
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, delay: 2.5 }}
+      exit={{ opacity: 0, transition: { duration: 0.5 } }}
       className={cn(
         'fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0d1a15]'
       )}
