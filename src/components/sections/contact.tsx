@@ -40,7 +40,7 @@ const ContactSection = () => {
   const CallButton = () => {
     if (isMobile) {
       return (
-        <Button asChild size="lg" className="flex-1 text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground" variant="outline" onMouseEnter={playHoverSound}>
+        <Button asChild size="lg" className="flex-1 text-glow bg-primary text-primary-foreground hover:bg-primary/90" onMouseEnter={playHoverSound}>
           <a href={`tel:${phoneNumber}`}>
               <Phone className="mr-2 h-5 w-5" />
               Call Me
@@ -52,7 +52,7 @@ const ContactSection = () => {
     return (
       <AlertDialog>
         <AlertDialogTrigger asChild>
-          <Button size="lg" className="flex-1 text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground" variant="outline" onMouseEnter={playHoverSound}>
+          <Button size="lg" className="flex-1 text-glow bg-primary text-primary-foreground hover:bg-primary/90" onMouseEnter={playHoverSound}>
             <Phone className="mr-2 h-5 w-5" />
             Call Me
           </Button>
@@ -80,7 +80,7 @@ const ContactSection = () => {
     <section id="contact" className="scroll-section p-4 md:p-8">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center gap-12 max-w-4xl text-center">
         <div>
-          <h2 className="font-headline text-4xl md:text-5xl text-glow mb-4">Connect & Collaborate</h2>
+          <h2 className="font-headline text-4xl md:text-5xl text-glow text-primary dark:text-glow mb-4">Connect & Collaborate</h2>
           <p className="text-muted-foreground mb-8 text-lg max-w-2xl mx-auto">
             Seeking opportunities to drive innovation at the intersection of finance and technology. Let's discuss how my expertise can generate value for your organization.
           </p>
@@ -93,7 +93,7 @@ const ContactSection = () => {
               contact@prameshluitel.com.np
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="flex-1 text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground" variant="outline" onMouseEnter={playHoverSound}>
+                <Button asChild size="lg" className="flex-1 text-glow bg-primary text-primary-foreground hover:bg-primary/90" onMouseEnter={playHoverSound}>
                 <a href="mailto:contact@prameshluitel.com.np">
                     <Send className="mr-2 h-5 w-5" />
                     Email Me

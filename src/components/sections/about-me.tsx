@@ -109,7 +109,7 @@ const AboutMeSection = () => {
                         {skillGroup.items.map(item => (
                             <div 
                                 key={item} 
-                                className="text-xs text-center font-medium px-2 py-0.5 rounded-full bg-secondary border border-accent/20 text-foreground transition-all hover:bg-accent/20 hover:scale-105 hover:shadow-lg hover:shadow-accent/20 cursor-default"
+                                className="text-xs text-center font-medium px-2 py-0.5 rounded-full bg-accent border border-accent/20 text-foreground transition-all hover:bg-accent/20 hover:scale-105 hover:shadow-lg hover:shadow-accent/20 cursor-default"
                                 onMouseEnter={playHoverSound}
                             >
                                 {item}
