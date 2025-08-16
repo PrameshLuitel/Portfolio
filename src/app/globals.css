@@ -43,8 +43,8 @@
     --popover: 162 75% 8%;
     --popover-foreground: 158 10% 95%;
 
-    --primary: 90 100% 50%; /* Electric Green */
-    --primary-foreground: 162 75% 8%;
+    --primary: 158 100% 22%; /* Deep Emerald Green (Subtle) */
+    --primary-foreground: 158 10% 95%;
 
     --secondary: 158 100% 18%; /* Darker Emerald for secondary elements */
     --secondary-foreground: 158 10% 95%;
@@ -60,7 +60,7 @@
 
     --border: 158 100% 18%;
     --input: 158 100% 18%;
-    --ring: 90 100% 50%;
+    --ring: 158 100% 22%;
   }
 }
 
