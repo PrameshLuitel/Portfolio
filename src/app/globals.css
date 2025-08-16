@@ -131,7 +131,7 @@
 
 @layer utilities {
   .dark .text-glow {
-    text-shadow: 0 0 8px hsl(var(--primary)), 0 0 20px hsl(var(--primary) / 0.5);
+    text-shadow: 0 0 5px hsl(var(--primary) / 0.8), 0 0 10px hsl(var(--primary) / 0.2);
   }
 
   .text-glow {
@@ -139,7 +139,7 @@
   }
 
   .dark .icon-glow {
-    filter: drop-shadow(0 0 5px hsl(var(--primary))) drop-shadow(0 0 10px hsl(var(--primary) / 0.7));
+    filter: drop-shadow(0 0 3px hsl(var(--primary))) drop-shadow(0 0 8px hsl(var(--primary) / 0.5));
   }
   
   .icon-glow {
