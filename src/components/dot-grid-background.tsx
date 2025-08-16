@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
 const DotGridBackground = () => {
@@ -53,12 +53,10 @@ const DotGridBackground = () => {
           const dist = Math.sqrt(dx * dx + dy * dy);
           
           let size = dotSize;
-          let opacity = 1;
           
           if (dist < mouseRadius) {
             const falloff = (mouseRadius - dist) / mouseRadius;
             size = dotSize + 3 * Math.sin(falloff * Math.PI); // Grow effect
-            opacity = 1 - falloff * 0.5;
           }
 
           ctx.fillStyle = colors.dot;
