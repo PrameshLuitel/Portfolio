@@ -78,7 +78,7 @@ const AboutMeSection = () => {
               </div>
             </div>
             
-            <Button asChild variant="outline" size="sm" className="w-full text-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
+            <Button asChild variant="outline" size="sm" className="w-full text-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground dark:text-primary dark:border-primary dark:hover:bg-primary dark:hover:text-primary-foreground" onMouseEnter={playHoverSound}>
               <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download>
                 <Download className="mr-2 h-4 w-4" />
                 Download My CV

@@ -26,18 +26,30 @@ const socialLinks = [
 
 const ContactSection = () => {
   const { playHoverSound } = useSound();
+  const [isMounted, setIsMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // A simple check for mobile devices.
+    setIsMounted(true);
     const userAgent = typeof window.navigator === "undefined" ? "" : navigator.userAgent;
     const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
     setIsMobile(mobile);
   }, []);
 
+
   const phoneNumber = '+977-9761774474';
 
   const CallButton = () => {
+    if (!isMounted) {
+      // Render a placeholder or null on the server and initial client render
+      return (
+        <Button size="lg" className="flex-1" disabled>
+          <Phone className="mr-2 h-5 w-5" />
+          Call Me
+        </Button>
+      );
+    }
+
     if (isMobile) {
       return (
         <Button asChild size="lg" className="flex-1 text-glow bg-primary text-primary-foreground hover:bg-primary/90" onMouseEnter={playHoverSound}>
