@@ -9,9 +9,9 @@ import { cn } from '@/lib/utils';
 
 const SplashScreen = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const [showSplash, setShowSplash] = useState(false);
+  const [showSplash, setShowSplash] = useState(true); // Default to true to prevent flash
   const [stage, setStage] = useState<'initial' | 'logo' | 'buttons' | 'closing'>('initial');
-  const [countdown, setCountdown] = useState(5);
+  const [countdown, setCountdown] = useState(10);
   const [countdownKey, setCountdownKey] = useState(0);
   const { setTheme } = useTheme();
   
@@ -29,7 +29,9 @@ const SplashScreen = () => {
   useEffect(() => {
     setIsMounted(true);
     const hasSeenSplash = localStorage.getItem('hasSeenSplash');
-    if (!hasSeenSplash) {
+    if (hasSeenSplash) {
+      setShowSplash(false);
+    } else {
       setShowSplash(true);
       setStage('logo');
     }
@@ -42,23 +44,26 @@ const SplashScreen = () => {
       }, 2500); // Wait for name animation to roughly finish
       return () => clearTimeout(timer);
     }
-    
-    if (stage === 'buttons') {
-      const timer = setInterval(() => {
-        setCountdown(prev => {
-          if (prev <= 1) {
-            clearInterval(timer);
-            handleThemeSelect('light');
-            return 0;
-          }
-          setCountdownKey(key => key + 1); // Reset animation
-          return prev - 1;
-        });
-      }, 1000);
-      return () => clearInterval(timer);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stage]);
+
+  // New useEffect to handle countdown logic safely
+  useEffect(() => {
+    if (stage !== 'buttons') return;
+
+    if (countdown <= 0) {
+      handleThemeSelect('light');
+      return;
+    }
+
+    const timer = setInterval(() => {
+      setCountdown(prev => prev - 1);
+      setCountdownKey(key => key + 1); // Reset animation for the number
+    }, 1000);
+
+    return () => clearInterval(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stage, countdown]);
+
 
   const handleThemeSelect = (theme: 'light' | 'dark') => {
     if (stage === 'closing') return;
