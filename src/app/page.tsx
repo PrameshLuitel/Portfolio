@@ -12,6 +12,7 @@ import ResearchSection from '@/components/sections/research';
 import VestaraSection from '@/components/sections/vestara';
 import SplashScreen from '@/components/splash-screen';
 import StartupSound from '@/components/startup-sound';
+import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -26,7 +27,9 @@ export default function Home() {
 
   return (
     <>
-      <SplashScreen setIsLoading={setIsLoading} />
+      <AnimatePresence>
+        {isLoading && <SplashScreen setIsLoading={setIsLoading} />}
+      </AnimatePresence>
       {!isLoading && (
         <>
           <StartupSound />

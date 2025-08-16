@@ -3,6 +3,7 @@
 
 import { useEffect, useState, useMemo } from 'react';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 interface SplashScreenProps {
   setIsLoading: (loading: boolean) => void;
@@ -10,8 +11,6 @@ interface SplashScreenProps {
 
 const SplashScreen = ({ setIsLoading }: SplashScreenProps) => {
   const [isMounted, setIsMounted] = useState(false);
-  const [showSplash, setShowSplash] = useState(true);
-  const [isClosing, setIsClosing] = useState(false);
   
   const name = "Pramesh Luitel";
   const letters = useMemo(() => name.split('').map((char, index) => (
@@ -26,46 +25,56 @@ const SplashScreen = ({ setIsLoading }: SplashScreenProps) => {
 
   useEffect(() => {
     setIsMounted(true);
+    
+    const closeTimer = setTimeout(() => {
+      // Allow framer-motion to animate out
+      localStorage.setItem('hasSeenSplash', 'true');
+      setIsLoading(false);
+    }, 3000); // Total splash screen duration
+
+    return () => clearTimeout(closeTimer);
+
+  }, [setIsLoading]);
+
+  useEffect(() => {
     const hasSeenSplash = localStorage.getItem('hasSeenSplash');
     if (hasSeenSplash) {
-      setShowSplash(false);
       setIsLoading(false);
-    } else {
-      setShowSplash(true);
-      const closeTimer = setTimeout(() => {
-        setIsClosing(true);
-        localStorage.setItem('hasSeenSplash', 'true');
-        // Wait for fade-out animation to complete
-        setTimeout(() => {
-            setShowSplash(false);
-            setIsLoading(false);
-        }, 500);
-      }, 3000); // Total splash screen duration
-
-      return () => clearTimeout(closeTimer);
     }
   }, [setIsLoading]);
 
-  if (!isMounted || !showSplash) {
+  if (!isMounted) {
     return null;
   }
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5, delay: 2.5 }}
       className={cn(
-        'fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0d1a15] transition-opacity duration-500',
-        isClosing ? 'animate-fade-out' : 'animate-fade-in'
+        'fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0d1a15]'
       )}
     >
       <div className="text-center">
-        <h1 className="font-headline text-5xl md:text-7xl text-white mb-4">
+        <motion.h1 
+          layoutId="main-logo"
+          className="font-headline text-5xl md:text-7xl text-white mb-4"
+          transition={{
+            type: 'spring',
+            stiffness: 70,
+            damping: 20,
+            duration: 1.5,
+            delay: 1.5
+          }}
+        >
           {letters}
-        </h1>
+        </motion.h1>
         <p className="splash-subtitle text-muted-foreground text-sm md:text-base">
           Creative Solutions to Eliminate Inefficiency
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
