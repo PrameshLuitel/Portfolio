@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
-    apple: '/icon.png', // Apple touch icons can still be PNG
+    apple: '/icon.png',
   },
 };
 
@@ -21,14 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* The metadata object above handles the icon linking automatically in Next.js 13+ */}
-        {/* The link tags below are for extra compatibility and to be explicit */}
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
         <link rel="apple-touch-icon" href="/icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+        <link rel="author" href="/humans.txt" />
+        <link rel="llms" href="/LLMs.txt" />
       </head>
       <body className="font-body antialiased bg-background">
         <ThemeProvider

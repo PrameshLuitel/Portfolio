@@ -1,0 +1,6 @@
+# For all web crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://prameshluitel.com.np/sitemap.xml

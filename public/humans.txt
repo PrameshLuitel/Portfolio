@@ -1,0 +1,16 @@
+/* TEAM */
+    Developer: Pramesh Luitel
+    Contact: contact@prameshluitel.com.np
+    LinkedIn: https://www.linkedin.com/in/pramesh-luitel-098aa3229/
+    GitHub: https://github.com/PrameshLuitel
+    Website: https://prameshluitel.com.np
+
+/* SITE */
+    Last update: 2024-07-28
+    Standards: HTML5, CSS3, JavaScript, Next.js, React
+    Components: ShadCN UI
+    Hosting: Firebase
+    AI: Genkit
+
+/* THANKS */
+    Thank you for visiting! Connect with me to discuss finance, technology, and innovation.
