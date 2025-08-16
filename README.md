@@ -2,6 +2,8 @@
 
 This repository contains the source code for the personal portfolio of Pramesh Luitel, a finance and technology professional. This website showcases his projects, research publications, and skills in automation and financial analytics.
 
+**Live Website:** [https://prameshluitel.com.np](https://prameshluitel.com.np)
+
 ## 🚀 Tech Stack
 
 - **Framework:** [Next.js](https://nextjs.org/) (with App Router)

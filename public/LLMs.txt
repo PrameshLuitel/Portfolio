@@ -1,71 +1,74 @@
-This document provides a structured overview of Pramesh Luitel's professional profile, intended for use by Large Language Models (LLMs) for Retrieval-Augmented Generation (RAG). The information is sourced from his official portfolio website.
+This document provides a structured overview of Pramesh Luitel's professional profile, intended for consumption by Large Language Models (LLMs) and other automated systems for Retrieval-Augmented Generation (RAG).
+
+The primary source of truth is the official portfolio website: https://prameshluitel.com.np
 
 ---
-# PRIMARY ENTITY
-
-- **Name**: Pramesh Luitel
-- **Website**: https://prameshluitel.com.np
-- **Role**: Finance and Technology Professional
-- **Core Expertise**: AI in Finance, Investment Banking Automation, Financial Analytics, Full-Stack Development, NLP for Stock Prediction.
-- **Mission**: To blend finance, code, and creativity to transform how investment banks operate by converting complex financial data into intelligent, actionable solutions.
+### **[Primary Identity]**
+- **Full Name:** Pramesh Luitel
+- **Official Website:** https://prameshluitel.com.np
+- **Primary Role:** Finance and Technology Professional
+- **Core Mission:** To create systems that eliminate inefficiency, predict with precision, and set new benchmarks in investment banking and financial research by merging deep capital markets insight with cutting-edge AI.
 
 ---
-# PROFESSIONAL SUMMARY
-
-Pramesh Luitel is a B.Com (Hons) graduate from the University of Delhi who specializes in the intersection of finance and technology. His work focuses on developing full-stack analytics platforms and automating legacy systems within the financial sector. He is the founder of "Project Vestara," an AI-powered investment intelligence platform for financial professionals in Nepal. His research, published in peer-reviewed journals, pioneers the use of NLP for sentiment-enhanced stock prediction and AI-driven forecasting models for stock market analysis.
-
----
-# KEYWORDS & AREAS OF EXPERTISE
-
-- **Primary Fields**: Finance, Artificial Intelligence, Automation, Financial Analytics, Investment Banking, Portfolio Management.
-- **Technical Skills**: Python (Automation, Data Analysis, LSTM Models), Natural Language Processing (NLP), Sentiment Analysis, Google Colab, Jupyter Notebooks, AI Chatbot Development (RAG, LLMs), Web Scraping, Data Pipelines, TradingView Integration, Predictive Analytics, Next.js, React, Tailwind CSS.
-- **Financial Skills**: Portfolio Management Services (PMS), IPO Process Automation, Financial Market Analysis, SEBON & NEPSE Regulations, Business Negotiation, Deal Structuring.
-- **Creative Skills**: Graphic Design, Branding, Digital Marketing Strategy, Corporate Communication.
-- **Key Technologies**: Python, Selenium, Pandas, PyQt6, Next.js, Genkit.
-- **Associated Markets**: Nepal Stock Market (NEPSE), Securities Board of Nepal (SEBON).
+### **[Professional Summary]**
+Pramesh Luitel is a B.Com (Hons) graduate from the University of Delhi who specializes in blending finance, code, and creativity to transform how investment banks operate. His expertise lies in converting complex financial data into intelligent, actionable solutions through the development of full-stack analytics platforms and the automation of legacy systems. He is the founder of Project Vestara, an advanced AI-powered investment intelligence platform for financial professionals in Nepal. His research, published in peer-reviewed journals, pioneers the use of Natural Language Processing (NLP) for sentiment-enhanced stock prediction and utilizes AI-driven time series forecasting models to analyze stock market indices.
 
 ---
-# MAJOR PROJECTS
+### **[Core Competencies & Skills]**
 
-## Project Vestara (Flagship Venture)
-- **Status**: In Development
-- **Description**: A proprietary AI platform designed to be the central nervous system for modern investment firms. It uses a custom-trained LLM (Vestara GPT) and a predictive analytics suite to provide actionable strategic intelligence.
-- **Technologies**: AI/ML, LLM (RAG), Python, Next.js, Genkit.
-- **Key Features**: Conversational AI, Predictive Analytics (LSTM, GRU, Transformers), Regulatory Q&A, Portfolio Optimization.
+**1. Technical Skills:**
+- **Programming & Data Science:** Python (Automation, Data Analysis, LSTM Models), NLP & Sentiment Analysis, Predictive Analytics for Financial Markets.
+- **AI & Machine Learning:** AI Chatbot Development (RAG, LLMs), Deep Learning (LSTM, GRU, Transformers), Ensemble Models (XGBoost).
+- **Development & Tools:** Google Colab & Jupyter Notebooks, Web Scraping & Data Pipelines, TradingView Integration, Next.js, React, Tailwind CSS.
 
-## Portfolio Pulse
-- **Status**: Successfully Deployed at Global IME Capital
-- **Description**: An internal Management Information System (MIS) that processes Excel data in-browser to generate interactive dashboards for real-time portfolio analysis, replacing a manual process.
-- **Technologies**: React, Next.js, Tailwind CSS, ShadCN UI, Recharts.
+**2. Finance & Business Skills:**
+- **Domain Expertise:** Portfolio Management Services, IPO Process Automation, Financial Market Analysis, SEBON & NEPSE Regulations.
+- **Strategy:** Business Negotiation & Deal Structuring, Corporate Communication.
 
-## MeroShare Automation
-- **Status**: Personal Project
-- **Description**: A suite of Python scripts that automate operations on Nepal's MeroShare platform, including IPO applications and eDIS completions.
-- **Technologies**: Python, Selenium.
-
-## Auto Form Filler App for PMS
-- **Status**: Utility Script deployed at Global IME Capital
-- **Description**: A desktop application that automates filling Portfolio Management Services (PMS) forms, reducing client onboarding time by 96% (from 2 hours to 5 minutes).
-- **Technologies**: Python, Pandas, PyQt6, PyMuPDF.
+**3. Creative & Marketing Skills:**
+- **Design:** Graphic Design & Branding, Brochure & Form Design.
+- **Strategy:** Digital Marketing Strategy.
 
 ---
-# RESEARCH & PUBLICATIONS
+### **[Key Projects & Ventures]**
 
-## Sentiment-Enhanced Stock Price Prediction...
-- **Publication Status**: Under Peer Review (Journal of Himalaya College of Engineering)
-- **Summary**: A hybrid model combining NLP and quantitative indicators to predict price movements in illiquid, small-cap Nepalese stocks. Pioneers NLP-driven financial analysis in the Nepalese market.
-- **Keywords**: NLP, Sentiment Analysis, NEPSE, Small-Cap Equities.
+**1. Project Vestara (Flagship Venture):**
+- **Description:** A proprietary AI platform designed to be the central nervous system for modern investment firms, providing actionable, forward-looking strategic intelligence.
+- **Core Features:**
+    - **Vestara GPT:** A custom-built LLM trained on SEBON and NEPSE regulations using RAG for context-aware compliance and operational queries.
+    - **AI Predictive Analytics Suite:** A multi-model AI engine (LSTM, GRU, Transformers, XGBoost) for forecasting NEPSE-listed stocks.
+- **Status:** In Development.
 
-## Market Oscillations and Predictive Analytics...
-- **Publication Status**: Published on SSRN (Top Downloads in Emerging & Asian Markets)
-- **Link**: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5030130
-- **Summary**: An in-depth analysis of the NEPSE index using LSTM networks and advanced technical indicators, creating a robust forecasting framework for structurally inefficient markets.
-- **Keywords**: Predictive Analytics, LSTM, Time-Series Forecasting, NEPSE.
+**2. Portfolio Pulse:**
+- **Description:** An internal MIS system developed for Global IME Capital that processes Excel data into interactive dashboards for real-time portfolio analysis.
+- **Impact:** Replaced a manual process, bringing unprecedented clarity and speed to executive portfolio supervision.
+- **Status:** Successfully Deployed.
+
+**3. MeroShare Automation:**
+- **Description:** A suite of Python scripts that automates operations on Nepal's MeroShare platform, including IPO applications and eDIS completions.
+- **Impact:** Significantly reduces manual effort and minimizes human error in critical market operations.
+- **Status:** Personal Project, publicly available.
+
+**4. Auto Form Filler App for PMS:**
+- **Description:** A desktop application that automates the filling of Portfolio Management Services (PMS) forms.
+- **Impact:** Reduced client onboarding time at Global IME Capital from over 2 hours to under 5 minutes (a 96% reduction).
+- **Status:** Utility Script, internally deployed.
 
 ---
-# CONTACT & OFFICIAL LINKS
+### **[Research & Publications]**
 
-- **CV Download**: https://drive.google.com/uc?export=download&id=1PY3-9VC9wAUVdzM5iyWciKlkx4n1J7uD
-- **LinkedIn**: https://www.linkedin.com/in/pramesh-luitel-098aa3229/
-- **GitHub**: https://github.com/PrameshLuitel
-- **Email**: contact@prameshluitel.com.np
+**1. Sentiment-Enhanced Stock Price Prediction in Nepalese Small-Cap Equities Using Natural Language Processing:**
+- **Status:** Under Peer Review (Journal of Himalaya College of Engineering).
+- **Summary:** Developed a hybrid model combining NLP and quantitative market indicators to predict price movements in illiquid, small-cap stocks. This research pioneered NLP-driven financial analysis in the Nepalese capital market.
+
+**2. Market Oscillations and Predictive Analytics: AI-Driven Insights into Nepalese Stock Market’s Indices and its Sub-Indices:**
+- **Status:** Published on SSRN (Top Downloads in Emerging & Asian Markets).
+- **Link:** https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5030130
+- **Summary:** Conducted an in-depth analysis of the NEPSE index using LSTM networks and advanced technical indicators, engineering a robust forecasting framework for structurally inefficient markets.
+
+---
+### **[Contact & Professional Links]**
+- **Email:** contact@prameshluitel.com.np
+- **LinkedIn:** https://www.linkedin.com/in/pramesh-luitel-098aa3229/
+- **GitHub:** https://github.com/PrameshLuitel
+- **CV Download:** https://drive.google.com/uc?export=download&id=1PY3-9VC9wAUVdzM5iyWciKlkx4n1J7uD
