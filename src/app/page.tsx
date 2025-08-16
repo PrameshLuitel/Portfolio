@@ -1,3 +1,4 @@
+
 "use client";
 
 import DotGridBackground from '@/components/dot-grid-background';
@@ -11,29 +12,37 @@ import ResearchSection from '@/components/sections/research';
 import VestaraSection from '@/components/sections/vestara';
 import SplashScreen from '@/components/splash-screen';
 import StartupSound from '@/components/startup-sound';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     // Ensure the page starts at the top
-    window.scrollTo(0, 0);
-  }, []);
+    if (!isLoading) {
+      window.scrollTo(0, 0);
+    }
+  }, [isLoading]);
 
   return (
     <>
-      <SplashScreen />
-      <StartupSound />
-      <DotGridBackground />
-      <Navbar />
-      <main className="scroll-container">
-        <HeroSection />
-        <AboutMeSection />
-        <ProjectsSection />
-        <ResearchSection />
-        <VestaraSection />
-        <ContactSection />
-        <Footer />
-      </main>
+      <SplashScreen setIsLoading={setIsLoading} />
+      {!isLoading && (
+        <>
+          <StartupSound />
+          <DotGridBackground />
+          <Navbar />
+          <main className="scroll-container">
+            <HeroSection />
+            <AboutMeSection />
+            <ProjectsSection />
+            <ResearchSection />
+            <VestaraSection />
+            <ContactSection />
+            <Footer />
+          </main>
+        </>
+      )}
     </>
   );
 }

@@ -1,15 +1,19 @@
 
 "use client";
 
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useCallback } from 'react';
 import { useTheme } from 'next-themes';
 import { Sun, Moon } from 'lucide-react';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
 
-const SplashScreen = () => {
+interface SplashScreenProps {
+  setIsLoading: (loading: boolean) => void;
+}
+
+const SplashScreen = ({ setIsLoading }: SplashScreenProps) => {
   const [isMounted, setIsMounted] = useState(false);
-  const [showSplash, setShowSplash] = useState(true); // Default to true to prevent flash
+  const [showSplash, setShowSplash] = useState(true);
   const [stage, setStage] = useState<'initial' | 'logo' | 'buttons' | 'closing'>('initial');
   const [countdown, setCountdown] = useState(10);
   const [countdownKey, setCountdownKey] = useState(0);
@@ -31,11 +35,12 @@ const SplashScreen = () => {
     const hasSeenSplash = localStorage.getItem('hasSeenSplash');
     if (hasSeenSplash) {
       setShowSplash(false);
+      setIsLoading(false);
     } else {
       setShowSplash(true);
       setStage('logo');
     }
-  }, []);
+  }, [setIsLoading]);
 
   useEffect(() => {
     if (stage === 'logo') {
@@ -46,7 +51,18 @@ const SplashScreen = () => {
     }
   }, [stage]);
 
-  // New useEffect to handle countdown logic safely
+  const handleThemeSelect = useCallback((theme: 'light' | 'dark') => {
+    if (stage === 'closing') return;
+    setTheme(theme);
+    setStage('closing');
+    localStorage.setItem('hasSeenSplash', 'true');
+    setTimeout(() => {
+        setShowSplash(false);
+        setIsLoading(false);
+    }, 500); // Corresponds to fade-out animation
+  }, [setTheme, stage, setIsLoading]);
+
+
   useEffect(() => {
     if (stage !== 'buttons') return;
 
@@ -61,20 +77,7 @@ const SplashScreen = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stage, countdown]);
-
-
-  const handleThemeSelect = (theme: 'light' | 'dark') => {
-    if (stage === 'closing') return;
-    setTheme(theme);
-    setStage('closing');
-    localStorage.setItem('hasSeenSplash', 'true');
-    // Hide splash screen after fade out animation
-    setTimeout(() => {
-        setShowSplash(false);
-    }, 500);
-  };
+  }, [stage, countdown, handleThemeSelect]);
 
   if (!isMounted || !showSplash) {
     return null;
