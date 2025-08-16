@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Download, FileText, Zap, Briefcase, Code, BarChart, Palette } from 'lucide-react';
 import { useSound } from '@/hooks/use-sound';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { ScrollArea } from '../ui/scroll-area';
 
 const aboutData = {
   introduction: "I specialize in blending finance, code, and creativity to transform investment banking operations. My expertise lies in converting complex financial data into intelligent, actionable solutions through full-stack analytics platforms and automating legacy systems.",
@@ -29,7 +29,6 @@ const aboutData = {
   skills: [
     {
       icon: Code,
-      value: "technical",
       category: 'Technical Skills',
       subCategories: [
         {
@@ -44,7 +43,6 @@ const aboutData = {
     },
     {
       icon: BarChart,
-      value: "finance",
       category: 'Finance & Business Skills',
       subCategories: [
          {
@@ -59,7 +57,6 @@ const aboutData = {
     },
     {
       icon: Palette,
-      value: "creative",
       category: 'Creative & Marketing Skills',
       subCategories: [
         {
@@ -117,46 +114,45 @@ const AboutMeSection = () => {
           
           {/* Right Column */}
           <div className="lg:col-span-2">
-             <Tabs defaultValue="technical" className="w-full">
-              <TabsList className="grid w-full grid-cols-3">
-                {aboutData.skills.map((skillGroup) => (
-                  <TabsTrigger key={skillGroup.value} value={skillGroup.value} className="gap-2">
-                    <skillGroup.icon className="w-4 h-4" />
-                    <span className="hidden sm:inline">{skillGroup.category}</span>
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-                {aboutData.skills.map((skillGroup) => (
-                  <TabsContent key={skillGroup.value} value={skillGroup.value}>
-                    <Card className="bg-card/50 backdrop-blur-sm border-border h-[400px]">
-                      <CardHeader>
-                        <CardTitle className="flex items-center gap-2 text-xl text-primary">
-                           <skillGroup.icon className="w-5 h-5" />
-                           {skillGroup.category}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="space-y-4">
-                        {skillGroup.subCategories.map(subCategory => (
-                          <div key={subCategory.title}>
-                            <h4 className="font-semibold text-base text-foreground mb-2">{subCategory.title}</h4>
-                            <div className="flex flex-wrap gap-2 justify-start">
-                              {subCategory.items.map(item => (
-                                  <div 
-                                      key={item} 
-                                      className="text-xs text-center font-medium px-2 py-1 rounded-full bg-accent border border-border text-foreground transition-all hover:bg-primary/20 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 cursor-default hover:text-glow"
-                                      onMouseEnter={playHoverSound}
-                                  >
-                                      {item}
-                                  </div>
-                              ))}
-                            </div>
+             <Card className="bg-card/50 backdrop-blur-sm border-border h-[400px]">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-xl text-primary">
+                      Core Competencies
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[320px] pr-4">
+                    <div className="space-y-6">
+                      {aboutData.skills.map((skillGroup) => (
+                        <div key={skillGroup.category}>
+                          <h3 className="font-headline text-lg flex items-center gap-2 text-primary mb-3">
+                            <skillGroup.icon className="w-5 h-5" />
+                            {skillGroup.category}
+                          </h3>
+                          <div className="space-y-4 pl-2 border-l-2 border-primary/20 ml-2">
+                            {skillGroup.subCategories.map(subCategory => (
+                              <div key={subCategory.title} className="pl-4">
+                                <h4 className="font-semibold text-base text-foreground mb-2">{subCategory.title}</h4>
+                                <div className="flex flex-wrap gap-2 justify-start">
+                                  {subCategory.items.map(item => (
+                                      <div 
+                                          key={item} 
+                                          className="text-xs text-center font-medium px-2 py-1 rounded-full bg-accent border border-border text-foreground transition-all hover:bg-primary/20 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 cursor-default hover:text-glow"
+                                          onMouseEnter={playHoverSound}
+                                      >
+                                          {item}
+                                      </div>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
                           </div>
-                        ))}
-                      </CardContent>
-                    </Card>
-                  </TabsContent>
-                ))}
-             </Tabs>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
           </div>
         </div>
       </div>
