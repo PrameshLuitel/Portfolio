@@ -1,17 +1,12 @@
-# humans.txt - Information about the human who built this site.
-
-# TEAM
-Role: Owner, Creator, and Subject
-Name: Pramesh Luitel
+/* TEAM */
+Creator, Owner, Subject: Pramesh Luitel
 Contact: contact@prameshluitel.com.np
 Website: https://prameshluitel.com.np
 LinkedIn: https://www.linkedin.com/in/pramesh-luitel-098aa3229/
 GitHub: https://github.com/PrameshLuitel
 
-# SITE
-Last update: 2024-07-29
-Standards: Next.js, React, Tailwind CSS
-Components: ShadCN UI
-Host: GitHub Pages
-Software: Visual Studio Code
-AI Partner: Google's AI Studio (for assistance with code generation and refinement)
+/* SITE */
+Last update: 2024-07-30
+Language: English (US)
+Doctype: HTML5
+Tools: Next.js, React, Tailwind CSS, Vercel
