@@ -3,7 +3,7 @@
 
 import * as React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { projects } from '@/lib/data';
@@ -15,7 +15,7 @@ import { ScrollArea } from '../ui/scroll-area';
 
 const ProjectsSection = () => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2500, stopOnInteraction: true, stopOnMouseEnter: true })
+    Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   return (
@@ -28,6 +28,8 @@ const ProjectsSection = () => {
             align: "start",
             loop: true,
           }}
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.play}
           className="w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl"
         >
           <CarouselContent>
