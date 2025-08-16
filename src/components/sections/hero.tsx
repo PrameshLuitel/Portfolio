@@ -32,7 +32,7 @@ const HeroSection = () => {
     <section id="home" className="scroll-section">
       <div className="z-10 container mx-auto flex h-full flex-col items-center justify-center text-center p-4">
         <h1 className="sr-only">Pramesh Luitel: AI in Finance, Automation & Investment Banking Portfolio</h1>
-        <GlitchText text="Hi, I'm Pramesh" className="font-headline text-5xl md:text-7xl lg:text-8xl mb-4" />
+        <GlitchText text="Hi, I'm Pramesh" className="font-headline text-5xl md:text-6xl lg:text-8xl mb-4" />
         <p className="font-body text-lg md:text-xl lg:text-2xl max-w-3xl text-muted-foreground mb-8">
           Merging deep capital markets insight with cutting-edge AI, I, Pramesh Luitel, create systems that eliminate inefficiency, predict with precision, and set new benchmarks in investment banking and financial research.
         </p>
@@ -44,7 +44,7 @@ const HeroSection = () => {
           <Button asChild variant="outline" size="lg" className="hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
             <a href="#research" onClick={(e) => scrollToSection(e, '#research')}>Research Papers</a>
           </Button>
-          <Button asChild variant="outline" size="lg" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
+          <Button asChild size="lg" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground border" onMouseEnter={playHoverSound}>
             <a href="#vestara" onClick={(e) => scrollToSection(e, '#vestara')}>Explore Vestara GPT</a>
           </Button>
         </div>

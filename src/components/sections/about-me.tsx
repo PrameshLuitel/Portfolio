@@ -78,7 +78,7 @@ const AboutMeSection = () => {
               </div>
             </div>
             
-            <Button asChild variant="outline" size="sm" className="w-full text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
+            <Button asChild variant="outline" size="sm" className="w-full text-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
               <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download>
                 <Download className="mr-2 h-4 w-4" />
                 Download My CV
@@ -90,7 +90,7 @@ const AboutMeSection = () => {
           <div className="w-full md:w-[65%] lg:w-[70%] flex flex-col gap-4">
              <Card className="bg-card/50 backdrop-blur-sm border-accent/20">
                 <CardContent className="p-4">
-                    <p className="text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: aboutData.introduction }} />
+                    <p className="text-sm text-muted-foreground">{aboutData.introduction}</p>
                 </CardContent>
             </Card>
             <div>
@@ -109,7 +109,7 @@ const AboutMeSection = () => {
                         {skillGroup.items.map(item => (
                             <div 
                                 key={item} 
-                                className="text-xs text-center font-medium px-2 py-0.5 rounded-full bg-secondary/50 border border-accent/20 text-foreground transition-all hover:bg-accent/20 hover:scale-105 hover:shadow-lg hover:shadow-accent/20 cursor-default"
+                                className="text-xs text-center font-medium px-2 py-0.5 rounded-full bg-secondary border border-accent/20 text-foreground transition-all hover:bg-accent/20 hover:scale-105 hover:shadow-lg hover:shadow-accent/20 cursor-default"
                                 onMouseEnter={playHoverSound}
                             >
                                 {item}
