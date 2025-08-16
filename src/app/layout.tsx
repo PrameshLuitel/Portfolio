@@ -5,7 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   title: 'Pramesh Luitel | Portfolio',
-  description: 'Portfolio of Pramesh Luitel, showcasing projects and expertise in finance and technology.',
+  description: 'Portfolio of Pramesh Luitel, showcasing projects and expertise in finance, AI, and technology.',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
@@ -18,6 +18,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pramesh Luitel",
+    "url": "https://prameshluitel.com.np",
+    "jobTitle": "Finance and Technology Professional",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Delhi"
+    },
+    "knowsAbout": ["Finance", "Artificial Intelligence", "Automation", "Financial Analytics", "Investment Banking", "Natural Language Processing"],
+    "sameAs": [
+      "https://www.linkedin.com/in/pramesh-luitel-098aa3229/",
+      "https://github.com/PrameshLuitel"
+    ]
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -29,6 +46,10 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
         <link rel="author" href="/humans.txt" />
         <link rel="llms" href="/LLMs.txt" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body className="font-body antialiased bg-background">
         <ThemeProvider
