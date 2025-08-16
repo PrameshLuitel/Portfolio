@@ -38,13 +38,13 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-8">
-          <Button asChild variant="outline" size="lg" className="text-glow bg-accent/10 border-accent text-accent hover:bg-accent hover:text-accent-foreground" onMouseEnter={playHoverSound}>
+          <Button asChild variant="outline" size="lg" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
             <a href="#projects" onClick={(e) => scrollToSection(e, '#projects')}>Projects</a>
           </Button>
-          <Button asChild variant="outline" size="lg" className="text-glow bg-accent/10 border-accent text-accent hover:bg-accent hover:text-accent-foreground" onMouseEnter={playHoverSound}>
+          <Button asChild variant="outline" size="lg" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
             <a href="#research" onClick={(e) => scrollToSection(e, '#research')}>Research Papers</a>
           </Button>
-          <Button asChild variant="outline" size="lg" className="text-glow bg-accent/10 border-accent text-accent hover:bg-accent hover:text-accent-foreground" onMouseEnter={playHoverSound}>
+          <Button asChild variant="outline" size="lg" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
             <a href="#vestara" onClick={(e) => scrollToSection(e, '#vestara')}>Explore Vestara GPT</a>
           </Button>
         </div>

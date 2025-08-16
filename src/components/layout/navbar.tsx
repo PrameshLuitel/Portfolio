@@ -100,8 +100,8 @@ const Navbar = () => {
               href={link.href}
               onClick={(e) => scrollToSection(e, link.href)}
               className={cn(
-                "px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-accent dark:hover:text-accent transition-all",
-                activeSection === link.href && "text-accent dark:text-accent"
+                "px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary dark:hover:text-primary transition-all",
+                activeSection === link.href && "text-primary dark:text-primary"
               )}
             >
               {link.label}
@@ -145,8 +145,8 @@ const Navbar = () => {
         href={link.href} 
         onClick={(e) => scrollToSection(e, link.href)}
         className={cn(
-          "px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-accent dark:hover:text-accent transition-all",
-          activeSection === link.href && "text-accent dark:text-accent"
+          "px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary dark:hover:text-primary transition-all",
+          activeSection === link.href && "text-primary dark:text-primary"
         )}
       >
         {link.label}
@@ -187,8 +187,8 @@ const Navbar = () => {
                 href={link.href} 
                 onClick={(e) => scrollToSection(e, link.href)}
                 className={cn(
-                  "block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-accent hover:bg-accent/20",
-                  activeSection === link.href && "text-accent bg-accent/20"
+                  "block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent/20",
+                  activeSection === link.href && "text-primary bg-accent/20"
                 )}
               >
                 {link.label}
