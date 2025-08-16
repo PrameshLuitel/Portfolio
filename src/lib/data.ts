@@ -74,7 +74,7 @@ export const researchPapers = [
   {
     title: 'Market Oscillations and Predictive Analytics: AI-Driven Insights into Nepse Stock Market’s Indices and its Sub-Indices',
     publication: "Published on SSRN | Top Downloads in Emerging & Asian Markets",
-    link: 'https://papers.ssmn.com/sol3/papers.cfm?abstract_id=5030130',
+    link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5030130',
     tags: ['Predictive Analytics', 'LSTM', 'Time-Series Forecasting', 'NEPSE', 'SSRN'],
     summary: "Conducted an in-depth analysis of the NEPSE index using LSTM networks and advanced technical indicators. This work engineered a robust forecasting framework, highlighting the applicability of deep learning in structurally inefficient markets where traditional financial models often underperform.",
     isPublished: true,

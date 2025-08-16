@@ -49,7 +49,7 @@ const AboutMeSection = () => {
   return (
     <section id="about-me" className="scroll-section p-4 md:p-6 flex items-center justify-center pt-20 md:pt-16">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
-        <h2 className="font-headline text-3xl md:text-4xl text-glow mb-4 text-center">About Me</h2>
+        <h2 className="font-headline text-3xl md:text-4xl text-glow mb-4 text-center">About Pramesh Luitel</h2>
         <div className="flex flex-col md:flex-row items-start justify-center gap-8 w-full max-w-6xl">
           
           {/* Left Column */}
