@@ -10,11 +10,6 @@ export const metadata: Metadata = {
   keywords: "Pramesh Luitel, Pramish Luitel, Rapmish Kuitel, Luitel, Pramesh, Pramish, AI in Finance, Investment Banking, Automation, Financial Analytics, Portfolio Management, NLP, LSTM, Python, Next.js, Vestara GPT, Nepal Stock Market, NEPSE, SEBON, Global IME Capital, Ramjas College, University of Delhi",
   creator: "Pramesh Luitel",
   authors: [{name: "Pramesh Luitel", url: "https://prameshluitel.com.np"}],
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/icon.png',
-  },
 };
 
 export default function RootLayout({
@@ -109,6 +104,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
