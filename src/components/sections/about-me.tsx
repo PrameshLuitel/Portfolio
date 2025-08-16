@@ -29,17 +29,44 @@ const aboutData = {
     {
       icon: Code,
       category: 'Technical Skills',
-      items: ['Python (Automation, Data Analysis, LSTM Models)', 'NLP & Sentiment Analysis', 'Google Colab & Jupyter Notebooks', 'AI Chatbot Development (RAG, LLMs)', 'Web Scraping & Data Pipelines', 'TradingView Integration', 'Predictive Analytics for Financial Markets'],
+      subCategories: [
+        {
+          title: 'Predictive Analytics & Machine Learning',
+          items: ['LSTM models', 'Time series forecasting', 'Sentiment analysis (NLP)', 'Hybrid modeling', 'Advanced technical indicators', 'Google Colab', 'Python (Pandas, Scikit-learn, TensorFlow/Keras)'],
+        },
+        {
+          title: 'Software Development & Automation',
+          items: ['Full-stack development (Next.js, Tailwind CSS)', 'Process automation (Python, Excel)', 'Desktop GUI development (CustomTkinter)', 'Basic C language', 'API integration'],
+        },
+      ],
     },
     {
       icon: BarChart,
       category: 'Finance & Business Skills',
-      items: ['Portfolio Management Services', 'IPO Process Automation', 'Financial Market Analysis', 'SEBON & NEPSE Regulations', 'Business Negotiation & Deal Structuring'],
+      subCategories: [
+         {
+          title: 'Financial Analysis & Strategy',
+          items: ['Portfolio management', 'Capital market analysis (NEPSE)', 'Investment intelligence', 'Financial modeling', 'Strategic planning'],
+        },
+        {
+          title: 'Operational & Project Management',
+          items: ['Identifying operational bottlenecks', 'Leading digital strategy', 'Client onboarding automation'],
+        },
+      ],
     },
     {
       icon: Palette,
       category: 'Creative & Marketing Skills',
-      items: ['Graphic Design & Branding', 'Digital Marketing Strategy', 'Corporate Communication', 'Brochure & Form Design'],
+      subCategories: [
+        {
+          title: 'Brand & Campaign Management',
+          items: ['Branding & theme development', 'Digital rollout & execution', 'Marketing for financial products'],
+        },
+        {
+          title: 'Content & Research',
+          items: ['Research paper publication', 'Transforming complex data', 'Storytelling technical concepts', 'Creative problem-solving'],
+        },
+      ],
     },
   ]
 };
@@ -104,18 +131,23 @@ const AboutMeSection = () => {
                         {skillGroup.category}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="p-2 pt-1">
-                      <div className="flex flex-wrap gap-1 justify-start">
-                        {skillGroup.items.map(item => (
-                            <div 
-                                key={item} 
-                                className="text-xs text-center font-medium px-2 py-0.5 rounded-full bg-accent border border-border text-foreground transition-all hover:bg-primary/20 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 cursor-default hover:text-glow"
-                                onMouseEnter={playHoverSound}
-                            >
-                                {item}
-                            </div>
-                        ))}
-                      </div>
+                    <CardContent className="p-2 pt-1 space-y-2">
+                      {skillGroup.subCategories.map(subCategory => (
+                        <div key={subCategory.title}>
+                          <h4 className="font-semibold text-sm text-foreground mb-1">{subCategory.title}</h4>
+                          <div className="flex flex-wrap gap-1 justify-start">
+                            {subCategory.items.map(item => (
+                                <div 
+                                    key={item} 
+                                    className="text-xs text-center font-medium px-2 py-0.5 rounded-full bg-accent border border-border text-foreground transition-all hover:bg-primary/20 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 cursor-default hover:text-glow"
+                                    onMouseEnter={playHoverSound}
+                                >
+                                    {item}
+                                </div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
                     </CardContent>
                   </Card>
                 ))}
