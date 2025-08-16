@@ -3,6 +3,7 @@ import { FileText, Download, Plus, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useSound } from '@/hooks/use-sound';
 
 const researchPapers = [
   {
@@ -24,6 +25,7 @@ const researchPapers = [
 ];
 
 const ResearchSection = () => {
+  const { playHoverSound } = useSound();
   return (
     <section id="research" className="scroll-section p-4 md:p-8 flex items-center justify-center">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center w-full max-w-4xl">
@@ -37,7 +39,7 @@ const ResearchSection = () => {
                     <CardTitle className="text-base md:text-lg text-foreground">{paper.title}</CardTitle>
                     <CardDescription className="text-muted-foreground mt-1 text-xs md:text-sm">{paper.publication}</CardDescription>
                   </div>
-                  <Button asChild variant="outline" size="sm" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed self-start sm:self-auto" disabled={!paper.isPublished}>
+                  <Button asChild variant="outline" size="sm" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed self-start sm:self-auto" disabled={!paper.isPublished} onMouseEnter={playHoverSound}>
                     <a href={paper.isPublished ? paper.link : undefined} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       {paper.isPublished ? 'View Paper' : 'Pending'}
@@ -57,7 +59,7 @@ const ResearchSection = () => {
           ))}
         </div>
         <div className="text-center mt-3">
-          <Button variant="outline" className="bg-card/70 backdrop-blur-sm border-dashed border-accent/50 text-accent/80 cursor-not-allowed hover:bg-accent/10 hover:text-accent transition-colors">
+          <Button variant="outline" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
             <Plus className="mr-2 h-4 w-4" />
             More Research Incoming...
           </Button>

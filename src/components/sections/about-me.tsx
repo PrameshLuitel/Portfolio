@@ -8,7 +8,7 @@ import { Download, FileText, Zap, Briefcase, Code, BarChart, Palette } from 'luc
 import { useSound } from '@/hooks/use-sound';
 
 const aboutData = {
-  introduction: "I am Pramesh Luitel (Pramish Luitel), a B.Com (Hons) graduate from the University of Delhi who specializes in <span class='text-primary font-semibold'>blending finance, code, and creativity</span> to transform how investment banks operate. My expertise lies in converting complex financial data into intelligent, actionable solutions through the development of <span class='text-primary font-semibold'>full-stack analytics platforms</span> and the <span class='text-primary font-semibold'>automation of legacy systems</span>. Currently, I am developing <span class='text-primary font-semibold'>Project Vestara</span>, an advanced AI-powered investment intelligence platform for financial professionals in Nepal. My research has been published in peer-reviewed journals, where I pioneered the use of <span class='text-primary font-semibold'>Natural Language Processing (NLP)</span> for sentiment-enhanced stock prediction and utilized <span class='text-primary font-semibold'>AI-driven time series forecasting models</span> to analyze stock market indices. My technical skills include <span class='text-primary font-semibold'>predictive analytics</span>, <span class='text-primary font-semibold'>machine learning (LSTM models)</span>, and <span class='text-primary font-semibold'>advanced financial automation</span>.",
+  introduction: "I am Pramesh Luitel (Pramish Luitel), a B.Com (Hons) graduate from the University of Delhi who specializes in <span class='text-accent font-semibold'>blending finance, code, and creativity</span> to transform how investment banks operate. My expertise lies in converting complex financial data into intelligent, actionable solutions through the development of <span class='text-accent font-semibold'>full-stack analytics platforms</span> and the <span class='text-accent font-semibold'>automation of legacy systems</span>. Currently, I am developing <span class='text-accent font-semibold'>Project Vestara</span>, an advanced AI-powered investment intelligence platform for financial professionals in Nepal. My research has been published in peer-reviewed journals, where I pioneered the use of <span class='text-accent font-semibold'>Natural Language Processing (NLP)</span> for sentiment-enhanced stock prediction and utilized <span class='text-accent font-semibold'>AI-driven time series forecasting models</span> to analyze stock market indices. My technical skills include <span class='text-accent font-semibold'>predictive analytics</span>, <span class='text-accent font-semibold'>machine learning (LSTM models)</span>, and <span class='text-accent font-semibold'>advanced financial automation</span>.",
   imageUrl: '/images/pramesh-luitel-headshot.jpg',
   cvUrl: 'https://drive.google.com/uc?export=download&id=1PY3-9VC9wAUVdzM5iyWciKlkx4n1J7uD',
   highlights: [
@@ -65,7 +65,7 @@ const AboutMeSection = () => {
             <h3 className="font-headline text-xl text-foreground -mt-2">Pramesh Luitel</h3>
             
             <div className="w-full">
-              <h3 className="font-headline text-lg text-primary mb-2">Major Highlights</h3>
+              <h3 className="font-headline text-lg text-accent mb-2">Major Highlights</h3>
               <div className="grid grid-cols-1 gap-2">
                   {aboutData.highlights.map((highlight, index) => (
                     <Card key={index} className="bg-card/50 backdrop-blur-sm border-accent/20 text-center group">
@@ -78,7 +78,7 @@ const AboutMeSection = () => {
               </div>
             </div>
             
-            <Button asChild variant="outline" size="sm" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground w-full" onMouseEnter={playHoverSound}>
+            <Button asChild variant="outline" size="sm" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full" onMouseEnter={playHoverSound}>
               <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download>
                 <Download className="mr-2 h-4 w-4" />
                 Download My CV
@@ -94,7 +94,7 @@ const AboutMeSection = () => {
                 </CardContent>
             </Card>
             <div>
-               <h3 className="font-headline text-xl text-primary mt-2 mb-2 text-center md:text-left">Core Competencies</h3>
+               <h3 className="font-headline text-xl text-accent mt-2 mb-2 text-center md:text-left">Core Competencies</h3>
                <div className="space-y-2">
                 {aboutData.skills.map((skillGroup, index) => (
                   <Card key={index} className="bg-card/50 backdrop-blur-sm border-accent/20">
