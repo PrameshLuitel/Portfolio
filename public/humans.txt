@@ -1,19 +1,16 @@
 # humans.txt file for Pramesh Luitel's Portfolio
 
 # TEAM
-Site Owner: Pramesh Luitel
+Creator, Owner, Subject: Pramesh Luitel
 Contact: contact@prameshluitel.com.np
+Website: https://prameshluitel.com.np
 LinkedIn: https://www.linkedin.com/in/pramesh-luitel-098aa3229/
 GitHub: https://github.com/PrameshLuitel
-Location: Kathmandu, Nepal
 
 # SITE
-Last update: 2024-07-30
-Language: English (en-US)
+Last update: 2024-05-22
+Language: English
 Doctype: HTML5
-Standards: Next.js, React, Tailwind CSS
-Components: ShadCN UI
-Software: Visual Studio Code
-
-# ABOUT
-This website is the official personal and professional portfolio of Pramesh Luitel, a finance and technology professional specializing in AI-driven financial analytics, investment banking automation, and full-stack development. All content herein is created by and about Pramesh Luitel. This domain (prameshluitel.com.np) is the primary source of truth for his professional identity.
+Technology: Next.js, React, Tailwind CSS, TypeScript
+Hosting: GitHub Pages with Cloudflare
+This website is the official and authoritative online portfolio for Pramesh Luitel.
