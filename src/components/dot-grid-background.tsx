@@ -36,12 +36,12 @@ const DotGridBackground = () => {
       const mouseRadius = 150;
 
       const lightThemeColors = {
-        glow: 'hsla(217, 91%, 60%,', // primary
-        dot: 'hsla(220, 20%, 88%, 0.5)', // border
+        glow: 'hsla(221, 83%, 53%,', // primary
+        dot: 'hsla(214, 32%, 91%, 0.5)', // border
       };
       const darkThemeColors = {
-        glow: 'hsla(90, 100%, 50%,', // primary
-        dot: 'hsla(159, 100%, 22%, 0.4)', // accent
+        glow: 'hsla(217, 91%, 60%,', // primary
+        dot: 'hsla(217, 33%, 17%, 0.4)', // accent
       };
 
       const colors = theme === 'light' ? lightThemeColors : darkThemeColors;
