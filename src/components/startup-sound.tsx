@@ -55,27 +55,38 @@ const StartupSound = () => {
   useEffect(() => {
     const handleSoundLogic = () => {
         try {
+            let hasVisited = localStorage.getItem('hasVisited');
             let visitCount = parseInt(localStorage.getItem('visitCount') || '0', 10);
-            visitCount++;
 
-            // After 3 visits, there's a 1 in 3 chance to play the sound
-            if (visitCount >= 3) {
-                if (Math.random() < 0.33) {
-                    const audioContext = getAudioContext();
-                    if (audioContext && audioContext.state === 'suspended') {
-                         window.addEventListener('click', playWhistleSound, { once: true });
-                         window.addEventListener('keydown', playWhistleSound, { once: true });
-                    } else {
-                        playWhistleSound();
-                    }
-                    // Reset counter after playing or attempting to play
-                    localStorage.setItem('visitCount', '0');
+            const triggerSound = () => {
+                const audioContext = getAudioContext();
+                if (audioContext && audioContext.state === 'suspended') {
+                     window.addEventListener('click', playWhistleSound, { once: true });
+                     window.addEventListener('keydown', playWhistleSound, { once: true });
                 } else {
-                    // If it doesn't play, reset counter anyway to keep it random
-                     localStorage.setItem('visitCount', '0');
+                    playWhistleSound();
                 }
+            };
+
+            if (!hasVisited) {
+                // First visit ever
+                triggerSound();
+                localStorage.setItem('hasVisited', 'true');
+                localStorage.setItem('visitCount', '1');
             } else {
-                localStorage.setItem('visitCount', visitCount.toString());
+                // Subsequent visits
+                visitCount++;
+                if (visitCount >= 3) {
+                    if (Math.random() < 0.33) {
+                        triggerSound();
+                        localStorage.setItem('visitCount', '0'); // Reset after playing
+                    } else {
+                         // Still reset to keep it random for the next 3 visits
+                        localStorage.setItem('visitCount', '0');
+                    }
+                } else {
+                    localStorage.setItem('visitCount', visitCount.toString());
+                }
             }
 
         } catch (error) {
