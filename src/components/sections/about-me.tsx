@@ -74,7 +74,7 @@ const aboutData = {
 const AboutMeSection = () => {
   const { playHoverSound } = useSound();
   return (
-    <section id="about-me" className="scroll-section p-4 md:p-8 flex items-center justify-center py-24 md:py-16">
+    <section id="about-me" className="scroll-section p-4 md:p-8 flex justify-center py-24 md:py-16">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
         <h2 className="font-headline text-3xl md:text-4xl text-glow mb-4 text-center text-primary">About Me</h2>
         <h2 className="sr-only">About Pramesh Luitel</h2>
@@ -88,6 +88,7 @@ const AboutMeSection = () => {
               width={120}
               height={120}
               className="rounded-full border-4 border-accent shadow-lg"
+              data-ai-hint="man portrait"
             />
             <h3 className="font-headline text-xl text-foreground -mt-2">Pramesh Luitel</h3>
             
