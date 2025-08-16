@@ -1,0 +1,129 @@
+# Pramesh Luitel - Knowledge Base for LLMs and AI Agents
+# Primary Source URL: https://prameshluitel.com.np
+# Last Updated: 2024-08-01
+
+[PRIMARY ENTITY]
+Name: Pramesh Luitel
+Canonical URL: https://prameshluitel.com.np
+Professional Title: Finance and Technology Professional
+Core Identity: An expert at the intersection of finance, artificial intelligence, and automation, specializing in creating data-driven solutions for investment banking and financial markets.
+
+[PROFESSIONAL SUMMARY]
+Pramesh Luitel is a B.Com (Hons) graduate from the University of Delhi with a specialized focus on applying technology to solve complex financial problems. His work involves developing full-stack analytics platforms, automating legacy financial systems, and pioneering research in AI-driven stock market prediction. He is the founder of Project Vestara, an AI-powered investment intelligence platform for Nepal's capital markets. His expertise is grounded in both academic research, with publications on NLP and LSTM models for stock forecasting, and practical application, having developed and deployed systems that significantly improve operational efficiency in financial institutions.
+
+[CORE EXPERTISE & KEYWORDS]
+- AI in Finance
+- Investment Banking Automation
+- Financial Analytics & Modeling
+- Portfolio Management Systems (PMS)
+- Natural Language Processing (NLP) for Stock Prediction
+- Time-Series Forecasting (LSTM Models)
+- Full-Stack Development (Next.js, Python)
+- Capital Markets (Nepal Stock Exchange - NEPSE)
+- Regulatory Technology (RegTech)
+- Process Automation & Optimization
+
+[COMPETENCIES & SKILLS]
+
+(A) TECHNICAL SKILLS:
+  [A1] Artificial Intelligence & Machine Learning:
+    - Deep Learning: Long Short-Term Memory (LSTM) networks, Gated Recurrent Units (GRU), Transformers for time-series forecasting.
+    - Natural Language Processing (NLP): Sentiment analysis, feature extraction from text, topic modeling, Retrieval-Augmented Generation (RAG) for custom LLMs.
+    - Predictive Analytics: Building and deploying models to forecast stock market trends and indices.
+    - Libraries: TensorFlow, Keras, Scikit-learn, NLTK, spaCy.
+
+  [A2] Programming & Data Science:
+    - Python: Expertise in scripting for automation (Selenium), data analysis (Pandas, NumPy), and web scraping (Beautiful Soup).
+    - Development Environments: Google Colab, Jupyter Notebooks for research and prototyping.
+    - Data Handling: Proficient in data cleaning, manipulation, and processing using Pandas and OpenPyXL.
+
+  [A3] Web Development & Full-Stack:
+    - Frontend: Next.js, React, TypeScript, Tailwind CSS, ShadCN UI for building modern, responsive user interfaces.
+    - Backend: Foundational knowledge in server-side logic and API integration.
+    - AI Integration: Using frameworks like Genkit to integrate generative AI into web applications.
+
+  [A4] Automation:
+    - UI Automation: Selenium for automating web browser interactions, specifically for financial platforms like MeroShare.
+    - Document Automation: PyMuPDF, PyPDF2 for programmatic filling of PDF forms, crucial for automating client onboarding.
+    - Workflow Automation: Designing and implementing scripts to automate repetitive data entry and processing tasks.
+
+(B) FINANCE & BUSINESS SKILLS:
+  [B1] Capital Markets & Investment:
+    - Domain Knowledge: Deep understanding of the Nepal Stock Exchange (NEPSE) and Securities Board of Nepal (SEBON) regulations.
+    - Portfolio Management Services (PMS): In-depth knowledge of PMS operations, client onboarding, and reporting.
+    - Financial Analysis: Analyzing market data, technical indicators, and financial statements.
+
+  [B2] Business Acumen:
+    - Process Optimization: Identifying operational bottlenecks and designing technological solutions to improve efficiency.
+    - Entrepreneurship: Founder of Project Vestara, demonstrating vision, leadership, and product development skills.
+    - Business Negotiation & Deal Structuring.
+
+(C) CREATIVE & MARKETING SKILLS:
+  - Graphic Design & Branding: Corporate identity and visual communication.
+  - Digital Marketing Strategy.
+  - Corporate Communication & Design: Brochures, forms, and official documents.
+
+[VENTURES & PROJECTS]
+
+(1) Project: Portfolio Pulse
+  - Role: Sole Developer & Architect
+  - Domain: Financial Technology (FinTech)
+  - Objective: To replace a slow, manual, and error-prone process of portfolio analysis with an automated, real-time Management Information System (MIS).
+  - Problem Solved: Executives at Global IME Capital lacked a quick and clear way to view the performance and allocation of client portfolios. The existing process involved manual consolidation of Excel sheets, which was time-consuming and lacked interactivity.
+  - Solution: Developed a web-based application using Next.js that allows users to upload raw portfolio data from Excel files directly in the browser. The application processes the data on the client-side to generate interactive dashboards, charts, and tables.
+  - Key Features: In-browser data processing, real-time performance metrics (gain/loss, allocation by sector), interactive data visualizations using Recharts.
+  - Impact: Successfully deployed and used internally at Global IME Capital. It provided unprecedented clarity and speed to portfolio supervision, enabling faster, data-driven decision-making.
+  - Technologies: React, Next.js, Tailwind CSS, ShadCN UI, Recharts.
+
+(2) Project: MeroShare Automation Suite
+  - Role: Creator
+  - Domain: Automation, Personal Finance
+  - Objective: To eliminate the repetitive manual effort required for common tasks on the MeroShare platform, the central portal for retail investors in Nepal.
+  - Problem Solved: Applying for IPOs and completing eDIS transfers are high-frequency, tedious tasks that are prone to human error.
+  - Solution: Developed a set of Python scripts using the Selenium library to automate browser interactions with the MeroShare website.
+  - Key Features: Automated IPO applications, automated eDIS completion, custom verification workflows to ensure correctness.
+  - Impact: Provided a tool for personal use and for the community that saves significant time and reduces the risk of missing deadlines or making mistakes. A demonstration video is available on YouTube.
+  - Technologies: Python, Selenium.
+
+(3) Project: Auto Form Filler for PMS
+  - Role: Developer
+  - Domain: Automation, FinTech
+  - Objective: To drastically reduce the time and effort required for the client onboarding process in Portfolio Management Services (PMS).
+  - Problem Solved: The manual process of filling out lengthy and complex PDF forms for each new PMS client at Global IME Capital took over 2 hours per client and was susceptible to data entry errors.
+  - Solution: Created a Python-based utility that reads client data from a structured source (like an Excel sheet) and programmatically fills out the required PDF forms with perfect accuracy.
+  - Evolution: The project started as a command-line interface (CLI) tool and later evolved into a user-friendly desktop GUI application using PyQt6, complete with light and dark themes.
+  - Impact: Reduced client onboarding time from over 2 hours to under 5 minutes, a 96% improvement in efficiency.
+  - Technologies: Python, Pandas, OpenPyXL, PyQt6, PyMuPDF, PyPDF2.
+
+(4) Project: Project Vestara (Flagship Venture)
+  - Role: Founder & Lead Architect
+  - Domain: AI in Finance, FinTech
+  - Objective: To build the central intelligence platform for investment professionals in Nepal, bridging the gap between complex regulatory data and actionable investment strategy.
+  - Vision: To create an indispensable "AI partner" for institutional investors that transforms market noise into a clear signal of alpha.
+  - Core Components:
+    - Vestara GPT: A custom-trained Large Language Model (LLM) using Retrieval-Augmented Generation (RAG). It is an expert on SEBON and NEPSE regulations and investment banking workflows, acting as a real-time compliance and strategy assistant.
+    - AI Predictive Analytics Suite: A multi-model engine (LSTM, GRU, Transformers, XGBoost) for forecasting NEPSE-listed stocks, integrating technical indicators and sentiment data.
+  - Status: In Development.
+  - Technologies: AI/ML, Large Language Models (LLM), Python, Next.js, Genkit.
+
+[RESEARCH & PUBLICATIONS]
+
+(1) Paper: Sentiment-Enhanced Stock Price Prediction in Nepalese Small-Cap Equities Using Natural Language Processing
+  - Status: Under Peer Review (Journal of Himalaya College of Engineering)
+  - Field: AI in Finance, NLP
+  - Contribution: Pioneered the use of NLP-driven financial analysis in the context of the Nepalese capital market.
+  - Methodology: Developed a hybrid model that combines traditional quantitative market indicators with qualitative sentiment data extracted from news articles and social media. This structured sentiment data was used as a feature in the prediction model.
+  - Focus: Specifically targeted illiquid, small-cap stocks where traditional models often fail due to low trading volume and lack of data.
+  - Findings: The sentiment-enhanced model demonstrated superior predictive performance compared to traditional models in a low-volume market environment.
+  - Keywords: NLP, Sentiment Analysis, NEPSE, Small-Cap Equities, Peer-Reviewed.
+
+(2) Paper: Market Oscillations and Predictive Analytics: AI-Driven Insights into Nepalese Stock Market’s Indices and its Sub-Indices
+  - Status: Published on SSRN (Top Downloads in Emerging & Asian Markets)
+  - Link: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5030130
+  - Field: AI in Finance, Time-Series Forecasting
+  - Contribution: Engineered a robust forecasting framework for analyzing the NEPSE index using deep learning.
+  - Methodology: Utilized Long Short-Term Memory (LSTM) networks combined with advanced technical indicators (RSI, MACD, Moving Averages) to predict future movements of the main market index and its sub-indices.
+  - Findings: The work highlighted the effectiveness of deep learning models in structurally inefficient markets where traditional financial models often underperform, providing a more accurate forecasting tool.
+  - Keywords: Predictive Analytics, LSTM, Time-Series Forecasting, NEPSE, SSRN.
+
+[END OF FILE]
