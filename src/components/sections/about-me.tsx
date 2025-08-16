@@ -32,11 +32,11 @@ const aboutData = {
       subCategories: [
         {
           title: 'Predictive Analytics & Machine Learning',
-          items: ['LSTM models', 'Time series forecasting', 'Sentiment analysis (NLP)', 'Hybrid modeling', 'Advanced technical indicators', 'Google Colab', 'Python (Pandas, Scikit-learn, TensorFlow/Keras)'],
+          items: ['AI Model Architecture', 'LLM Development', 'RAG-based Systems', 'LSTM Models', 'Time-Series Forecasting', 'Sentiment Analysis (NLP)', 'Hybrid Modeling', 'Python (Pandas, Scikit-learn, TensorFlow)'],
         },
         {
           title: 'Software Development & Automation',
-          items: ['Full-stack development (Next.js, Tailwind CSS)', 'Process automation (Python, Excel)', 'Desktop GUI development (CustomTkinter)', 'Basic C language', 'API integration'],
+          items: ['Full-Stack Development (Next.js, Tailwind)', 'Process Automation (Python, Excel)', 'Desktop GUI Development (CustomTkinter)', 'API Integration', 'Data Transformation & Visualization'],
         },
       ],
     },
@@ -46,11 +46,11 @@ const aboutData = {
       subCategories: [
          {
           title: 'Financial Analysis & Strategy',
-          items: ['Portfolio management', 'Capital market analysis (NEPSE)', 'Investment intelligence', 'Financial modeling', 'Strategic planning'],
+          items: ['Portfolio Management', 'Capital Market Analysis (NEPSE)', 'Investment Intelligence', 'Financial Modeling', 'Strategic Planning'],
         },
         {
           title: 'Operational & Project Management',
-          items: ['Identifying operational bottlenecks', 'Leading digital strategy', 'Client onboarding automation'],
+          items: ['End-to-end Process Automation', 'Automated IPO & eDIS Workflows', 'Scalable Solution Design', 'Leading Digital Strategy', 'Client Onboarding Automation'],
         },
       ],
     },
@@ -60,11 +60,11 @@ const aboutData = {
       subCategories: [
         {
           title: 'Brand & Campaign Management',
-          items: ['Branding & theme development', 'Digital rollout & execution', 'Marketing for financial products'],
+          items: ['Branding & Theme Development', 'Digital Rollout & Execution', 'Marketing for Financial Products'],
         },
         {
           title: 'Content & Research',
-          items: ['Research paper publication', 'Transforming complex data', 'Storytelling technical concepts', 'Creative problem-solving'],
+          items: ['Research Paper Publication', 'Transforming Complex Data', 'Communicating Technical Concepts', 'Creative Problem-Solving'],
         },
       ],
     },
