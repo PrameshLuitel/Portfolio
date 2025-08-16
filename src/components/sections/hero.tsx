@@ -38,14 +38,11 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-8">
-          <Button asChild variant="outline" size="lg" className="hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
-            <a href="#projects" onClick={(e) => scrollToSection(e, '#projects')}>Projects</a>
+          <Button asChild size="lg" className="text-glow" onMouseEnter={playHoverSound}>
+            <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')}>Contact Me</a>
           </Button>
           <Button asChild variant="outline" size="lg" className="hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
-            <a href="#research" onClick={(e) => scrollToSection(e, '#research')}>Research Papers</a>
-          </Button>
-          <Button asChild size="lg" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground border" onMouseEnter={playHoverSound}>
-            <a href="#vestara" onClick={(e) => scrollToSection(e, '#vestara')}>Explore Vestara GPT</a>
+            <a href="#projects" onClick={(e) => scrollToSection(e, '#projects')}>View My Work</a>
           </Button>
         </div>
 

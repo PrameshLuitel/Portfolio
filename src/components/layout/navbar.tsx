@@ -13,7 +13,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { projects } from '@/lib/data';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -34,11 +33,11 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState('#home');
   const mainContainerRef = useRef<HTMLElement | null>(null);
   const [isMounted, setIsMounted] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
-
 
   useEffect(() => {
     if (!isMounted) return;
@@ -47,9 +46,9 @@ const Navbar = () => {
     const container = mainContainerRef.current;
     if (!container) return;
 
-
     const handleScroll = () => {
       const scrollPosition = container?.scrollTop || 0;
+      setIsScrolled(scrollPosition > 10);
       let currentActiveSection = '';
 
       navLinks.forEach(link => {
@@ -78,7 +77,6 @@ const Navbar = () => {
     };
   }, [isMounted]);
 
-
   const scrollToSection = (e: React.MouseEvent<HTMLElement>, id: string) => {
     if (!id.startsWith('#')) return;
     e.preventDefault();
@@ -100,8 +98,8 @@ const Navbar = () => {
               href={link.href}
               onClick={(e) => scrollToSection(e, link.href)}
               className={cn(
-                "px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary dark:hover:text-primary transition-all",
-                activeSection === link.href && "text-primary dark:text-primary"
+                "px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary transition-all",
+                activeSection === link.href && "text-primary"
               )}
             >
               {link.label}
@@ -145,8 +143,8 @@ const Navbar = () => {
         href={link.href} 
         onClick={(e) => scrollToSection(e, link.href)}
         className={cn(
-          "px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary dark:hover:text-primary transition-all",
-          activeSection === link.href && "text-primary dark:text-primary"
+          "px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary transition-all",
+          activeSection === link.href && "text-primary"
         )}
       >
         {link.label}
@@ -155,7 +153,10 @@ const Navbar = () => {
   };
   
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-secondary/80 backdrop-blur-md">
+    <header className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled ? "bg-background/80 backdrop-blur-md border-b" : "bg-transparent border-b border-transparent"
+    )}>
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
@@ -187,8 +188,8 @@ const Navbar = () => {
                 href={link.href} 
                 onClick={(e) => scrollToSection(e, link.href)}
                 className={cn(
-                  "block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent/20",
-                  activeSection === link.href && "text-primary bg-accent/20"
+                  "block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent",
+                  activeSection === link.href && "text-primary bg-accent"
                 )}
               >
                 {link.label}

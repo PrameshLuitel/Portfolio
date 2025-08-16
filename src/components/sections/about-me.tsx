@@ -68,7 +68,7 @@ const AboutMeSection = () => {
               <h3 className="font-headline text-lg text-primary mb-2">Major Highlights</h3>
               <div className="grid grid-cols-1 gap-2">
                   {aboutData.highlights.map((highlight, index) => (
-                    <Card key={index} className="bg-card/50 backdrop-blur-sm border-accent/20 text-center group">
+                    <Card key={index} className="bg-card/50 backdrop-blur-sm border-border text-center group">
                       <CardContent className="p-2 flex flex-col items-center justify-center gap-1">
                         <highlight.icon className="w-5 h-5 text-primary transition-all group-hover:text-primary" />
                         <p className="font-bold text-xs text-center">{highlight.title}</p>
@@ -78,7 +78,7 @@ const AboutMeSection = () => {
               </div>
             </div>
             
-            <Button asChild size="sm" className="w-full text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground border" onMouseEnter={playHoverSound}>
+            <Button asChild size="sm" className="w-full text-glow" onMouseEnter={playHoverSound}>
               <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download>
                 <Download className="mr-2 h-4 w-4" />
                 Download My CV
@@ -88,7 +88,7 @@ const AboutMeSection = () => {
           
           {/* Right Column */}
           <div className="w-full md:w-[65%] lg:w-[70%] flex flex-col gap-4">
-             <Card className="bg-card/50 backdrop-blur-sm border-accent/20">
+             <Card className="bg-card/50 backdrop-blur-sm border-border">
                 <CardContent className="p-4">
                     <p className="text-sm text-muted-foreground">{aboutData.introduction}</p>
                 </CardContent>
@@ -97,7 +97,7 @@ const AboutMeSection = () => {
                <h3 className="font-headline text-xl text-primary mt-2 mb-2 text-center md:text-left">Core Competencies</h3>
                <div className="space-y-2">
                 {aboutData.skills.map((skillGroup, index) => (
-                  <Card key={index} className="bg-card/50 backdrop-blur-sm border-accent/20">
+                  <Card key={index} className="bg-card/50 backdrop-blur-sm border-border">
                     <CardHeader className="p-2 pb-1">
                       <CardTitle className="flex items-center gap-2 text-base">
                         <skillGroup.icon className="w-5 h-5 text-primary" />
@@ -109,7 +109,7 @@ const AboutMeSection = () => {
                         {skillGroup.items.map(item => (
                             <div 
                                 key={item} 
-                                className="text-xs text-center font-medium px-2 py-0.5 rounded-full bg-accent border border-accent/20 text-foreground transition-all hover:bg-primary/20 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 cursor-default hover:text-glow"
+                                className="text-xs text-center font-medium px-2 py-0.5 rounded-full bg-accent border border-border text-foreground transition-all hover:bg-primary/20 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 cursor-default hover:text-glow"
                                 onMouseEnter={playHoverSound}
                             >
                                 {item}

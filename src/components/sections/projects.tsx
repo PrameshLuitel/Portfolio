@@ -3,7 +3,7 @@
 
 import * as React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { projects } from '@/lib/data';
@@ -28,7 +28,7 @@ const ProjectsSection = () => {
             align: "start",
             loop: true,
           }}
-          onMouseEnter={() => plugin.current.stop()}
+          onMouseEnter={plugin.current.stop}
           onMouseLeave={() => plugin.current.play()}
           className="w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl"
         >
@@ -39,7 +39,7 @@ const ProjectsSection = () => {
                   <Dialog>
                     <DialogTrigger asChild>
                       <div className="block h-full cursor-pointer">
-                        <Card className="h-full flex flex-col bg-card/70 backdrop-blur-sm border-accent/20 overflow-hidden transition-all hover:border-primary hover:shadow-lg hover:shadow-primary/20">
+                        <Card className="h-full flex flex-col bg-card/70 backdrop-blur-sm border-border overflow-hidden transition-all hover:border-primary hover:shadow-lg hover:shadow-primary/20">
                           <CardHeader>
                             <CardTitle className="flex items-center justify-between">
                               <span className="text-lg font-headline">{project.title}</span>
@@ -51,7 +51,7 @@ const ProjectsSection = () => {
                               alt={project.title}
                               width={400}
                               height={300}
-                              className="rounded-md border border-accent/20 object-cover w-full h-48"
+                              className="rounded-md border border-border object-cover w-full h-48"
                               data-ai-hint={project.image.hint}
                             />
                             <p className="mt-4 text-sm text-muted-foreground line-clamp-3">{project.description}</p>
@@ -74,7 +74,7 @@ const ProjectsSection = () => {
                               alt={project.title}
                               width={600}
                               height={400}
-                              className="rounded-md border border-accent/20 object-cover w-full h-auto aspect-[4/3]"
+                              className="rounded-md border border-border object-cover w-full h-auto aspect-[4/3]"
                               data-ai-hint={project.image.hint}
                           />
                           <p className="text-sm text-muted-foreground">{project.longDescription}</p>
@@ -88,7 +88,7 @@ const ProjectsSection = () => {
                           </div>
                           <div className="flex flex-wrap gap-4 mt-4">
                               {project.liveLink && (
-                                  <Button asChild variant="outline" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground">
+                                  <Button asChild variant="default" className="text-glow">
                                       <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
                                           <LinkIcon className="mr-2 h-4 w-4" />
                                           Live Demo

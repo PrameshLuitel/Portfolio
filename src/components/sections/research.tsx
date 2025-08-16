@@ -32,14 +32,14 @@ const ResearchSection = () => {
         <h2 className="font-headline text-3xl md:text-4xl text-glow mb-4 text-center text-primary">Research & Publications</h2>
         <div className="w-full space-y-3">
           {researchPapers.map((paper, index) => (
-            <Card key={index} className="bg-card/70 backdrop-blur-sm border-accent/20">
+            <Card key={index} className="bg-card/70 backdrop-blur-sm border-border">
               <CardHeader className="p-4">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
                   <div className="flex-grow">
                     <CardTitle className="text-base md:text-lg text-foreground">{paper.title}</CardTitle>
                     <CardDescription className="text-muted-foreground mt-1 text-xs md:text-sm">{paper.publication}</CardDescription>
                   </div>
-                  <Button asChild size="sm" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground border flex-shrink-0 self-start sm:self-auto" disabled={!paper.isPublished} onMouseEnter={playHoverSound}>
+                  <Button asChild size="sm" className="text-glow" disabled={!paper.isPublished} onMouseEnter={playHoverSound}>
                     <a href={paper.isPublished ? paper.link : undefined} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       {paper.isPublished ? 'View Paper' : 'Pending'}
@@ -59,7 +59,7 @@ const ResearchSection = () => {
           ))}
         </div>
         <div className="text-center mt-3">
-          <Button variant="outline" className="bg-secondary/50 border-primary border-dashed text-primary text-glow hover:bg-primary/20" onMouseEnter={playHoverSound}>
+          <Button variant="outline" className="border-primary/50 border-dashed text-primary hover:bg-primary/10 hover:border-primary" onMouseEnter={playHoverSound}>
             <Plus className="mr-2 h-4 w-4" />
             More Research Incoming...
           </Button>
