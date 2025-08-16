@@ -4,8 +4,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'Pramesh Luitel | Portfolio',
-  description: 'Portfolio of Pramesh Luitel, showcasing projects and expertise in finance, AI, and technology.',
+  title: 'Pramesh Luitel | AI in Finance, Automation & Investment Banking Portfolio',
+  description: 'The official portfolio of Pramesh Luitel, a finance and technology professional specializing in AI-driven financial analytics, investment banking automation, NLP for stock prediction, and full-stack development. Discover projects, research, and the vision for Vestara GPT.',
+  keywords: "Pramesh Luitel, AI in Finance, Investment Banking, Automation, Financial Analytics, Portfolio Management, NLP, LSTM, Python, Next.js, Vestara GPT, Nepal Stock Market, NEPSE, SEBON",
+  creator: "Pramesh Luitel",
+  authors: [{name: "Pramesh Luitel", url: "https://prameshluitel.com.np"}],
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
@@ -28,7 +31,7 @@ export default function RootLayout({
       "@type": "CollegeOrUniversity",
       "name": "University of Delhi"
     },
-    "knowsAbout": ["Finance", "Artificial Intelligence", "Automation", "Financial Analytics", "Investment Banking", "Natural Language Processing"],
+    "knowsAbout": ["Finance", "Artificial Intelligence", "Automation", "Financial Analytics", "Investment Banking", "Natural Language Processing", "Portfolio Management", "Python", "Next.js"],
     "sameAs": [
       "https://www.linkedin.com/in/pramesh-luitel-098aa3229/",
       "https://github.com/PrameshLuitel"

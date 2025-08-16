@@ -56,7 +56,7 @@ const AboutMeSection = () => {
           <div className="w-full md:w-[35%] lg:w-[30%] flex flex-col items-center text-center gap-4">
             <Image
               src={aboutData.imageUrl}
-              alt="Pramesh Luitel Headshot"
+              alt="Headshot of Pramesh Luitel - AI in Finance Specialist"
               width={120}
               height={120}
               className="rounded-full border-4 border-primary shadow-lg"
