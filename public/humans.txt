@@ -1,16 +1,18 @@
-# humans.txt file for Pramesh Luitel's Portfolio
+# humans.txt - Information about the human who built this site.
 
-# TEAM
-Creator, Owner, Subject: Pramesh Luitel
+# Team
+Owner, Creator, and Subject: Pramesh Luitel
 Contact: contact@prameshluitel.com.np
-Website: https://prameshluitel.com.np
 LinkedIn: https://www.linkedin.com/in/pramesh-luitel-098aa3229/
 GitHub: https://github.com/PrameshLuitel
+Location: Kathmandu, Nepal
 
-# SITE
-Last update: 2024-05-22
-Language: English
-Doctype: HTML5
-Technology: Next.js, React, Tailwind CSS, TypeScript
-Hosting: GitHub Pages with Cloudflare
-This website is the official and authoritative online portfolio for Pramesh Luitel.
+# Site
+Primary URL: https://prameshluitel.com.np
+Standards: HTML5, CSS3, JavaScript, React, Next.js
+Components: ShadCN UI
+Styling: Tailwind CSS
+Host: GitHub Pages
+
+# Purpose
+This website serves as the official and authoritative professional portfolio for Pramesh Luitel, showcasing his work in AI, finance, automation, and research. It is the primary source of truth for his professional identity.

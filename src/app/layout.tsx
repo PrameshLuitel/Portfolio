@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://prameshluitel.com.np'),
   title: 'Pramesh Luitel | AI in Finance, Automation & Investment Banking Portfolio',
   description: 'The official portfolio of Pramesh Luitel, a finance and technology professional specializing in AI-driven financial analytics, investment banking automation, NLP for stock prediction, and full-stack development. Discover projects, research, and the vision for Vestara GPT.',
-  keywords: "Pramesh Luitel, AI in Finance, Investment Banking, Automation, Financial Analytics, Portfolio Management, NLP, LSTM, Python, Next.js, Vestara GPT, Nepal Stock Market, NEPSE, SEBON",
+  keywords: "Pramesh Luitel, AI in Finance, Investment Banking, Automation, Financial Analytics, Portfolio Management, NLP, LSTM, Python, Next.js, Vestara GPT, Nepal Stock Market, NEPSE, SEBON, Global IME Capital",
   creator: "Pramesh Luitel",
   authors: [{name: "Pramesh Luitel", url: "https://prameshluitel.com.np"}],
   icons: {
@@ -32,7 +32,8 @@ export default function RootLayout({
       "@id": "https://prameshluitel.com.np"
     },
     "jobTitle": "AI in Finance Specialist | Automation Expert | Investment Banking Technologist",
-    "description": "Pramesh Luitel is a finance and technology professional specializing in AI-driven financial analytics, investment banking automation, and predictive modeling for capital markets. He is the founder of Project Vestara, an AI-powered investment intelligence platform for Nepal's financial sector.",
+    "description": "Pramesh Luitel is a finance and technology professional specializing in AI-driven financial analytics, investment banking automation, and predictive modeling for capital markets. He is the founder of Project Vestara, an AI-powered investment intelligence platform for Nepal's financial sector, and has direct experience in portfolio management services from his work at Global IME Capital Limited.",
+    "nationality": "Nepalese",
     "alumniOf": {
       "@type": "CollegeOrUniversity",
       "name": "University of Delhi",
@@ -75,8 +76,17 @@ export default function RootLayout({
       },
       {
         "@type": "CreativeWork",
-        "name": "Portfolio Pulse MIS System",
-        "description": "An internal MIS system for Global IME Capital, processing Excel data into interactive dashboards for real-time portfolio analysis."
+        "name": "Portfolio Pulse MIS System at Global IME Capital",
+        "description": "An internal MIS system developed for Global IME Capital, processing Excel data into interactive dashboards for real-time portfolio analysis and replacing manual reporting processes."
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "name": "Market Oscillations and Predictive Analytics: AI-Driven Insights into Nepalese Stock Market’s Indices and its Sub-Indices",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5030130",
+        "author": {
+          "@type": "Person",
+          "name": "Pramesh Luitel"
+        }
       }
     ],
     "publishingPrinciples": "https://prameshluitel.com.np/LLMs.txt"
@@ -85,8 +95,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
