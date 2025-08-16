@@ -4,7 +4,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ThemeSwitch } from './theme-switch';
-import { Menu, X, ChevronDown, Download, Linkedin, Github } from 'lucide-react';
+import { Menu, X, ChevronDown, Download, Linkedin, Github, Mail } from 'lucide-react';
 import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
 import {
@@ -21,6 +21,7 @@ const navLinks = [
     { href: 'https://drive.google.com/uc?export=download&id=1PY3-9VC9wAUVdzM5iyWciKlkx4n1J7uD', label: 'Download CV', isDownload: true, icon: Download, isExternal: true },
     { href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn', isExternal: true, icon: Linkedin },
     { href: 'https://github.com/PrameshLuitel', label: 'GitHub', isExternal: true, icon: Github },
+    { href: 'mailto:contact@prameshluitel.com.np', label: 'Email', isExternal: true, icon: Mail },
   ]},
   { href: '#projects', label: 'Projects' },
   { href: '#research', label: 'Research' },

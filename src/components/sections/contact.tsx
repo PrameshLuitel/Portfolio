@@ -11,7 +11,7 @@ import { useState } from 'react';
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn' },
   { icon: Github, href: 'https://github.com/PrameshLuitel', label: 'GitHub' },
-  { icon: Mail, href: 'mailto:luitelpramesh@gmail.com', label: 'Email' },
+  { icon: Mail, href: 'mailto:contact@prameshluitel.com.np', label: 'Email' },
   { icon: FileText, href: 'https://drive.google.com/uc?export=download&id=1PY3-9VC9wAUVdzM5iyWciKlkx4n1J7uD', label: 'CV' },
 ]
 
@@ -21,7 +21,7 @@ const ContactSection = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const mailtoHref = `mailto:luitelpramesh@gmail.com?subject=Inquiry from ${name} (${email})&body=${encodeURIComponent(message)}`;
+  const mailtoHref = `mailto:contact@prameshluitel.com.np?subject=Inquiry from ${name} (${email})&body=${encodeURIComponent(message)}`;
 
   return (
     <section id="contact" className="scroll-section p-4 md:p-8">
