@@ -31,8 +31,7 @@ const SplashScreen = ({ setIsLoading }: SplashScreenProps) => {
 
   return (
     <motion.div
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
+      exit={{ opacity: 0, transition: { duration: 0.5 } }}
       className={cn(
         'fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background'
       )}
@@ -44,9 +43,11 @@ const SplashScreen = ({ setIsLoading }: SplashScreenProps) => {
         >
           {letters}
         </motion.h1>
-        <p className="splash-subtitle text-muted-foreground text-sm md:text-base">
-          Creative Solutions to Eliminate Inefficiency
-        </p>
+        <motion.div layoutId="main-subtitle">
+          <p className="splash-subtitle text-muted-foreground text-sm md:text-base">
+            Creative Solutions to Eliminate Inefficiency
+          </p>
+        </motion.div>
       </div>
     </motion.div>
   );
