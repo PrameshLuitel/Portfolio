@@ -4,6 +4,17 @@
 import { Button } from '@/components/ui/button';
 import { useSound } from '@/hooks/use-sound';
 import { Github, Linkedin, Mail, FileText, Send, Phone } from 'lucide-react';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+import { useState, useEffect } from 'react';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn' },
@@ -15,6 +26,55 @@ const socialLinks = [
 
 const ContactSection = () => {
   const { playHoverSound } = useSound();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // A simple check for mobile devices.
+    const userAgent = typeof window.navigator === "undefined" ? "" : navigator.userAgent;
+    const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+    setIsMobile(mobile);
+  }, []);
+
+  const phoneNumber = '+977-9761774474';
+
+  const CallButton = () => {
+    if (isMobile) {
+      return (
+        <Button asChild size="lg" className="flex-1 text-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground" variant="outline" onMouseEnter={playHoverSound}>
+          <a href={`tel:${phoneNumber}`}>
+              <Phone className="mr-2 h-5 w-5" />
+              Call Me
+          </a>
+        </Button>
+      );
+    }
+
+    return (
+      <AlertDialog>
+        <AlertDialogTrigger asChild>
+          <Button size="lg" className="flex-1 text-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground" variant="outline" onMouseEnter={playHoverSound}>
+            <Phone className="mr-2 h-5 w-5" />
+            Call Me
+          </Button>
+        </AlertDialogTrigger>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>My Contact Number</AlertDialogTitle>
+            <AlertDialogDescription>
+              You can reach me directly at the number below.
+              <p className="font-mono text-lg text-foreground bg-secondary/50 rounded-md p-3 inline-block border border-primary/20 mt-4 w-full text-center">
+                {phoneNumber}
+              </p>
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction>Close</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    );
+  };
+
 
   return (
     <section id="contact" className="scroll-section p-4 md:p-8">
@@ -39,12 +99,7 @@ const ContactSection = () => {
                     Email Me
                 </a>
                 </Button>
-                <Button asChild size="lg" className="flex-1 text-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground" variant="outline" onMouseEnter={playHoverSound}>
-                <a href="tel:+9779761774474">
-                    <Phone className="mr-2 h-5 w-5" />
-                    Call Me
-                </a>
-                </Button>
+                <CallButton />
             </div>
         </div>
 
