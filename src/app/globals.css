@@ -205,3 +205,37 @@
   text-shadow: -1px 0 hsl(var(--secondary));
   animation: glitch-anim-2 5s cubic-bezier(.25,.46,.45,.94) both infinite;
 }
+
+
+/* Splash Screen Animations */
+@keyframes letter-glitch {
+  0% { transform: translate3d(0, 0, 0) scale(1.2); opacity: 0; color: hsl(90 100% 50%); text-shadow: 0 0 10px hsl(90 100% 50%); }
+  5% { transform: translate3d(2px, -2px, 0) skewX(20deg); opacity: 1; }
+  10% { transform: translate3d(-2px, 2px, 0) skewX(-20deg); }
+  15% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; color: hsl(158 10% 95%); text-shadow: none; }
+  100% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; color: hsl(158 10% 95%); text-shadow: none; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+.animate-fade-out {
+  animation: fade-out 0.5s ease-in-out forwards;
+}
+
+.splash-letter {
+  display: inline-block;
+  opacity: 0;
+  animation: letter-glitch 2s ease-in-out forwards;
+}
