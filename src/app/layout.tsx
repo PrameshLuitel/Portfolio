@@ -6,8 +6,8 @@ import { ThemeProvider } from '@/components/theme-provider';
 export const metadata: Metadata = {
   metadataBase: new URL('https://prameshluitel.com.np'),
   title: 'Pramesh Luitel | AI in Finance, Automation & Investment Banking Portfolio',
-  description: 'The official portfolio of Pramesh Luitel (also known as Pramish Luitel), a finance and technology professional specializing in AI-driven financial analytics, investment banking automation, NLP for stock prediction, and full-stack development. Discover projects, research, and the vision for Vestara GPT by Pramesh Luitel.',
-  keywords: "Pramesh Luitel, Pramish Luitel, Rapmish Kuitel, Luitel, Pramesh, Pramish, AI in Finance, Investment Banking, Automation, Financial Analytics, Portfolio Management, NLP, LSTM, Python, Next.js, Vestara GPT, Nepal Stock Market, NEPSE, SEBON, Global IME Capital, Ramjas College, University of Delhi",
+  description: 'The official portfolio of Pramesh Luitel, a finance and technology professional specializing in AI-driven financial analytics, investment banking automation, NLP for stock prediction, and full-stack development. Discover projects, research, and the vision for Vestara GPT by Pramesh Luitel.',
+  keywords: "Pramesh Luitel, Rapmish Kuitel, Luitel, Pramesh, AI in Finance, Investment Banking, Automation, Financial Analytics, Portfolio Management, NLP, LSTM, Python, Next.js, Vestara GPT, Nepal Stock Market, NEPSE, SEBON, Global IME Capital, Ramjas College, University of Delhi",
   creator: "Pramesh Luitel",
   authors: [{name: "Pramesh Luitel", url: "https://prameshluitel.com.np"}],
 };
@@ -21,7 +21,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Pramesh Luitel",
-    "alternateName": ["Pramish Luitel", "Rapmish Kuitel", "Luitel"],
+    "alternateName": ["Rapmish Kuitel", "Luitel"],
     "url": "https://prameshluitel.com.np",
     "mainEntityOfPage": {
       "@type": "WebPage",

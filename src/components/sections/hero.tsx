@@ -34,7 +34,7 @@ const HeroSection = () => {
         <h1 className="sr-only">Pramesh Luitel: AI in Finance, Automation & Investment Banking Portfolio</h1>
         <GlitchText text="Hi, I'm Pramesh" className="font-headline text-5xl md:text-6xl lg:text-8xl mb-4" />
         <p className="font-body text-lg md:text-xl lg:text-2xl max-w-3xl text-muted-foreground mb-8">
-          Merging deep capital markets insight with cutting-edge AI, I, Pramesh Luitel, create systems that eliminate inefficiency, predict with precision, and set new benchmarks in investment banking and financial research.
+          I merge deep capital markets insight with cutting-edge AI to create systems that eliminate inefficiency, predict with precision, and set new benchmarks in investment banking and financial research.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-8">

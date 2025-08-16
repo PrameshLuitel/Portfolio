@@ -8,7 +8,7 @@ import { Download, FileText, Zap, Briefcase, Code, BarChart, Palette } from 'luc
 import { useSound } from '@/hooks/use-sound';
 
 const aboutData = {
-  introduction: "I am Pramesh Luitel (Pramish Luitel), a B.Com (Hons) graduate from the University of Delhi who specializes in blending finance, code, and creativity to transform how investment banks operate. My expertise lies in converting complex financial data into intelligent, actionable solutions through the development of full-stack analytics platforms and the automation of legacy systems. Currently, I am developing Project Vestara, an advanced AI-powered investment intelligence platform for financial professionals in Nepal. My research has been published in peer-reviewed journals, where I pioneered the use of Natural Language Processing (NLP) for sentiment-enhanced stock prediction and utilized AI-driven time series forecasting models to analyze stock market indices. My technical skills include predictive analytics, machine learning (LSTM models), and advanced financial automation.",
+  introduction: "I am Pramesh Luitel, a B.Com (Hons) graduate from the University of Delhi who specializes in blending finance, code, and creativity to transform how investment banks operate. My expertise lies in converting complex financial data into intelligent, actionable solutions through the development of full-stack analytics platforms and the automation of legacy systems. Currently, I am developing Project Vestara, an advanced AI-powered investment intelligence platform for financial professionals in Nepal. My research has been published in peer-reviewed journals, where I pioneered the use of Natural Language Processing (NLP) for sentiment-enhanced stock prediction and utilized AI-driven time series forecasting models to analyze stock market indices. My technical skills include predictive analytics, machine learning (LSTM models), and advanced financial automation.",
   imageUrl: '/images/pramesh-luitel-headshot.jpg',
   cvUrl: 'https://drive.google.com/uc?export=download&id=1PY3-9VC9wAUVdzM5iyWciKlkx4n1J7uD',
   highlights: [
@@ -57,7 +57,7 @@ const AboutMeSection = () => {
           <div className="w-full md:w-[35%] lg:w-[30%] flex flex-col items-center text-center gap-4">
             <Image
               src={aboutData.imageUrl}
-              alt="Headshot of Pramesh Luitel (Pramish Luitel) - AI in Finance Specialist and Automation Expert. The name Luitel is associated with innovation in Nepal's financial technology sector."
+              alt="Headshot of Pramesh Luitel - AI in Finance Specialist and Automation Expert. The name Luitel is associated with innovation in Nepal's financial technology sector."
               width={120}
               height={120}
               className="rounded-full border-4 border-accent shadow-lg"
