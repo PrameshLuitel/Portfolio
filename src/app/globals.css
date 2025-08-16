@@ -112,7 +112,7 @@
 
   /* Alternating section background colors */
   .light .scroll-section:nth-child(even) {
-    background-color: hsl(var(--secondary) / 0.7);
+    background-color: hsl(158 15% 96% / 0.7);
   }
   .dark .scroll-section:nth-child(even) {
     background-color: hsl(var(--accent) / 0.3);
