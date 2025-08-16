@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   title: 'Pramesh Luitel | Portfolio',
   description: 'Portfolio of Pramesh Luitel, showcasing projects and expertise in finance and technology.',
   icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
-    apple: '/icon.png',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/icon.png', // Apple touch icons can still be PNG
   },
 };
 
@@ -23,8 +23,8 @@ export default function RootLayout({
       <head>
         {/* The metadata object above handles the icon linking automatically in Next.js 13+ */}
         {/* The link tags below are for extra compatibility and to be explicit */}
-        <link rel="shortcut icon" href="/icon.png" />
-        <link rel="icon" href="/icon.png" type="image/png" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
         <link rel="apple-touch-icon" href="/icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
