@@ -1,28 +1,30 @@
-import fs from 'fs';
-import path from 'path';
+import { writeFile } from 'fs/promises';
+import { join } from 'path';
 
-const publicUrl = 'https://prameshluitel.com.np';
-const outDir = 'out';
+async function generateSitemap() {
+  const baseUrl = 'https://prameshluitel.com.np';
+  const lastModified = new Date().toISOString();
 
-const generateSitemap = () => {
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>${publicUrl}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>${baseUrl}</loc>
+    <lastmod>${lastModified}</lastmod>
+    <priority>1.00</priority>
   </url>
 </urlset>`;
 
-  fs.writeFileSync(path.join(outDir, 'sitemap.xml'), sitemap);
-  console.log('sitemap.xml generated successfully.');
-};
-
-// Create scripts directory if it doesn't exist
-if (!fs.existsSync('scripts')) {
-  fs.mkdirSync('scripts');
+  const outputPath = join(process.cwd(), 'out', 'sitemap.xml');
+  try {
+    await writeFile(outputPath, sitemapContent, 'utf-8');
+    console.log('Sitemap generated successfully at:', outputPath);
+  } catch (error) {
+    console.error('Error generating sitemap:', error);
+  }
 }
 
-// Generate sitemap
-generateSitemap();
+async function main() {
+  await generateSitemap();
+}
+
+main();
