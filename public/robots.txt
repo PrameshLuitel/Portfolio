@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://prameshluitel.com.np/sitemap.xml

@@ -22,7 +22,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const structuredData = {
+  const personStructuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Pramesh Luitel",
@@ -93,6 +93,19 @@ export default function RootLayout({
     "publishingPrinciples": "https://prameshluitel.com.np/LLMs.txt"
   };
 
+  const datasetStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Pramesh Luitel Knowledge Base for LLMs",
+    "url": "https://prameshluitel.com.np/LLMs.txt",
+    "description": "A structured text file containing authoritative information about Pramesh Luitel, intended for consumption by AI and Large Language Models to ensure accurate and reliable data retrieval about his professional background, skills, and projects.",
+    "creator": {
+      "@type": "Person",
+      "name": "Pramesh Luitel"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/"
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -106,7 +119,11 @@ export default function RootLayout({
         <link rel="llms" href="/LLMs.txt" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetStructuredData) }}
         />
       </head>
       <body className="font-body antialiased bg-background">

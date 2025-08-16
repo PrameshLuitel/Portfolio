@@ -1,6 +1,7 @@
 "use client";
 
 import DotGridBackground from '@/components/dot-grid-background';
+import Footer from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
 import AboutMeSection from '@/components/sections/about-me';
 import ContactSection from '@/components/sections/contact';
@@ -29,6 +30,7 @@ export default function Home() {
         <ResearchSection />
         <VestaraSection />
         <ContactSection />
+        <Footer />
       </main>
     </>
   );
