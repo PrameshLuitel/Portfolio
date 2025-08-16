@@ -10,7 +10,7 @@ const VestaraSection = () => {
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
         <h2 className="font-headline text-3xl md:text-4xl text-glow mb-2 text-center">Flagship Project: Vestara GPT</h2>
         <p className="text-muted-foreground mb-6">The future of investment strategy, powered by proprietary AI.</p>
-        <Card className="w-full max-w-5xl bg-card/70 backdrop-blur-sm border-primary/20">
+        <Card className="w-full max-w-5xl bg-card/70 backdrop-blur-sm border-accent/20">
           <Tabs defaultValue="vision" className="w-full">
             <CardHeader className="p-4 md:p-6">
               <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4">

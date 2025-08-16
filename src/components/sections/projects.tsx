@@ -39,7 +39,7 @@ const ProjectsSection = () => {
                   <Dialog>
                     <DialogTrigger asChild>
                       <div className="block h-full cursor-pointer">
-                        <Card className="h-full flex flex-col bg-card/70 backdrop-blur-sm border-primary/20 overflow-hidden transition-all hover:border-primary hover:shadow-lg hover:shadow-primary/20">
+                        <Card className="h-full flex flex-col bg-card/70 backdrop-blur-sm border-accent/20 overflow-hidden transition-all hover:border-primary hover:shadow-lg hover:shadow-primary/20">
                           <CardHeader>
                             <CardTitle className="flex items-center justify-between">
                               <span className="text-lg font-headline">{project.title}</span>
@@ -51,7 +51,7 @@ const ProjectsSection = () => {
                               alt={project.title}
                               width={400}
                               height={300}
-                              className="rounded-md border border-primary/20 object-cover w-full h-48"
+                              className="rounded-md border border-accent/20 object-cover w-full h-48"
                               data-ai-hint={project.image.hint}
                             />
                             <p className="mt-4 text-sm text-muted-foreground line-clamp-3">{project.description}</p>
@@ -74,7 +74,7 @@ const ProjectsSection = () => {
                               alt={project.title}
                               width={600}
                               height={400}
-                              className="rounded-md border border-primary/20 object-cover w-full h-auto aspect-[4/3]"
+                              className="rounded-md border border-accent/20 object-cover w-full h-auto aspect-[4/3]"
                               data-ai-hint={project.image.hint}
                           />
                           <p className="text-sm text-muted-foreground">{project.longDescription}</p>

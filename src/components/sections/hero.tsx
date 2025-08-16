@@ -4,7 +4,6 @@
 import GlitchText from '@/components/glitch-text';
 import { Github, Linkedin, Mail, MoveDown, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import { useSound } from '@/hooks/use-sound';
 
 const socialLinks = [
@@ -16,6 +15,19 @@ const socialLinks = [
 
 const HeroSection = () => {
   const { playHoverSound } = useSound();
+  
+  const scrollToSection = (e: React.MouseEvent<HTMLElement>, id: string) => {
+    if (!id.startsWith('#')) return;
+    e.preventDefault();
+    const targetId = id.substring(1); 
+    const section = document.getElementById(targetId);
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <section id="home" className="scroll-section">
       <div className="z-10 container mx-auto flex h-full flex-col items-center justify-center text-center p-4">
@@ -26,14 +38,14 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-8">
-          <Button asChild variant="outline" size="lg" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
-            <Link href="#projects">Projects</Link>
+          <Button asChild variant="outline" size="lg" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
+            <a href="#projects" onClick={(e) => scrollToSection(e, '#projects')}>Projects</a>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
-            <Link href="#research">Research Papers</Link>
+          <Button asChild variant="outline" size="lg" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
+            <a href="#research" onClick={(e) => scrollToSection(e, '#research')}>Research Papers</a>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
-            <Link href="#vestara">Explore Vestara GPT</Link>
+          <Button asChild variant="outline" size="lg" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onMouseEnter={playHoverSound}>
+            <a href="#vestara" onClick={(e) => scrollToSection(e, '#vestara')}>Explore Vestara GPT</a>
           </Button>
         </div>
 
@@ -45,13 +57,16 @@ const HeroSection = () => {
               aria-label={link.label} 
               target="_blank" 
               rel="noopener noreferrer" 
+              className="text-foreground hover:text-primary transition-colors"
             >
               <link.icon className="w-8 h-8 icon-glow"/>
             </a>
           ))}
         </div>
         <div className="absolute bottom-10 animate-bounce">
-          <MoveDown className="w-8 h-8 text-primary" />
+          <a href="#about-me" onClick={(e) => scrollToSection(e, '#about-me')} aria-label="Scroll down">
+            <MoveDown className="w-8 h-8 text-primary" />
+          </a>
         </div>
       </div>
     </section>

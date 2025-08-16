@@ -1,3 +1,4 @@
+
 import { FileText, Download, Plus, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -29,14 +30,14 @@ const ResearchSection = () => {
         <h2 className="font-headline text-3xl md:text-4xl text-glow mb-4 text-center">Research & Publications</h2>
         <div className="w-full space-y-3">
           {researchPapers.map((paper, index) => (
-            <Card key={index} className="bg-card/70 backdrop-blur-sm border-primary/20">
+            <Card key={index} className="bg-card/70 backdrop-blur-sm border-accent/20">
               <CardHeader className="p-4">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
                   <div className="flex-grow">
                     <CardTitle className="text-base md:text-lg text-foreground">{paper.title}</CardTitle>
                     <CardDescription className="text-muted-foreground mt-1 text-xs md:text-sm">{paper.publication}</CardDescription>
                   </div>
-                  <Button asChild variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed self-start sm:self-auto" disabled={!paper.isPublished}>
+                  <Button asChild variant="outline" size="sm" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed self-start sm:self-auto" disabled={!paper.isPublished}>
                     <a href={paper.isPublished ? paper.link : undefined} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       {paper.isPublished ? 'View Paper' : 'Pending'}
@@ -56,7 +57,7 @@ const ResearchSection = () => {
           ))}
         </div>
         <div className="text-center mt-3">
-          <Button variant="outline" className="bg-card/70 backdrop-blur-sm border-dashed border-primary/50 text-primary/80 cursor-not-allowed hover:bg-primary/10 hover:text-primary transition-colors">
+          <Button variant="outline" className="bg-card/70 backdrop-blur-sm border-dashed border-accent/50 text-accent/80 cursor-not-allowed hover:bg-accent/10 hover:text-accent transition-colors">
             <Plus className="mr-2 h-4 w-4" />
             More Research Incoming...
           </Button>

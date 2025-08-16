@@ -60,7 +60,7 @@ const AboutMeSection = () => {
               alt="Headshot of Pramesh Luitel (Pramish Luitel) - AI in Finance Specialist and Automation Expert. The name Luitel is associated with innovation in Nepal's financial technology sector."
               width={120}
               height={120}
-              className="rounded-full border-4 border-primary shadow-lg"
+              className="rounded-full border-4 border-accent shadow-lg"
             />
             <h3 className="font-headline text-xl text-foreground -mt-2">Pramesh Luitel</h3>
             
@@ -68,9 +68,9 @@ const AboutMeSection = () => {
               <h3 className="font-headline text-lg text-primary mb-2">Major Highlights</h3>
               <div className="grid grid-cols-1 gap-2">
                   {aboutData.highlights.map((highlight, index) => (
-                    <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20 text-center group">
+                    <Card key={index} className="bg-card/50 backdrop-blur-sm border-accent/20 text-center group">
                       <CardContent className="p-2 flex flex-col items-center justify-center gap-1">
-                        <highlight.icon className="w-5 h-5 text-primary transition-all group-hover:icon-glow" />
+                        <highlight.icon className="w-5 h-5 text-accent transition-all group-hover:text-primary" />
                         <p className="font-bold text-xs text-center">{highlight.title}</p>
                       </CardContent>
                     </Card>
@@ -78,7 +78,7 @@ const AboutMeSection = () => {
               </div>
             </div>
             
-            <Button asChild variant="outline" size="sm" className="border-primary text-primary text-glow hover:bg-primary hover:text-primary-foreground w-full" onMouseEnter={playHoverSound}>
+            <Button asChild variant="outline" size="sm" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground w-full" onMouseEnter={playHoverSound}>
               <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download>
                 <Download className="mr-2 h-4 w-4" />
                 Download My CV
@@ -88,7 +88,7 @@ const AboutMeSection = () => {
           
           {/* Right Column */}
           <div className="w-full md:w-[65%] lg:w-[70%] flex flex-col gap-4">
-             <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
+             <Card className="bg-card/50 backdrop-blur-sm border-accent/20">
                 <CardContent className="p-4">
                     <p className="text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: aboutData.introduction }} />
                 </CardContent>
@@ -97,10 +97,10 @@ const AboutMeSection = () => {
                <h3 className="font-headline text-xl text-primary mt-2 mb-2 text-center md:text-left">Core Competencies</h3>
                <div className="space-y-2">
                 {aboutData.skills.map((skillGroup, index) => (
-                  <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/20">
+                  <Card key={index} className="bg-card/50 backdrop-blur-sm border-accent/20">
                     <CardHeader className="p-2 pb-1">
                       <CardTitle className="flex items-center gap-2 text-base">
-                        <skillGroup.icon className="w-5 h-5 text-primary icon-glow" />
+                        <skillGroup.icon className="w-5 h-5 text-accent" />
                         {skillGroup.category}
                       </CardTitle>
                     </CardHeader>
@@ -109,7 +109,7 @@ const AboutMeSection = () => {
                         {skillGroup.items.map(item => (
                             <div 
                                 key={item} 
-                                className="text-xs text-center font-medium px-2 py-0.5 rounded-full bg-secondary/50 border border-primary/20 text-foreground transition-all hover:bg-primary/20 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 cursor-default"
+                                className="text-xs text-center font-medium px-2 py-0.5 rounded-full bg-secondary/50 border border-accent/20 text-foreground transition-all hover:bg-accent/20 hover:scale-105 hover:shadow-lg hover:shadow-accent/20 cursor-default"
                                 onMouseEnter={playHoverSound}
                             >
                                 {item}
