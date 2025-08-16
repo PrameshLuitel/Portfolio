@@ -22,39 +22,25 @@ const SplashScreen = ({ setIsLoading }: SplashScreenProps) => {
   )), [name]);
 
   useEffect(() => {
-    // Determine the duration of the splash screen
-    const hasSeenSplash = localStorage.getItem('hasSeenSplash');
-    const duration = hasSeenSplash ? 1000 : 3000; // Shorter duration for returning visitors
-
-    const closeTimer = setTimeout(() => {
-      localStorage.setItem('hasSeenSplash', 'true');
+    const timer = setTimeout(() => {
       setIsLoading(false);
-    }, duration);
+    }, 3000); // Splash screen duration
 
-    return () => clearTimeout(closeTimer);
-
+    return () => clearTimeout(timer);
   }, [setIsLoading]);
 
   return (
     <motion.div
-      initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
       className={cn(
-        'fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0d1a15]'
+        'fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background'
       )}
     >
       <div className="text-center">
         <motion.h1 
           layoutId="main-logo"
           className="font-headline text-5xl md:text-7xl text-white mb-4"
-          transition={{
-            type: 'spring',
-            stiffness: 70,
-            damping: 20,
-            duration: 1.5,
-            delay: 1.5
-          }}
         >
           {letters}
         </motion.h1>
