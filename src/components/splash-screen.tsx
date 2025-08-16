@@ -10,8 +10,6 @@ interface SplashScreenProps {
 }
 
 const SplashScreen = ({ setIsLoading }: SplashScreenProps) => {
-  const [isMounted, setIsMounted] = useState(false);
-  
   const name = "Pramesh Luitel";
   const letters = useMemo(() => name.split('').map((char, index) => (
     <span
@@ -24,28 +22,18 @@ const SplashScreen = ({ setIsLoading }: SplashScreenProps) => {
   )), [name]);
 
   useEffect(() => {
-    setIsMounted(true);
-    
+    // Determine the duration of the splash screen
+    const hasSeenSplash = localStorage.getItem('hasSeenSplash');
+    const duration = hasSeenSplash ? 1000 : 3000; // Shorter duration for returning visitors
+
     const closeTimer = setTimeout(() => {
-      // Allow framer-motion to animate out
       localStorage.setItem('hasSeenSplash', 'true');
       setIsLoading(false);
-    }, 3000); // Total splash screen duration
+    }, duration);
 
     return () => clearTimeout(closeTimer);
 
   }, [setIsLoading]);
-
-  useEffect(() => {
-    const hasSeenSplash = localStorage.getItem('hasSeenSplash');
-    if (hasSeenSplash) {
-      setIsLoading(false);
-    }
-  }, [setIsLoading]);
-
-  if (!isMounted) {
-    return null;
-  }
 
   return (
     <motion.div
