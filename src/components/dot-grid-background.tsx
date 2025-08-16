@@ -36,12 +36,12 @@ const DotGridBackground = () => {
       const mouseRadius = 150;
 
       const lightThemeColors = {
-        glow: 'hsla(221, 100%, 65%,', // primary
-        dot: 'hsla(215, 20%, 90%, 0.5)', // border
+        glow: 'hsla(217, 91%, 60%,', // primary
+        dot: 'hsla(220, 20%, 88%, 0.5)', // border
       };
       const darkThemeColors = {
         glow: 'hsla(90, 100%, 50%,', // primary
-        dot: 'hsla(158, 100%, 22%, 0.4)', // accent
+        dot: 'hsla(159, 100%, 22%, 0.4)', // accent
       };
 
       const colors = theme === 'light' ? lightThemeColors : darkThemeColors;
@@ -52,31 +52,20 @@ const DotGridBackground = () => {
           const dy = mouse.y - y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           
-          let size = dotSize;
+          const opacity = Math.max(0, 1 - dist / mouseRadius);
           
-          if (dist < mouseRadius) {
-            const falloff = (mouseRadius - dist) / mouseRadius;
-            size = dotSize + 3 * Math.sin(falloff * Math.PI); // Grow effect
+          if (opacity > 0.05) {
+            ctx.fillStyle = `${colors.glow} ${opacity * 0.6})`;
+            ctx.beginPath();
+            ctx.arc(x, y, dotSize + opacity * 2, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            ctx.fillStyle = colors.dot;
+            ctx.beginPath();
+            ctx.arc(x, y, dotSize, 0, Math.PI * 2);
+            ctx.fill();
           }
-
-          ctx.fillStyle = colors.dot;
-          ctx.beginPath();
-          ctx.arc(x, y, size, 0, Math.PI * 2);
-          ctx.fill();
         }
-      }
-
-      // Draw the glow effect at the mouse position
-      if (mouse.x > -1000) {
-        const gradient = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, mouseRadius);
-        gradient.addColorStop(0, `${colors.glow} 0.2)`);
-        gradient.addColorStop(0.5, `${colors.glow} 0.05)`);
-        gradient.addColorStop(1, `${colors.glow} 0)`);
-        
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(mouse.x, mouse.y, mouseRadius, 0, Math.PI * 2);
-        ctx.fill();
       }
 
       animationFrameId = requestAnimationFrame(draw);
