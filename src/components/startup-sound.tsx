@@ -1,10 +1,10 @@
+
 "use client";
 
 import { useEffect, useRef, useCallback } from 'react';
 
 const StartupSound = () => {
   const audioContextRef = useRef<AudioContext | null>(null);
-  const hasPlayedRef = useRef(false);
 
   const getAudioContext = useCallback(() => {
     if (typeof window === 'undefined') return null;
@@ -14,71 +14,86 @@ const StartupSound = () => {
     return audioContextRef.current;
   }, []);
 
-  const playSound = useCallback(() => {
+  const playWhistleSound = useCallback(() => {
     const audioContext = getAudioContext();
-    if (!audioContext || hasPlayedRef.current) return;
-    
+    if (!audioContext) return;
+
     if (audioContext.state === 'suspended') {
-        audioContext.resume();
+      audioContext.resume();
     }
 
-    // Check if sound has already been played in this session
-    if (sessionStorage.getItem('startupSoundPlayed')) {
-      hasPlayedRef.current = true;
-      return;
-    }
-    
     const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
 
-    // Sound properties
+    // Whistle sound properties
     oscillator.type = 'sine';
-    oscillator.frequency.setValueAtTime(880, audioContext.currentTime);
-    oscillator.frequency.exponentialRampToValueAtTime(1400, audioContext.currentTime + 0.1);
+    // Start at a high frequency
+    oscillator.frequency.setValueAtTime(2000, audioContext.currentTime); 
+    // Quickly drop frequency for a "whistle down" effect
+    oscillator.frequency.exponentialRampToValueAtTime(1200, audioContext.currentTime + 0.2);
 
-    // Volume envelope
+    // Volume envelope to make it fade in and out quickly
     gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-    gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.05);
-    gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.3);
+    gainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 0.02); // Quick fade in
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.25); // Fade out
 
-    // Connect nodes and start sound
     oscillator.connect(gainNode);
     gainNode.connect(audioContext.destination);
     oscillator.start();
     oscillator.stop(audioContext.currentTime + 0.3);
 
-    // Mark that the sound has been played
-    sessionStorage.setItem('startupSoundPlayed', 'true');
-    hasPlayedRef.current = true;
+    // Clean up interaction listener after playing
+    const cleanup = () => {
+        window.removeEventListener('click', playWhistleSound);
+        window.removeEventListener('keydown', playWhistleSound);
+    }
+    cleanup();
 
-    // Clean up interaction listener
-    window.removeEventListener('click', playSound);
-    window.removeEventListener('keydown', playSound);
   }, [getAudioContext]);
 
-  useEffect(() => {
-    const initAudio = () => {
-      // Try to play immediately if allowed
-      playSound();
 
-      const audioContext = getAudioContext();
-      // If it's suspended, it requires user interaction
-      if (audioContext && audioContext.state === 'suspended') {
-        window.addEventListener('click', playSound, { once: true });
-        window.addEventListener('keydown', playSound, { once: true });
-      }
-    };
+  useEffect(() => {
+    const handleSoundLogic = () => {
+        try {
+            let visitCount = parseInt(localStorage.getItem('visitCount') || '0', 10);
+            visitCount++;
+
+            // After 3 visits, there's a 1 in 3 chance to play the sound
+            if (visitCount >= 3) {
+                if (Math.random() < 0.33) {
+                    const audioContext = getAudioContext();
+                    if (audioContext && audioContext.state === 'suspended') {
+                         window.addEventListener('click', playWhistleSound, { once: true });
+                         window.addEventListener('keydown', playWhistleSound, { once: true });
+                    } else {
+                        playWhistleSound();
+                    }
+                    // Reset counter after playing or attempting to play
+                    localStorage.setItem('visitCount', '0');
+                } else {
+                    // If it doesn't play, reset counter anyway to keep it random
+                     localStorage.setItem('visitCount', '0');
+                }
+            } else {
+                localStorage.setItem('visitCount', visitCount.toString());
+            }
+
+        } catch (error) {
+            console.error("Could not access localStorage for sound effect:", error);
+        }
+    }
     
-    // Defer initialization to after the initial render
-    const timeoutId = setTimeout(initAudio, 1);
+    // Defer initialization to after the initial render to ensure window is available
+    const timeoutId = setTimeout(handleSoundLogic, 1);
 
     return () => {
       clearTimeout(timeoutId);
-      // Cleanup listeners on component unmount
-      window.removeEventListener('click', playSound);
-      window.removeEventListener('keydown', playSound);
+      // Ensure listeners are cleaned up when the component unmounts
+      window.removeEventListener('click', playWhistleSound);
+      window.removeEventListener('keydown', playWhistleSound);
     };
-  }, [playSound, getAudioContext]);
+  }, [playWhistleSound, getAudioContext]);
+
 
   return null; // This component doesn't render anything
 };
