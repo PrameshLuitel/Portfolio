@@ -27,16 +27,59 @@ export default function RootLayout({
     "@type": "Person",
     "name": "Pramesh Luitel",
     "url": "https://prameshluitel.com.np",
-    "jobTitle": "Finance and Technology Professional",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://prameshluitel.com.np"
+    },
+    "jobTitle": "AI in Finance Specialist | Automation Expert | Investment Banking Technologist",
+    "description": "Pramesh Luitel is a finance and technology professional specializing in AI-driven financial analytics, investment banking automation, and predictive modeling for capital markets. He is the founder of Project Vestara, an AI-powered investment intelligence platform for Nepal's financial sector.",
     "alumniOf": {
       "@type": "CollegeOrUniversity",
-      "name": "University of Delhi"
+      "name": "University of Delhi",
+      "sameAs": "https://en.wikipedia.org/wiki/University_of_Delhi"
     },
-    "knowsAbout": ["Finance", "Artificial Intelligence", "Automation", "Financial Analytics", "Investment Banking", "Natural Language Processing", "Portfolio Management", "Python", "Next.js"],
+    "knowsAbout": [
+      "Artificial Intelligence (AI)",
+      "Finance",
+      "Investment Banking",
+      "Automation",
+      "Financial Analytics",
+      "Portfolio Management",
+      "Natural Language Processing (NLP)",
+      "LSTM Models",
+      "Python (Programming Language)",
+      "Next.js (Web Framework)",
+      "Vestara GPT",
+      "Nepal Stock Market (NEPSE)",
+      "Securities Board of Nepal (SEBON)",
+      "Financial Modeling",
+      "Sentiment Analysis",
+      "Full-Stack Development"
+    ],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "bachelor's degree",
+      "name": "Bachelor of Commerce (Honours)",
+      "educationalLevel": "https://schema.org/BachelorDegree"
+    },
     "sameAs": [
       "https://www.linkedin.com/in/pramesh-luitel-098aa3229/",
-      "https://github.com/PrameshLuitel"
-    ]
+      "https://github.com/PrameshLuitel",
+      "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5030130"
+    ],
+    "workExample": [
+      {
+        "@type": "CreativeWork",
+        "name": "Project Vestara GPT",
+        "description": "An advanced AI-powered investment intelligence platform designed to redefine how financial professionals in Nepal access, interpret, and act on critical regulatory and market data."
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Portfolio Pulse MIS System",
+        "description": "An internal MIS system for Global IME Capital, processing Excel data into interactive dashboards for real-time portfolio analysis."
+      }
+    ],
+    "publishingPrinciples": "https://prameshluitel.com.np/LLMs.txt"
   };
 
   return (
