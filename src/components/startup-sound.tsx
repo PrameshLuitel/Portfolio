@@ -79,11 +79,9 @@ const StartupSound = () => {
                 if (visitCount >= 3) {
                     if (Math.random() < 0.33) {
                         triggerSound();
-                        localStorage.setItem('visitCount', '0'); // Reset after playing
-                    } else {
-                         // Still reset to keep it random for the next 3 visits
-                        localStorage.setItem('visitCount', '0');
                     }
+                    // Always reset to keep it random for the next 3 visits
+                    localStorage.setItem('visitCount', '0');
                 } else {
                     localStorage.setItem('visitCount', visitCount.toString());
                 }
