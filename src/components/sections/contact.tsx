@@ -73,6 +73,12 @@ const ContactSection = () => {
                 Send Inquiry
               </a>
             </Button>
+            <p className="text-center text-xs text-muted-foreground">
+              Or, you can email me directly at{' '}
+              <a href="mailto:contact@prameshluitel.com.np" className="text-primary underline hover:text-primary/80">
+                contact@prameshluitel.com.np
+              </a>
+            </p>
           </div>
         </div>
       </div>
