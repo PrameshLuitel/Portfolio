@@ -1,6 +1,4 @@
-# Allow all web crawlers to access the site
 User-agent: *
 Allow: /
 
-# Point to the sitemap for better indexing
 Sitemap: https://prameshluitel.com.np/sitemap.xml
