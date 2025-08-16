@@ -62,10 +62,10 @@ const ContactSection = () => {
             <AlertDialogTitle>My Contact Number</AlertDialogTitle>
             <AlertDialogDescription>
               You can reach me directly at the number below.
-              <div className="font-mono text-lg text-foreground bg-secondary/50 rounded-md p-3 border border-primary/20 mt-4 w-full text-center">
-                {phoneNumber}
-              </div>
             </AlertDialogDescription>
+            <div className="font-mono text-lg text-foreground bg-secondary/50 rounded-md p-3 border border-primary/20 mt-4 w-full text-center">
+              {phoneNumber}
+            </div>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogAction>Close</AlertDialogAction>
