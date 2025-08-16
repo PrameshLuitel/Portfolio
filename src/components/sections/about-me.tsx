@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Download, FileText, Zap, Briefcase, Code, BarChart, Palette } from 'lucide-react';
 import { useSound } from '@/hooks/use-sound';
-import { ScrollArea } from '../ui/scroll-area';
 
 const aboutData = {
   introduction: "I specialize in blending finance, code, and creativity to transform investment banking operations. My expertise lies in converting complex financial data into intelligent, actionable solutions through full-stack analytics platforms and automating legacy systems.",
@@ -114,26 +113,25 @@ const AboutMeSection = () => {
           
           {/* Right Column */}
           <div className="lg:col-span-2">
-             <Card className="bg-card/50 backdrop-blur-sm border-border h-[400px]">
+             <Card className="bg-card/50 backdrop-blur-sm border-border h-full">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-xl text-primary">
                       Core Competencies
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ScrollArea className="h-[320px] pr-4">
-                    <div className="space-y-6">
+                    <div className="space-y-4">
                       {aboutData.skills.map((skillGroup) => (
                         <div key={skillGroup.category}>
-                          <h3 className="font-headline text-lg flex items-center gap-2 text-primary mb-3">
-                            <skillGroup.icon className="w-5 h-5" />
+                          <h3 className="font-headline text-md flex items-center gap-2 text-primary mb-2">
+                            <skillGroup.icon className="w-4 h-4" />
                             {skillGroup.category}
                           </h3>
-                          <div className="space-y-4 pl-2 border-l-2 border-primary/20 ml-2">
+                          <div className="space-y-3 pl-2 border-l-2 border-primary/20 ml-2">
                             {skillGroup.subCategories.map(subCategory => (
                               <div key={subCategory.title} className="pl-4">
-                                <h4 className="font-semibold text-base text-foreground mb-2">{subCategory.title}</h4>
-                                <div className="flex flex-wrap gap-2 justify-start">
+                                <h4 className="font-semibold text-sm text-foreground mb-2">{subCategory.title}</h4>
+                                <div className="flex flex-wrap gap-1.5 justify-start">
                                   {subCategory.items.map(item => (
                                       <div 
                                           key={item} 
@@ -150,7 +148,6 @@ const AboutMeSection = () => {
                         </div>
                       ))}
                     </div>
-                  </ScrollArea>
                 </CardContent>
               </Card>
           </div>
