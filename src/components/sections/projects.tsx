@@ -21,7 +21,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="scroll-section p-4 md:p-8">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
-        <h2 className="font-headline text-4xl md:text-5xl text-glow mb-12 text-center">Venture & Project Showcase</h2>
+        <h2 className="font-headline text-4xl md:text-5xl text-glow mb-12 text-center text-primary">Venture & Project Showcase</h2>
         <Carousel
           plugins={[plugin.current]}
           opts={{

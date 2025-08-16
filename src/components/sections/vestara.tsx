@@ -8,7 +8,7 @@ const VestaraSection = () => {
   return (
     <section id="vestara" className="scroll-section p-4 md:p-8 flex items-center justify-center">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
-        <h2 className="font-headline text-3xl md:text-4xl text-glow mb-2 text-center">Flagship Project: Vestara GPT</h2>
+        <h2 className="font-headline text-3xl md:text-4xl text-glow mb-2 text-center text-primary">Flagship Project: Vestara GPT</h2>
         <p className="text-muted-foreground mb-6">The future of investment strategy, powered by proprietary AI.</p>
         <Card className="w-full max-w-5xl bg-card/70 backdrop-blur-sm border-accent/20">
           <Tabs defaultValue="vision" className="w-full">

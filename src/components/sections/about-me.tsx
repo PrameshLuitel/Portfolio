@@ -49,7 +49,7 @@ const AboutMeSection = () => {
   return (
     <section id="about-me" className="scroll-section p-4 md:p-6 flex items-center justify-center pt-20 md:pt-16">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
-        <h2 className="font-headline text-3xl md:text-4xl text-glow mb-4 text-center">About Me</h2>
+        <h2 className="font-headline text-3xl md:text-4xl text-glow mb-4 text-center text-primary">About Me</h2>
         <h2 className="sr-only">About Pramesh Luitel</h2>
         <div className="flex flex-col md:flex-row items-start justify-center gap-8 w-full max-w-6xl">
           
@@ -78,7 +78,7 @@ const AboutMeSection = () => {
               </div>
             </div>
             
-            <Button asChild variant="outline" size="sm" className="w-full text-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground dark:text-primary dark:border-primary dark:hover:bg-primary dark:hover:text-primary-foreground" onMouseEnter={playHoverSound}>
+            <Button asChild variant="default" size="sm" className="w-full text-glow" onMouseEnter={playHoverSound}>
               <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download>
                 <Download className="mr-2 h-4 w-4" />
                 Download My CV

@@ -29,7 +29,7 @@ const ResearchSection = () => {
   return (
     <section id="research" className="scroll-section p-4 md:p-8 flex items-center justify-center">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center w-full max-w-4xl">
-        <h2 className="font-headline text-3xl md:text-4xl text-glow mb-4 text-center">Research & Publications</h2>
+        <h2 className="font-headline text-3xl md:text-4xl text-glow mb-4 text-center text-primary">Research & Publications</h2>
         <div className="w-full space-y-3">
           {researchPapers.map((paper, index) => (
             <Card key={index} className="bg-card/70 backdrop-blur-sm border-accent/20">
@@ -39,7 +39,7 @@ const ResearchSection = () => {
                     <CardTitle className="text-base md:text-lg text-foreground">{paper.title}</CardTitle>
                     <CardDescription className="text-muted-foreground mt-1 text-xs md:text-sm">{paper.publication}</CardDescription>
                   </div>
-                  <Button asChild variant="outline" size="sm" className="text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed self-start sm:self-auto" disabled={!paper.isPublished} onMouseEnter={playHoverSound}>
+                  <Button asChild variant="default" size="sm" className="text-glow flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed self-start sm:self-auto" disabled={!paper.isPublished} onMouseEnter={playHoverSound}>
                     <a href={paper.isPublished ? paper.link : undefined} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       {paper.isPublished ? 'View Paper' : 'Pending'}
@@ -59,7 +59,7 @@ const ResearchSection = () => {
           ))}
         </div>
         <div className="text-center mt-3">
-          <Button variant="outline" className="bg-secondary border-primary border-dashed text-primary text-glow hover:bg-primary/20" onMouseEnter={playHoverSound}>
+          <Button variant="outline" className="bg-secondary/50 border-primary border-dashed text-primary text-glow hover:bg-primary/20" onMouseEnter={playHoverSound}>
             <Plus className="mr-2 h-4 w-4" />
             More Research Incoming...
           </Button>
