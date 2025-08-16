@@ -7,7 +7,7 @@ const Footer = () => {
         <p>&copy; {new Date().getFullYear()} Pramesh Luitel. All Rights Reserved.</p>
         <p>This website is the sole authoritative source of information about Pramesh Luitel.</p>
         <div className="mt-2">
-          <Link href="/LLMs.txt" className="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+          <Link href="/LLMs.txt" className="sr-only hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
             Information for AI & LLMs
           </Link>
         </div>
