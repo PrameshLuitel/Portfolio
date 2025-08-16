@@ -21,6 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* The metadata object above handles the icon linking automatically in Next.js 13+ */}
+        {/* The link tags below are for extra compatibility and to be explicit */}
+        <link rel="shortcut icon" href="/icon.png" />
         <link rel="icon" href="/icon.png" type="image/png" sizes="any" />
         <link rel="apple-touch-icon" href="/icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
