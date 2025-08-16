@@ -109,9 +109,12 @@
     overflow: hidden;
   }
 
-  /* Alternating section background colors for the light theme */
+  /* Alternating section background colors */
   .light .scroll-section:nth-child(even) {
     @apply bg-accent;
+  }
+  .dark .scroll-section:nth-child(even) {
+    background-color: hsl(var(--accent) / 0.3);
   }
 
   @media (min-width: 768px) {
