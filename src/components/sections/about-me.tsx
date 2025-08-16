@@ -78,7 +78,7 @@ const AboutMeSection = () => {
               </div>
             </div>
             
-            <Button asChild variant="default" size="sm" className="w-full text-glow" onMouseEnter={playHoverSound}>
+            <Button asChild size="sm" className="w-full text-glow bg-primary/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground border" onMouseEnter={playHoverSound}>
               <a href={aboutData.cvUrl} target="_blank" rel="noopener noreferrer" download>
                 <Download className="mr-2 h-4 w-4" />
                 Download My CV
@@ -109,7 +109,7 @@ const AboutMeSection = () => {
                         {skillGroup.items.map(item => (
                             <div 
                                 key={item} 
-                                className="text-xs text-center font-medium px-2 py-0.5 rounded-full bg-accent border border-accent/20 text-foreground transition-all hover:bg-accent/20 hover:scale-105 hover:shadow-lg hover:shadow-accent/20 cursor-default"
+                                className="text-xs text-center font-medium px-2 py-0.5 rounded-full bg-accent border border-accent/20 text-foreground transition-all hover:bg-primary/20 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 cursor-default hover:text-glow"
                                 onMouseEnter={playHoverSound}
                             >
                                 {item}
