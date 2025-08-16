@@ -4,33 +4,25 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%; /* Clean off-white with a hint of blue */
-    --foreground: 215 25% 27%; /* Dark, readable slate blue for text */
-
-    --card: 210 40% 100%; /* Pure white for cards to pop */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 27%;
+    --card: 210 40% 100%;
     --card-foreground: 215 25% 27%;
-
     --popover: 210 40% 100%;
     --popover-foreground: 215 25% 27%;
-
-    --primary: 221 100% 65%; /* Light, "electric" blue */
+    --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%; /* Light, cool gray-blue */
-    --secondary-foreground: 215 25% 27%;
-    
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215 28% 45%;
-
-    --accent: 210 40% 94.1%; /* Slightly darker gray-blue for hover effects */
-    --accent-foreground: 215 25% 27%;
-
+    --accent: 210 40% 94.1%;
+    --accent-foreground: 222 47% 11%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221 100% 65%;
+    --ring: 222 47% 11%;
   }
 
   .dark {
@@ -111,7 +103,7 @@
 
   /* Alternating section background colors */
   .light .scroll-section:nth-child(even) {
-    background-color: hsl(var(--primary) / 0.1);
+    background-color: hsl(var(--secondary));
   }
   .dark .scroll-section:nth-child(even) {
     background-color: hsl(var(--accent) / 0.3);
