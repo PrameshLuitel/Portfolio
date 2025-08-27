@@ -12,29 +12,42 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Button } from '../ui/button';
 import { Github, Link as LinkIcon } from 'lucide-react';
 import { ScrollArea } from '../ui/scroll-area';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { cn } from '@/lib/utils';
 
 const ProjectsSection = () => {
-  const plugin = React.useRef(
+  const isMobile = useIsMobile();
+  
+  const autoplayPlugin = React.useRef(
     Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: true })
   );
+
+  const carouselPlugins = isMobile ? [] : [autoplayPlugin.current];
 
   return (
     <section id="projects" className="scroll-section p-4 md:p-8">
       <div className="z-10 container mx-auto flex flex-col items-center justify-center">
         <h2 className="font-headline text-4xl md:text-5xl text-glow mb-12 text-center text-primary">Venture & Project Showcase</h2>
         <Carousel
-          plugins={[plugin.current]}
+          plugins={carouselPlugins}
           opts={{
             align: "start",
             loop: true,
           }}
-          onMouseEnter={plugin.current.stop}
-          onMouseLeave={() => plugin.current.play()}
-          className="w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl"
+          orientation={isMobile ? 'vertical' : 'horizontal'}
+          onMouseEnter={!isMobile ? autoplayPlugin.current.stop : undefined}
+          onMouseLeave={!isMobile ? () => autoplayPlugin.current.play() : undefined}
+          className={cn(
+            "w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl",
+            isMobile && "h-96" 
+          )}
         >
-          <CarouselContent>
+          <CarouselContent className={cn(isMobile && "-mt-4 h-full")}>
             {projects.map((project) => (
-              <CarouselItem key={project.slug} className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={project.slug} className={cn(
+                  "md:basis-1/2 lg:basis-1/3",
+                  isMobile && "pt-4 basis-full"
+                )}>
                 <div className="p-1 h-full">
                   <Dialog>
                     <DialogTrigger asChild>
