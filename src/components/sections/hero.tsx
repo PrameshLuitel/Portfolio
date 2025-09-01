@@ -46,7 +46,7 @@ const HeroSection = () => {
             <a href="#research" onClick={(e) => scrollToSection(e, '#research')}>Research Papers</a>
           </Button>
           <Button asChild size="lg" className="text-glow" onMouseEnter={playHoverSound}>
-            <Link href="/vestara">Explore Vestara GPT</Link>
+            <a href="https://vestara-seven.vercel.app/" target="_blank" rel="noopener noreferrer">Explore Vestara GPT</a>
           </Button>
         </div>
 

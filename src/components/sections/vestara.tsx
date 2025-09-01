@@ -71,10 +71,10 @@ const VestaraSection = () => {
         </Card>
         <div className="text-center mt-6">
             <Button asChild>
-                <Link href="/vestara">
+                <a href="https://vestara-seven.vercel.app/" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Learn More on the Vestara Page
-                </Link>
+                </a>
             </Button>
         </div>
       </div>

@@ -25,7 +25,7 @@ const navLinks = [
   ]},
   { href: '#projects', label: 'Projects' },
   { href: '#research', label: 'Research' },
-  { href: '/vestara', label: 'Vestara GPT' },
+  { href: 'https://vestara-seven.vercel.app/', label: 'Vestara GPT' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -92,16 +92,18 @@ const Navbar = () => {
   };
 
   const NavItem = ({ link }: { link: (typeof navLinks)[0] }) => {
-    if (link.href.startsWith('/')) {
+    if (link.href.startsWith('http')) {
         return (
-            <Link href={link.href}
+            <a href={link.href}
+               target="_blank"
+               rel="noopener noreferrer"
                 className={cn(
                     "px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary transition-all",
                     activeSection === link.href && "text-primary"
                 )}
             >
                 {link.label}
-            </Link>
+            </a>
         )
     }
       
@@ -201,13 +203,18 @@ const Navbar = () => {
                 key={link.label}
                 href={link.href} 
                 onClick={(e) => {
-                    if (link.href.startsWith('/')) return;
+                    if (link.href.startsWith('http')) {
+                      // Allow default behavior for external link
+                      return;
+                    }
                     scrollToSection(e, link.href);
                 }}
                 className={cn(
                   "block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent",
                   activeSection === link.href && "text-primary bg-accent"
                 )}
+                target={link.href.startsWith('http') ? '_blank' : '_self'}
+                rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}
               >
                 {link.label}
               </a>
