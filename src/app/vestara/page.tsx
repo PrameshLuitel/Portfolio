@@ -38,7 +38,7 @@ export default function VestaraPage() {
         </div>
 
         <header className="text-center mb-12">
-          <Image src="/images/vestara-logo.png" alt="Vestara Logo" width={100} height={100} className="mx-auto mb-4" data-ai-hint="ai brain" />
+          <Image src="https://picsum.photos/100/100" alt="Vestara Logo" width={100} height={100} className="mx-auto mb-4 rounded-full" data-ai-hint="ai brain" />
           <h1 className="font-headline text-5xl md:text-7xl text-glow text-primary">Vestara GPT</h1>
           <p className="text-muted-foreground mt-4 text-lg max-w-2xl mx-auto">
             AI-Powered Investment Intelligence for Nepal's Capital Markets
