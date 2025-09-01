@@ -21,7 +21,7 @@ const socialLinks = [
   { icon: Github, href: 'https://github.com/PrameshLuitel', label: 'GitHub' },
   { icon: Mail, href: 'mailto:contact@prameshluitel.com.np', label: 'Email' },
   { icon: Phone, href: 'tel:+9779761774474', label: 'Call' },
-  { icon: FileText, href: 'https://drive.google.com/uc?export=download&id=1PY3-9VC9wAUVdzM5iyWciKlkx4n1J7uD', label: 'CV' },
+  { icon: FileText, href: 'https://drive.google.com/uc?export=download&id=1HXLUTJX7ggXZ-mbA8wuFiF-wG6KOo0Cg', label: 'CV' },
 ]
 
 const ContactSection = () => {

@@ -10,7 +10,7 @@ import { useSound } from '@/hooks/use-sound';
 const aboutData = {
   introduction: "I specialize in blending finance, code, and creativity to transform investment banking operations. My expertise lies in converting complex financial data into intelligent, actionable solutions through full-stack analytics platforms and automating legacy systems.",
   imageUrl: '/images/pramesh-luitel-headshot.jpg',
-  cvUrl: 'https://drive.google.com/uc?export=download&id=1PY3-9VC9wAUVdzM5iyWciKlkx4n1J7uD',
+  cvUrl: 'https://drive.google.com/uc?export=download&id=1HXLUTJX7ggXZ-mbA8wuFiF-wG6KOo0Cg',
   highlights: [
     {
       icon: FileText,

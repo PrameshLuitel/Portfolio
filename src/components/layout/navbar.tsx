@@ -18,7 +18,7 @@ import { motion } from 'framer-motion';
 const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about-me', label: 'About Me', isDropdown: true, items: [
-    { href: 'https://drive.google.com/uc?export=download&id=1PY3-9VC9wAUVdzM5iyWciKlkx4n1J7uD', label: 'Download CV', isDownload: true, icon: Download, isExternal: true },
+    { href: 'https://drive.google.com/uc?export=download&id=1HXLUTJX7ggXZ-mbA8wuFiF-wG6KOo0Cg', label: 'Download CV', isDownload: true, icon: Download, isExternal: true },
     { href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn', isExternal: true, icon: Linkedin },
     { href: 'https://github.com/PrameshLuitel', label: 'GitHub', isExternal: true, icon: Github },
     { href: 'mailto:contact@prameshluitel.com.np', label: 'Email', isExternal: true, icon: Mail },
