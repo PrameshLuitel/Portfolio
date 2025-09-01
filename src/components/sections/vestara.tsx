@@ -1,8 +1,9 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Rocket } from 'lucide-react';
+import { Rocket, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const VestaraSection = () => {
   return (
@@ -68,6 +69,14 @@ const VestaraSection = () => {
             </CardContent>
           </Tabs>
         </Card>
+        <div className="text-center mt-6">
+            <Button asChild>
+                <Link href="/vestara">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Learn More on the Vestara Page
+                </Link>
+            </Button>
+        </div>
       </div>
     </section>
   );

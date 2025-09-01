@@ -25,7 +25,7 @@ const navLinks = [
   ]},
   { href: '#projects', label: 'Projects' },
   { href: '#research', label: 'Research' },
-  { href: '#vestara', label: 'Vestara GPT' },
+  { href: '/vestara', label: 'Vestara GPT' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -92,6 +92,19 @@ const Navbar = () => {
   };
 
   const NavItem = ({ link }: { link: (typeof navLinks)[0] }) => {
+    if (link.href.startsWith('/')) {
+        return (
+            <Link href={link.href}
+                className={cn(
+                    "px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary transition-all",
+                    activeSection === link.href && "text-primary"
+                )}
+            >
+                {link.label}
+            </Link>
+        )
+    }
+      
     if (link.isDropdown) {
       return (
          <div className="flex items-center">
@@ -187,7 +200,10 @@ const Navbar = () => {
               <a 
                 key={link.label}
                 href={link.href} 
-                onClick={(e) => scrollToSection(e, link.href)}
+                onClick={(e) => {
+                    if (link.href.startsWith('/')) return;
+                    scrollToSection(e, link.href);
+                }}
                 className={cn(
                   "block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent",
                   activeSection === link.href && "text-primary bg-accent"

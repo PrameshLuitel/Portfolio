@@ -5,6 +5,7 @@ import GlitchText from '@/components/glitch-text';
 import { Github, Linkedin, Mail, MoveDown, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useSound } from '@/hooks/use-sound';
+import Link from 'next/link';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/pramesh-luitel-098aa3229/', label: 'LinkedIn' },
@@ -45,7 +46,7 @@ const HeroSection = () => {
             <a href="#research" onClick={(e) => scrollToSection(e, '#research')}>Research Papers</a>
           </Button>
           <Button asChild size="lg" className="text-glow" onMouseEnter={playHoverSound}>
-            <a href="#vestara" onClick={(e) => scrollToSection(e, '#vestara')}>Explore Vestara GPT</a>
+            <Link href="/vestara">Explore Vestara GPT</Link>
           </Button>
         </div>
 
